@@ -1,0 +1,88 @@
+\documentclass[10pt, a4paper]{article}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{left=1.5cm, right=1.5cm, top=2.5cm, bottom=2.5cm}
+\allowdisplaybreaks % 允许长公式跨页打断，这句是救命的！
+
+\title{\textbf{Analytical Space Jacobian Elements of the 7R Mechanism}}
+\author{Automated Kinematics Engine}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Introduction}
+This document presents the exact symbolic expressions for the space Jacobian matrix $J_s(q) \in \mathbb{R}^{6 \times 7}$. Due to the extreme complexity of the trigonometric terms in distal links, each column $J_i$ is decomposed into its 6 individual spatial components $J_{i,1} \dots J_{i,6}$.
+
+\subsection*{Column 1 ($J_1$)}
+\begin{align*}
+J_{1,1} &= 0 \
+J_{1,2} &= 0 \
+J_{1,3} &= 1 \
+J_{1,4} &= 0 \
+J_{1,5} &= 0 \
+J_{1,6} &= 0 \
+\end{align*}
+
+\subsection*{Column 2 ($J_2$)}
+\begin{align*}
+J_{2,1} &= 0 \
+J_{2,2} &= 0 \
+J_{2,3} &= 1 \
+J_{2,4} &= 0 \
+J_{2,5} &= -l \
+J_{2,6} &= 0 \
+\end{align*}
+
+\subsection*{Column 3 ($J_3$)}
+\begin{align*}
+J_{3,1} &= \sin (\text{q1}) \
+J_{3,2} &= -\cos (\text{q1}) \
+J_{3,3} &= 0 \
+J_{3,4} &= 0 \
+J_{3,5} &= 0 \
+J_{3,6} &= -l (\cos (\text{q1})+2) \
+\end{align*}
+
+\subsection*{Column 4 ($J_4$)}
+\begin{align*}
+J_{4,1} &= \cos (\text{q1}) \sin (\text{q2}) \
+J_{4,2} &= \sin (\text{q1}) \sin (\text{q2}) \
+J_{4,3} &= -\cos (\text{q2}) \
+J_{4,4} &= \frac{1}{2} l \cos (\text{q2}) (5 \cos (\text{q1})-4 \sin (\text{q1})) \
+J_{4,5} &= \frac{1}{2} l \cos (\text{q2}) (5 \sin (\text{q1})+4 \cos (\text{q1})+2) \
+J_{4,6} &= \frac{1}{2} l (2 \sin (\text{q1})+5) \sin (\text{q2}) \
+\end{align*}
+
+\subsection*{Column 5 ($J_5$)}
+\begin{align*}
+J_{5,1} &= \sin (\text{q1}) \cos (\text{q3})-\cos (\text{q1}) \cos (\text{q2}) \sin (\text{q3}) \
+J_{5,2} &= -\sin (\text{q1}) \cos (\text{q2}) \sin (\text{q3})-\cos (\text{q1}) \cos (\text{q3}) \
+J_{5,3} &= -\sin (\text{q2}) \sin (\text{q3}) \
+J_{5,4} &= \frac{1}{2} l \sin (\text{q2}) (5 \cos (\text{q1}) (\sin (\text{q3})-1)-4 \sin (\text{q1}) \sin (\text{q3})) \
+J_{5,5} &= \frac{1}{2} l \sin (\text{q2}) (5 \sin (\text{q1}) (\sin (\text{q3})-1)+2 (2 \cos (\text{q1})+1) \sin (\text{q3})) \
+J_{5,6} &= -\frac{1}{2} l (\cos (\text{q2}) ((2 \sin (\text{q1})+5) \sin (\text{q3})-5)+2 (\cos (\text{q1})+2) \cos (\text{q3})) \
+\end{align*}
+
+\subsection*{Column 6 ($J_6$)}
+\begin{align*}
+J_{6,1} &= -\cos (\text{q1}) (\cos (\text{q2}) \cos (\text{q3}) \sin (\text{q4})+\sin (\text{q2}) \cos (\text{q4}))-\sin (\text{q1}) \sin (\text{q3}) \sin (\text{q4}) \
+J_{6,2} &= \sin (\text{q4}) (\cos (\text{q1}) \sin (\text{q3})-\sin (\text{q1}) \cos (\text{q2}) \cos (\text{q3}))-\sin (\text{q1}) \sin (\text{q2}) \cos (\text{q4}) \
+J_{6,3} &= \cos (\text{q2}) \cos (\text{q4})-\sin (\text{q2}) \cos (\text{q3}) \sin (\text{q4}) \
+J_{6,4} &= \frac{1}{2} l (5 \cos (\text{q1}) (\cos (\text{q2}) ((\sin (\text{q3})-1) \cos (\text{q4})+\sin (\text{q3}))+\sin (\text{q2}) \cos (\text{q3}) \sin (\text{q4}))-\sin (\text{q1}) (\cos (\text{q3}) (4 \sin (\text{q2}) \sin (\text{q4})+5 \cos (\text{q4})+5)-4 \cos (\text{q2}) \cos (\text{q4}))) \
+J_{6,5} &= \frac{1}{2} l (\cos (\text{q2}) (\cos (\text{q4}) (5 \sin (\text{q1}) (\sin (\text{q3})-1)-2)+5 \sin (\text{q1}) \sin (\text{q3}))+(5 \sin (\text{q1})+2) \sin (\text{q2}) \cos (\text{q3}) \sin (\text{q4})+\cos (\text{q1}) (\cos (\text{q3}) (4 \sin (\text{q2}) \sin (\text{q4})+5 \cos (\text{q4})+5)-4 \cos (\text{q2}) \cos (\text{q4}))) \
+J_{6,6} &= -\frac{1}{2} l (\sin (\text{q2}) \cos (\text{q4}) (2 \sin (\text{q1})-5 \sin (\text{q3})+5)+\sin (\text{q4}) ((2 \sin (\text{q1})+5) \cos (\text{q2}) \cos (\text{q3})-2 (\cos (\text{q1})+2) \sin (\text{q3}))-5 \sin (\text{q2}) \sin (\text{q3})) \
+\end{align*}
+
+\subsection*{Column 7 ($J_7$)}
+\begin{align*}
+J_{7,1} &= -\cos (\text{q3}) (\cos (\text{q1}) \cos (\text{q2}) \cos (\text{q4}) \sin (\text{q5})+\sin (\text{q1}) \cos (\text{q5}))+\cos (\text{q1}) (\cos (\text{q2}) \sin (\text{q3}) \cos (\text{q5})+\sin (\text{q2}) \sin (\text{q4}) \sin (\text{q5}))+\sin (\text{q1}) \sin (\text{q3}) (-\cos (\text{q4})) \sin (\text{q5}) \
+J_{7,2} &= \sin (\text{q1}) (\cos (\text{q2}) (\sin (\text{q3}) \cos (\text{q5})-\cos (\text{q3}) \cos (\text{q4}) \sin (\text{q5}))+\sin (\text{q2}) \sin (\text{q4}) \sin (\text{q5}))+\cos (\text{q1}) (\sin (\text{q3}) \cos (\text{q4}) \sin (\text{q5})+\cos (\text{q3}) \cos (\text{q5})) \
+J_{7,3} &= \sin (\text{q2}) \sin (\text{q3}) \cos (\text{q5})-\sin (\text{q5}) (\sin (\text{q2}) \cos (\text{q3}) \cos (\text{q4})+\cos (\text{q2}) \sin (\text{q4})) \
+J_{7,4} &= \frac{1}{2} l (\sin (\text{q1}) (\sin (\text{q3}) \cos (\text{q5}) (4 \sin (\text{q2})+5 \sin (\text{q4}))+\sin (\text{q5}) (-4 \sin (\text{q2}) \cos (\text{q3}) \cos (\text{q4})-4 \cos (\text{q2}) \sin (\text{q4})+5 \cos (\text{q3}) \sin (\text{q4})))+5 \cos (\text{q1}) (\cos (\text{q5}) (\sin (\text{q2}) (-\sin (\text{q3})+\cos (\text{q4})+1)+\cos (\text{q2}) \cos (\text{q3}) \sin (\text{q4}))+\sin (\text{q5}) (\sin (\text{q2}) \cos (\text{q3}) \cos (\text{q4})-\cos (\text{q2}) (\sin (\text{q3})-1) \sin (\text{q4})))) \
+J_{7,5} &= \frac{1}{2} l (\cos (\text{q5}) (5 \sin (\text{q1}) (\sin (\text{q2}) (-\sin (\text{q3})+\cos (\text{q4})+1)+\cos (\text{q2}) \cos (\text{q3}) \sin (\text{q4}))-\sin (\text{q3}) ((4 \cos (\text{q1})+2) \sin (\text{q2})+5 \cos (\text{q1}) \sin (\text{q4})))+\sin (\text{q5}) (\cos (\text{q2}) \sin (\text{q4}) (-5 \sin (\text{q1}) (\sin (\text{q3})-1)+4 \cos (\text{q1})+2)+\cos (\text{q3}) (\sin (\text{q2}) \cos (\text{q4}) (5 \sin (\text{q1})+4 \cos (\text{q1})+2)-5 \cos (\text{q1}) \sin (\text{q4})))) \
+J_{7,6} &= \frac{1}{2} l (\cos (\text{q3}) \cos (\text{q5}) (2 \cos (\text{q1})+5 \sin (\text{q2}) \sin (\text{q4})+4)+\sin (\text{q5}) (\sin (\text{q2}) \sin (\text{q4}) (2 \sin (\text{q1})-5 \sin (\text{q3})+5)+2 (\cos (\text{q1})+2) \sin (\text{q3}) \cos (\text{q4}))-\cos (\text{q2}) (\cos (\text{q5}) (-(2 \sin (\text{q1})+5) \sin (\text{q3})+5 \cos (\text{q4})+5)+(2 \sin (\text{q1})+5) \cos (\text{q3}) \cos (\text{q4}) \sin (\text{q5}))) \
+\end{align*}
+
+\end{document}

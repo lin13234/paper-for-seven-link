@@ -1,0 +1,160 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{amsmath, amssymb, geometry, breqn, graphicx, float, hyperref, subcaption}
+\geometry{left=2cm, right=2cm, top=2.5cm, bottom=2.5cm}
+\title{\textbf{Kinematic Analysis Report}}
+\author{Auto-Solver}
+\date{\today}
+\begin{document}
+\maketitle
+
+\section{Step 1: DH Matrices}
+\subsection*{Matrix $T_{1}$}
+\[ \left[\begin{matrix}\cos{\left(\theta_{1} \right)} & - \sin{\left(\theta_{1} \right)} & 0 & L \cos{\left(\theta_{1} \right)}\\\sin{\left(\theta_{1} \right)} & \cos{\left(\theta_{1} \right)} & 0 & L \sin{\left(\theta_{1} \right)}\\0 & 0 & 1 & 0\\0 & 0 & 0 & 1\end{matrix}\right] \]
+\subsection*{Matrix $T_{2}$}
+\[ \left[\begin{matrix}\cos{\left(\theta_{2} \right)} & 0 & - \sin{\left(\theta_{2} \right)} & 2 L \cos{\left(\theta_{2} \right)}\\\sin{\left(\theta_{2} \right)} & 0 & \cos{\left(\theta_{2} \right)} & 2 L \sin{\left(\theta_{2} \right)}\\0 & -1 & 0 & 5 L\\0 & 0 & 0 & 1\end{matrix}\right] \]
+\subsection*{Matrix $T_{3}$}
+\[ \left[\begin{matrix}- \cos{\left(\theta_{3} \right)} & 0 & - \sin{\left(\theta_{3} \right)} & 0\\- \sin{\left(\theta_{3} \right)} & 0 & \cos{\left(\theta_{3} \right)} & 0\\0 & 1 & 0 & 0\\0 & 0 & 0 & 1\end{matrix}\right] \]
+\subsection*{Matrix $T_{4}$}
+\[ \left[\begin{matrix}\cos{\left(\theta_{4} \right)} & 0 & - \sin{\left(\theta_{4} \right)} & \frac{5 L \cos{\left(\theta_{4} \right)}}{2}\\\sin{\left(\theta_{4} \right)} & 0 & \cos{\left(\theta_{4} \right)} & \frac{5 L \sin{\left(\theta_{4} \right)}}{2}\\0 & -1 & 0 & 0\\0 & 0 & 0 & 1\end{matrix}\right] \]
+\subsection*{Matrix $T_{5}$}
+\[ \left[\begin{matrix}\cos{\left(\theta_{5} \right)} & 0 & \sin{\left(\theta_{5} \right)} & \frac{5 L \cos{\left(\theta_{5} \right)}}{2}\\\sin{\left(\theta_{5} \right)} & 0 & - \cos{\left(\theta_{5} \right)} & \frac{5 L \sin{\left(\theta_{5} \right)}}{2}\\0 & 1 & 0 & 0\\0 & 0 & 0 & 1\end{matrix}\right] \]
+\subsection*{Matrix $T_{6}$}
+\[ \left[\begin{matrix}- \cos{\left(\theta_{6} \right)} & 0 & \sin{\left(\theta_{6} \right)} & 0\\- \sin{\left(\theta_{6} \right)} & 0 & - \cos{\left(\theta_{6} \right)} & 0\\0 & -1 & 0 & \frac{5 L}{2}\\0 & 0 & 0 & 1\end{matrix}\right] \]
+\subsection*{Matrix $T_{7}$}
+\[ \left[\begin{matrix}\cos{\left(\theta_{7} \right)} & 0 & - \sin{\left(\theta_{7} \right)} & 2 L \cos{\left(\theta_{7} \right)}\\\sin{\left(\theta_{7} \right)} & 0 & \cos{\left(\theta_{7} \right)} & 2 L \sin{\left(\theta_{7} \right)}\\0 & -1 & 0 & 0\\0 & 0 & 0 & 1\end{matrix}\right] \]
+
+
+\section{Step 2: Loop Equation}
+\[ \prod_{i=1}^{7} T_i = I \]
+
+\section{Step 3: Permutations}
+\subsection*{Set 1: $T_{1}T_{2}T_{3}T_{4} = T_{7}^{-1}T_{6}^{-1}T_{5}^{-1}$}
+\subsection*{Set 2: $T_{2}T_{3}T_{4}T_{5} = T_{1}^{-1}T_{7}^{-1}T_{6}^{-1}$}
+\subsection*{Set 3: $T_{3}T_{4}T_{5}T_{6} = T_{2}^{-1}T_{1}^{-1}T_{7}^{-1}$}
+\subsection*{Set 4: $T_{4}T_{5}T_{6}T_{7} = T_{3}^{-1}T_{2}^{-1}T_{1}^{-1}$}
+\subsection*{Set 5: $T_{5}T_{6}T_{7}T_{1} = T_{4}^{-1}T_{3}^{-1}T_{2}^{-1}$}
+\subsection*{Set 6: $T_{6}T_{7}T_{1}T_{2} = T_{5}^{-1}T_{4}^{-1}T_{3}^{-1}$}
+\subsection*{Set 7: $T_{7}T_{1}T_{2}T_{3} = T_{6}^{-1}T_{5}^{-1}T_{4}^{-1}$}
+
+
+\section{Step 4: Simplification}
+Equations simplified.
+\subsection*{Set 1}
+\[ \frac{L \left(- 5 \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{1} + \theta_{2} \right)} - 5 \sin{\left(\theta_{7} \right)} + 2 \cos{\left(\theta_{1} \right)} - 5 \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} \cos{\left(\theta_{1} + \theta_{2} \right)} - 5 \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} + 4 \cos{\left(\theta_{1} + \theta_{2} \right)} + 4\right)}{2} = 0 \]
+\[ \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{2} \right)} + \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{1} \right)} + \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{6} \right)} = 0 \]
+\[ - \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{2} \right)} \cos{\left(\theta_{4} \right)} + \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{4} \right)} \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)} + \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{4} \right)} \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{3} \right)} + \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{4} \right)} - \cos{\left(\theta_{6} \right)} = 0 \]
+\[ \frac{L \left(2 \sin{\left(\theta_{1} \right)} + 5 \sin{\left(\theta_{4} \right)} \cos{\left(\theta_{1} + \theta_{2} \right)} - 5 \sin{\left(\theta_{6} \right)} - 5 \sin{\left(\theta_{1} + \theta_{2} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} + 4 \sin{\left(\theta_{1} + \theta_{2} \right)}\right)}{2} = 0 \]
+\[ \frac{\sin{\left(\theta_{5} \right)} \sin^{2}{\left(\theta_{6} \right)} \sin{\left(\theta_{7} \right)}}{\cos{\left(\theta_{6} \right)}} - \frac{\sin{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)}}{\cos{\left(\theta_{6} \right)}} + \cos{\left(\theta_{3} \right)} - \cos{\left(\theta_{5} \right)} \cos{\left(\theta_{7} \right)} = 0 \]
+\[ - \sin{\left(\theta_{3} \right)} \sin{\left(\theta_{4} \right)} - \sin{\left(\theta_{6} \right)} \sin{\left(\theta_{7} \right)} = 0 \]
+\[ \frac{5 L \left(\sin{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} + \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{6} \right)} - \cos{\left(\theta_{7} \right)} + 2\right)}{2} = 0 \]
+\subsection*{Set 2}
+\[ - \frac{\sin^{2}{\left(\theta_{1} \right)} \sin{\left(\theta_{7} \right)}}{\cos{\left(\theta_{1} \right)}} - \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{5} \right)} - \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{5} \right)} - \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} + \frac{\sin{\left(\theta_{7} \right)}}{\cos{\left(\theta_{1} \right)}} = 0 \]
+\[ \frac{\sin{\left(\theta_{1} \right)} \sin{\left(\theta_{6} \right)} \sin^{2}{\left(\theta_{7} \right)}}{\cos{\left(\theta_{7} \right)}} - \frac{\sin{\left(\theta_{1} \right)} \sin{\left(\theta_{6} \right)}}{\cos{\left(\theta_{7} \right)}} + \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{4} \right)} \cos{\left(\theta_{3} \right)} - \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{6} \right)} + \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{4} \right)} = 0 \]
+\[ - \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{7} \right)} - \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{5} \right)} - \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} + \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{2} \right)} = 0 \]
+\[ \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} \cos{\left(\theta_{5} \right)} + \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{3} \right)} + \frac{\sin^{2}{\left(\theta_{6} \right)} \sin{\left(\theta_{7} \right)}}{\cos{\left(\theta_{6} \right)}} - \frac{\sin{\left(\theta_{7} \right)}}{\cos{\left(\theta_{6} \right)}} = 0 \]
+\[ - \sin{\left(\theta_{3} \right)} \sin{\left(\theta_{4} \right)} - \sin{\left(\theta_{6} \right)} \sin{\left(\theta_{7} \right)} = 0 \]
+\[ \sin{\left(\theta_{3} \right)} \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{4} \right)} - \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{5} \right)} + \cos{\left(\theta_{7} \right)} = 0 \]
+\[ \frac{5 L \left(\sin{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} \cos{\left(\theta_{5} \right)} + \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} + \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{3} \right)} - \cos{\left(\theta_{7} \right)} + 2\right)}{2} = 0 \]
+\subsection*{Set 3}
+\[ \frac{L \left(- 4 \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{2} \right)} - 5 \sqrt{2} \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{5} + \frac{\pi}{4} \right)} - 5 \sqrt{2} \sin{\left(\theta_{5} + \frac{\pi}{4} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} + 4 \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{2} \right)} + 2 \cos{\left(\theta_{2} \right)} - 5 \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} + 4\right)}{2} = 0 \]
+\[ - \sin{\left(\theta_{3} \right)} \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{6} \right)} + \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} \cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} + \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{6} \right)} - \sin{\left(\theta_{7} \right)} = 0 \]
+\[ \sin{\left(\theta_{3} \right)} \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{4} \right)} - \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{5} \right)} + \cos{\left(\theta_{7} \right)} = 0 \]
+\[ - \sin{\left(\theta_{3} \right)} \sin{\left(\theta_{4} \right)} \cos{\left(\theta_{6} \right)} - \sin{\left(\theta_{3} \right)} \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{4} \right)} \cos{\left(\theta_{5} \right)} - \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{3} \right)} = 0 \]
+\[ \frac{5 L \left(- \sqrt{2} \sin{\left(\theta_{3} \right)} \sin{\left(\theta_{5} + \frac{\pi}{4} \right)} \cos{\left(\theta_{4} \right)} - \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} + \sqrt{2} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{5} + \frac{\pi}{4} \right)} - 2\right)}{2} = 0 \]
+\[ - \frac{\sin^{2}{\left(\theta_{1} \right)} \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{7} \right)}}{\cos{\left(\theta_{1} \right)}} + \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{2} \right)} + \frac{\sin{\left(\theta_{2} \right)} \sin{\left(\theta_{7} \right)}}{\cos{\left(\theta_{1} \right)}} - \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{5} \right)} = 0 \]
+\[ - \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{2} \right)} + \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{5} \right)} + \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{2} \right)} - \cos{\left(\theta_{4} \right)} \cos{\left(\theta_{6} \right)} = 0 \]
+\[ \frac{L \left(- 4 \sin{\left(\theta_{1} \right)} \cos{\left(\theta_{2} \right)} - 4 \sin{\left(\theta_{2} \right)} \cos{\left(\theta_{1} \right)} - 2 \sin{\left(\theta_{2} \right)} + 5 \sqrt{2} \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{5} + \frac{\pi}{4} \right)} + 5 \sin{\left(\theta_{4} \right)}\right)}{2} = 0 \]
+\subsection*{Set 4}
+\[ - \sin{\left(\theta_{3} \right)} - \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{6} \right)} \sin{\left(\theta_{7} \right)} - \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{4} \right)} \cos{\left(\theta_{7} \right)} + \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{4} \right)} \cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} = 0 \]
+\[ \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{2} \right)} - \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{5} \right)} - \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{2} \right)} + \cos{\left(\theta_{4} \right)} \cos{\left(\theta_{6} \right)} = 0 \]
+\[ - \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{7} \right)} + \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} + \sin{\left(\theta_{6} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{4} \right)} = 0 \]
+\[ - \frac{\sin{\left(\theta_{1} \right)} \sin^{2}{\left(\theta_{2} \right)} \sin{\left(\theta_{3} \right)}}{\cos{\left(\theta_{2} \right)}} + \frac{\sin{\left(\theta_{1} \right)} \sin{\left(\theta_{3} \right)}}{\cos{\left(\theta_{2} \right)}} + \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{1} \right)} + \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{6} \right)} = 0 \]
+\[ - \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{6} \right)} + \cos{\left(\theta_{3} \right)} - \cos{\left(\theta_{5} \right)} \cos{\left(\theta_{7} \right)} = 0 \]
+\[ \frac{L \left(- 2 \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{2} \right)} - 4 \sin{\left(\theta_{3} \right)} + 4 \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} - 4 \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{5} \right)} - 10 \cos{\left(\theta_{3} \right)} + 5 \sqrt{2} \cos{\left(\theta_{5} + \frac{\pi}{4} \right)}\right)}{2} = 0 \]
+\subsection*{Set 5}
+\[ \frac{\sin{\left(\theta_{3} \right)} \sin^{2}{\left(\theta_{4} \right)}}{\cos{\left(\theta_{4} \right)}} - \frac{\sin{\left(\theta_{3} \right)}}{\cos{\left(\theta_{4} \right)}} - \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{7} \right)} + \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} = 0 \]
+\[ - \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{6} \right)} + \frac{\sin^{2}{\left(\theta_{2} \right)} \sin{\left(\theta_{3} \right)}}{\cos{\left(\theta_{2} \right)}} - \frac{\sin{\left(\theta_{3} \right)}}{\cos{\left(\theta_{2} \right)}} - \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} + \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{5} \right)} = 0 \]
+\[ \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} - \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{5} \right)} - \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{3} \right)} - \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{1} \right)} = 0 \]
+\[ \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{6} \right)} - \cos{\left(\theta_{3} \right)} + \cos{\left(\theta_{5} \right)} \cos{\left(\theta_{7} \right)} = 0 \]
+\[ \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} + \frac{\sin{\left(\theta_{2} \right)} \sin^{2}{\left(\theta_{3} \right)} \sin{\left(\theta_{4} \right)}}{\cos{\left(\theta_{3} \right)}} - \frac{\sin{\left(\theta_{2} \right)} \sin{\left(\theta_{4} \right)}}{\cos{\left(\theta_{3} \right)}} + \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{6} \right)} - \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{4} \right)} = 0 \]
+\[ \sin{\left(\theta_{3} \right)} \sin{\left(\theta_{4} \right)} + \sin{\left(\theta_{6} \right)} \sin{\left(\theta_{7} \right)} = 0 \]
+\[ L \left(\sin{\left(\theta_{1} \right)} \cos{\left(\theta_{6} \right)} - 5 \sin{\left(\theta_{3} \right)} \sin{\left(\theta_{4} \right)} + 2 \sin{\left(\theta_{4} \right)} \cos{\left(\theta_{3} \right)} - \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{7} \right)} - 2 \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}\right) = 0 \]
+\subsection*{Set 6}
+\[ - \sin{\left(\theta_{3} \right)} \sin{\left(\theta_{4} \right)} - \sin{\left(\theta_{6} \right)} \sin{\left(\theta_{7} \right)} = 0 \]
+\[ - \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{2} \right)} \cos{\left(\theta_{6} \right)} + \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{7} \right)} + \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{7} \right)} + \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{6} \right)} - \cos{\left(\theta_{4} \right)} = 0 \]
+\[ L \left(\sin{\left(\theta_{1} \right)} \cos{\left(\theta_{6} \right)} + 5 \sin{\left(\theta_{6} \right)} \sin{\left(\theta_{7} \right)} - \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{7} \right)} - 2 \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} \cos{\left(\theta_{1} + \theta_{2} \right)} - 2 \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} + 2 \sin{\left(\theta_{1} + \theta_{2} \right)} \cos{\left(\theta_{6} \right)}\right) = 0 \]
+\[ - \frac{\sin{\left(\theta_{3} \right)} \sin^{2}{\left(\theta_{4} \right)} \sin{\left(\theta_{5} \right)}}{\cos{\left(\theta_{4} \right)}} + \frac{\sin{\left(\theta_{3} \right)} \sin{\left(\theta_{5} \right)}}{\cos{\left(\theta_{4} \right)}} - \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{5} \right)} + \cos{\left(\theta_{7} \right)} = 0 \]
+\[ \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{2} \right)} + \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{1} \right)} - \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{5} \right)} = 0 \]
+\[ \frac{L \left(5 \sin{\left(\theta_{5} \right)} - 2 \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{1} \right)} - 4 \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{1} + \theta_{2} \right)} - 4 \sin{\left(\theta_{7} \right)} - 10 \cos{\left(\theta_{7} \right)} + 5\right)}{2} = 0 \]
+\subsection*{Set 7}
+\[ \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{7} \right)} - \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{7} \right)} + \frac{\sin{\left(\theta_{5} \right)} \sin^{2}{\left(\theta_{6} \right)}}{\cos{\left(\theta_{6} \right)}} - \frac{\sin{\left(\theta_{5} \right)}}{\cos{\left(\theta_{6} \right)}} + \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{3} \right)} = 0 \]
+\[ \frac{L \left(- 10 \sin{\left(\theta_{7} \right)} + 2 \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{7} \right)} - 5 \cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} - 5 \cos{\left(\theta_{6} \right)} + 4 \cos{\left(\theta_{7} \right)} \cos{\left(\theta_{1} + \theta_{2} \right)} + 4 \cos{\left(\theta_{7} \right)}\right)}{2} = 0 \]
+\[ \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{3} \right)} + \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{7} \right)} - \frac{\sin^{2}{\left(\theta_{4} \right)} \sin{\left(\theta_{5} \right)}}{\cos{\left(\theta_{4} \right)}} + \frac{\sin{\left(\theta_{5} \right)}}{\cos{\left(\theta_{4} \right)}} - \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)} = 0 \]
+\[ - \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{2} \right)} - \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{1} \right)} + \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{5} \right)} = 0 \]
+\[ \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{3} \right)} \sin{\left(\theta_{7} \right)} - \sin{\left(\theta_{3} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{2} \right)} - \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{7} \right)} + \cos{\left(\theta_{5} \right)} = 0 \]
+\[ \frac{L \left(- 5 \sin{\left(\theta_{5} \right)} + 2 \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{1} \right)} + 4 \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{1} + \theta_{2} \right)} + 4 \sin{\left(\theta_{7} \right)} + 10 \cos{\left(\theta_{7} \right)} - 5\right)}{2} = 0 \]
+\[ \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{2} \right)} + \frac{\sin{\left(\theta_{4} \right)} \sin^{2}{\left(\theta_{5} \right)} \sin{\left(\theta_{6} \right)}}{\cos{\left(\theta_{5} \right)}} - \frac{\sin{\left(\theta_{4} \right)} \sin{\left(\theta_{6} \right)}}{\cos{\left(\theta_{5} \right)}} - \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{2} \right)} + \cos{\left(\theta_{4} \right)} \cos{\left(\theta_{6} \right)} = 0 \]
+\[ \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{2} \right)} + \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{1} \right)} + \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{6} \right)} = 0 \]
+\[ \frac{L \left(- 2 \sin{\left(\theta_{1} \right)} + 5 \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{5} \right)} + 5 \sin{\left(\theta_{6} \right)} - 4 \sin{\left(\theta_{1} + \theta_{2} \right)}\right)}{2} = 0 \]
+
+
+\section{Step 5: Single Driver}
+No analytical single driver found.
+
+
+\section{Step 6: Dual Driver}
+\subsection{Input J3, J5}
+Found solution.
+\begin{enumerate}
+\item Solve $\theta_{4}$ using Set 3, (p_{y}) \\
+Form: $A\sin(\theta_{4}) + B\cos(\theta_{4}) + C = 0$ \\
+Poly: $(C-B)t^2 + 2At + (B+C) = 0$ \\
+{\scriptsize $A=0, B=0, C=\frac{5 L \left(\sqrt{2} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{5} + \frac{\pi}{4} \right)} - 2\right)}{2}$}
+\item Solve $\theta_{7}$ using Set 2, (a_{z}) \\
+Form: $A\sin(\theta_{7}) + B\cos(\theta_{7}) + C = 0$ \\
+Poly: $(C-B)t^2 + 2At + (B+C) = 0$ \\
+{\scriptsize $A=0, B=1, C=\sin{\left(\theta_{3} \right)} \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{4} \right)} - \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{5} \right)}$}
+\item Solve $\theta_{6}$ using Set 1, (n_{z}) \\
+Form: $A\sin(\theta_{6}) + B\cos(\theta_{6}) + C = 0$ \\
+Poly: $(C-B)t^2 + 2At + (B+C) = 0$ \\
+{\scriptsize $A=0, B=0, C=\tilde{\infty} \left(\frac{\sin^{2}{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)}} - \frac{\sin{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)}}\right) + \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} + \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{7} \right)}$}
+\item Solve $\theta_{2}$ using Set 4, (p_{x}) \\
+Form: $A\sin(\theta_{2}) + B\cos(\theta_{2}) + C = 0$ \\
+Poly: $(C-B)t^2 + 2At + (B+C) = 0$ \\
+{\scriptsize $A=0, B=0, C=\frac{L \left(10 \sin{\left(\theta_{3} \right)} + 4 \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} - 4 \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{4} \right)} + 5 \sqrt{2} \sin{\left(\theta_{5} + \frac{\pi}{4} \right)} \cos{\left(\theta_{4} \right)} - 4 \cos{\left(\theta_{3} \right)} - 4 \cos{\left(\theta_{4} \right)} \cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} + 5 \cos{\left(\theta_{4} \right)}\right)}{2}$}
+\item Solve $\theta_{1}$ using Set 1, (n_{x}) \\
+Form: $A\sin(\theta_{1}) + B\cos(\theta_{1}) + C = 0$ \\
+Poly: $(C-B)t^2 + 2At + (B+C) = 0$ \\
+{\scriptsize $A=\sin{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} - \sin{\left(\theta_{4} \right)} \cos{\left(\theta_{2} \right)}, B=- \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{4} \right)} - \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)}, C=- \frac{\sin^{2}{\left(\theta_{5} \right)} \sin^{2}{\left(\theta_{6} \right)} \sin^{2}{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} + \frac{\sin^{2}{\left(\theta_{5} \right)} \sin^{2}{\left(\theta_{6} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} + \frac{\sin^{2}{\left(\theta_{5} \right)} \sin^{2}{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} - \frac{\sin^{2}{\left(\theta_{5} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} + \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)} + \frac{\sin^{2}{\left(\theta_{6} \right)} \sin^{2}{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} - \frac{\sin^{2}{\left(\theta_{6} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} - \frac{\sin^{2}{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} + \frac{1}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}}$}
+\end{enumerate}
+\subsection{Input J4, J5}
+Found solution.
+\begin{enumerate}
+\item Solve $\theta_{3}$ using Set 3, (p_{y}) \\
+Form: $A\sin(\theta_{3}) + B\cos(\theta_{3}) + C = 0$ \\
+Poly: $(C-B)t^2 + 2At + (B+C) = 0$ \\
+{\scriptsize $A=0, B=0, C=- 5 L$}
+\item Solve $\theta_{7}$ using Set 2, (a_{z}) \\
+Form: $A\sin(\theta_{7}) + B\cos(\theta_{7}) + C = 0$ \\
+Poly: $(C-B)t^2 + 2At + (B+C) = 0$ \\
+{\scriptsize $A=0, B=1, C=\sin{\left(\theta_{3} \right)} \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{4} \right)} - \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{5} \right)}$}
+\item Solve $\theta_{6}$ using Set 1, (n_{z}) \\
+Form: $A\sin(\theta_{6}) + B\cos(\theta_{6}) + C = 0$ \\
+Poly: $(C-B)t^2 + 2At + (B+C) = 0$ \\
+{\scriptsize $A=0, B=0, C=\tilde{\infty} \left(\frac{\sin^{2}{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)}} - \frac{\sin{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)}}\right) + \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} + \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{7} \right)}$}
+\item Solve $\theta_{2}$ using Set 4, (p_{x}) \\
+Form: $A\sin(\theta_{2}) + B\cos(\theta_{2}) + C = 0$ \\
+Poly: $(C-B)t^2 + 2At + (B+C) = 0$ \\
+{\scriptsize $A=0, B=0, C=\frac{L \left(10 \sin{\left(\theta_{3} \right)} + 4 \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} - 4 \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{4} \right)} + 5 \sqrt{2} \sin{\left(\theta_{5} + \frac{\pi}{4} \right)} \cos{\left(\theta_{4} \right)} - 4 \cos{\left(\theta_{3} \right)} - 4 \cos{\left(\theta_{4} \right)} \cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} + 5 \cos{\left(\theta_{4} \right)}\right)}{2}$}
+\item Solve $\theta_{1}$ using Set 1, (n_{x}) \\
+Form: $A\sin(\theta_{1}) + B\cos(\theta_{1}) + C = 0$ \\
+Poly: $(C-B)t^2 + 2At + (B+C) = 0$ \\
+{\scriptsize $A=\sin{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} - \sin{\left(\theta_{4} \right)} \cos{\left(\theta_{2} \right)}, B=- \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{4} \right)} - \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)}, C=- \frac{\sin^{2}{\left(\theta_{5} \right)} \sin^{2}{\left(\theta_{6} \right)} \sin^{2}{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} + \frac{\sin^{2}{\left(\theta_{5} \right)} \sin^{2}{\left(\theta_{6} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} + \frac{\sin^{2}{\left(\theta_{5} \right)} \sin^{2}{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} - \frac{\sin^{2}{\left(\theta_{5} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} + \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)} + \frac{\sin^{2}{\left(\theta_{6} \right)} \sin^{2}{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} - \frac{\sin^{2}{\left(\theta_{6} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} - \frac{\sin^{2}{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} + \frac{1}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}}$}
+\end{enumerate}
+
+
+\section{Step 7: Numerical Plots}
+No valid kinematic simulation generated.
+
+
+\end{document}

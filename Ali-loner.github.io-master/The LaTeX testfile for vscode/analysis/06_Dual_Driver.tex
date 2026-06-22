@@ -1,0 +1,59 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{amsmath, amssymb, geometry, breqn, graphicx, float, hyperref, subcaption}
+\geometry{left=2cm, right=2cm, top=2.5cm, bottom=2.5cm}
+\title{\textbf{Kinematic Analysis Report}}
+\author{Auto-Solver}
+\date{\today}
+\begin{document}
+\maketitle
+\section*{Step 6: Dual Driver}
+\subsection{Input J3, J5}
+Found solution.
+\begin{enumerate}
+\item Solve $\theta_{4}$ using Set 3, (p_{y}) \\
+Form: $A\sin(\theta_{4}) + B\cos(\theta_{4}) + C = 0$ \\
+Poly: $(C-B)t^2 + 2At + (B+C) = 0$ \\
+{\scriptsize $A=0, B=0, C=\frac{5 L \left(\sqrt{2} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{5} + \frac{\pi}{4} \right)} - 2\right)}{2}$}
+\item Solve $\theta_{7}$ using Set 2, (a_{z}) \\
+Form: $A\sin(\theta_{7}) + B\cos(\theta_{7}) + C = 0$ \\
+Poly: $(C-B)t^2 + 2At + (B+C) = 0$ \\
+{\scriptsize $A=0, B=1, C=\sin{\left(\theta_{3} \right)} \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{4} \right)} - \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{5} \right)}$}
+\item Solve $\theta_{6}$ using Set 1, (n_{z}) \\
+Form: $A\sin(\theta_{6}) + B\cos(\theta_{6}) + C = 0$ \\
+Poly: $(C-B)t^2 + 2At + (B+C) = 0$ \\
+{\scriptsize $A=0, B=0, C=\tilde{\infty} \left(\frac{\sin^{2}{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)}} - \frac{\sin{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)}}\right) + \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} + \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{7} \right)}$}
+\item Solve $\theta_{2}$ using Set 4, (p_{x}) \\
+Form: $A\sin(\theta_{2}) + B\cos(\theta_{2}) + C = 0$ \\
+Poly: $(C-B)t^2 + 2At + (B+C) = 0$ \\
+{\scriptsize $A=0, B=0, C=\frac{L \left(10 \sin{\left(\theta_{3} \right)} + 4 \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} - 4 \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{4} \right)} + 5 \sqrt{2} \sin{\left(\theta_{5} + \frac{\pi}{4} \right)} \cos{\left(\theta_{4} \right)} - 4 \cos{\left(\theta_{3} \right)} - 4 \cos{\left(\theta_{4} \right)} \cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} + 5 \cos{\left(\theta_{4} \right)}\right)}{2}$}
+\item Solve $\theta_{1}$ using Set 1, (n_{x}) \\
+Form: $A\sin(\theta_{1}) + B\cos(\theta_{1}) + C = 0$ \\
+Poly: $(C-B)t^2 + 2At + (B+C) = 0$ \\
+{\scriptsize $A=\sin{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} - \sin{\left(\theta_{4} \right)} \cos{\left(\theta_{2} \right)}, B=- \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{4} \right)} - \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)}, C=- \frac{\sin^{2}{\left(\theta_{5} \right)} \sin^{2}{\left(\theta_{6} \right)} \sin^{2}{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} + \frac{\sin^{2}{\left(\theta_{5} \right)} \sin^{2}{\left(\theta_{6} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} + \frac{\sin^{2}{\left(\theta_{5} \right)} \sin^{2}{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} - \frac{\sin^{2}{\left(\theta_{5} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} + \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)} + \frac{\sin^{2}{\left(\theta_{6} \right)} \sin^{2}{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} - \frac{\sin^{2}{\left(\theta_{6} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} - \frac{\sin^{2}{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} + \frac{1}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}}$}
+\end{enumerate}
+\subsection{Input J4, J5}
+Found solution.
+\begin{enumerate}
+\item Solve $\theta_{3}$ using Set 3, (p_{y}) \\
+Form: $A\sin(\theta_{3}) + B\cos(\theta_{3}) + C = 0$ \\
+Poly: $(C-B)t^2 + 2At + (B+C) = 0$ \\
+{\scriptsize $A=0, B=0, C=- 5 L$}
+\item Solve $\theta_{7}$ using Set 2, (a_{z}) \\
+Form: $A\sin(\theta_{7}) + B\cos(\theta_{7}) + C = 0$ \\
+Poly: $(C-B)t^2 + 2At + (B+C) = 0$ \\
+{\scriptsize $A=0, B=1, C=\sin{\left(\theta_{3} \right)} \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{4} \right)} - \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{5} \right)}$}
+\item Solve $\theta_{6}$ using Set 1, (n_{z}) \\
+Form: $A\sin(\theta_{6}) + B\cos(\theta_{6}) + C = 0$ \\
+Poly: $(C-B)t^2 + 2At + (B+C) = 0$ \\
+{\scriptsize $A=0, B=0, C=\tilde{\infty} \left(\frac{\sin^{2}{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)}} - \frac{\sin{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)}}\right) + \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} + \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{7} \right)}$}
+\item Solve $\theta_{2}$ using Set 4, (p_{x}) \\
+Form: $A\sin(\theta_{2}) + B\cos(\theta_{2}) + C = 0$ \\
+Poly: $(C-B)t^2 + 2At + (B+C) = 0$ \\
+{\scriptsize $A=0, B=0, C=\frac{L \left(10 \sin{\left(\theta_{3} \right)} + 4 \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} - 4 \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{4} \right)} + 5 \sqrt{2} \sin{\left(\theta_{5} + \frac{\pi}{4} \right)} \cos{\left(\theta_{4} \right)} - 4 \cos{\left(\theta_{3} \right)} - 4 \cos{\left(\theta_{4} \right)} \cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} + 5 \cos{\left(\theta_{4} \right)}\right)}{2}$}
+\item Solve $\theta_{1}$ using Set 1, (n_{x}) \\
+Form: $A\sin(\theta_{1}) + B\cos(\theta_{1}) + C = 0$ \\
+Poly: $(C-B)t^2 + 2At + (B+C) = 0$ \\
+{\scriptsize $A=\sin{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} - \sin{\left(\theta_{4} \right)} \cos{\left(\theta_{2} \right)}, B=- \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{4} \right)} - \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)}, C=- \frac{\sin^{2}{\left(\theta_{5} \right)} \sin^{2}{\left(\theta_{6} \right)} \sin^{2}{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} + \frac{\sin^{2}{\left(\theta_{5} \right)} \sin^{2}{\left(\theta_{6} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} + \frac{\sin^{2}{\left(\theta_{5} \right)} \sin^{2}{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} - \frac{\sin^{2}{\left(\theta_{5} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} + \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)} + \frac{\sin^{2}{\left(\theta_{6} \right)} \sin^{2}{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} - \frac{\sin^{2}{\left(\theta_{6} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} - \frac{\sin^{2}{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} + \frac{1}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}}$}
+\end{enumerate}
+
+\end{document}

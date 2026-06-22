@@ -1,0 +1,285 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{amsmath, amssymb, geometry, breqn, graphicx, float, hyperref}
+\geometry{left=2cm, right=2cm, top=2.5cm, bottom=2.5cm}
+\title{\textbf{Complete Kinematic Analysis Report}}
+\author{Auto-Generated}
+\date{\today}
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+\section{Transformation Matrices}
+\subsection*{Matrix $T_{1}$}
+\[ \left[\begin{matrix}\cos{\left(\theta_{1} \right)} & - \sin{\left(\theta_{1} \right)} & 0 & L \cos{\left(\theta_{1} \right)}\\\sin{\left(\theta_{1} \right)} & \cos{\left(\theta_{1} \right)} & 0 & L \sin{\left(\theta_{1} \right)}\\0 & 0 & 1 & 0\\0 & 0 & 0 & 1\end{matrix}\right] \]
+\subsection*{Matrix $T_{2}$}
+\[ \left[\begin{matrix}\cos{\left(\theta_{2} \right)} & 0 & - \sin{\left(\theta_{2} \right)} & 2 L \cos{\left(\theta_{2} \right)}\\\sin{\left(\theta_{2} \right)} & 0 & \cos{\left(\theta_{2} \right)} & 2 L \sin{\left(\theta_{2} \right)}\\0 & -1 & 0 & 5 L\\0 & 0 & 0 & 1\end{matrix}\right] \]
+\subsection*{Matrix $T_{3}$}
+\[ \left[\begin{matrix}- \cos{\left(\theta_{3} \right)} & 0 & - \sin{\left(\theta_{3} \right)} & 0\\- \sin{\left(\theta_{3} \right)} & 0 & \cos{\left(\theta_{3} \right)} & 0\\0 & 1 & 0 & 0\\0 & 0 & 0 & 1\end{matrix}\right] \]
+\subsection*{Matrix $T_{4}$}
+\[ \left[\begin{matrix}\cos{\left(\theta_{4} \right)} & 0 & - \sin{\left(\theta_{4} \right)} & \frac{5 L \cos{\left(\theta_{4} \right)}}{2}\\\sin{\left(\theta_{4} \right)} & 0 & \cos{\left(\theta_{4} \right)} & \frac{5 L \sin{\left(\theta_{4} \right)}}{2}\\0 & -1 & 0 & 0\\0 & 0 & 0 & 1\end{matrix}\right] \]
+\subsection*{Matrix $T_{5}$}
+\[ \left[\begin{matrix}\cos{\left(\theta_{5} \right)} & 0 & \sin{\left(\theta_{5} \right)} & \frac{5 L \cos{\left(\theta_{5} \right)}}{2}\\\sin{\left(\theta_{5} \right)} & 0 & - \cos{\left(\theta_{5} \right)} & \frac{5 L \sin{\left(\theta_{5} \right)}}{2}\\0 & 1 & 0 & 0\\0 & 0 & 0 & 1\end{matrix}\right] \]
+\subsection*{Matrix $T_{6}$}
+\[ \left[\begin{matrix}- \cos{\left(\theta_{6} \right)} & 0 & \sin{\left(\theta_{6} \right)} & 0\\- \sin{\left(\theta_{6} \right)} & 0 & - \cos{\left(\theta_{6} \right)} & 0\\0 & -1 & 0 & \frac{5 L}{2}\\0 & 0 & 0 & 1\end{matrix}\right] \]
+\subsection*{Matrix $T_{7}$}
+\[ \left[\begin{matrix}\cos{\left(\theta_{7} \right)} & 0 & - \sin{\left(\theta_{7} \right)} & 2 L \cos{\left(\theta_{7} \right)}\\\sin{\left(\theta_{7} \right)} & 0 & \cos{\left(\theta_{7} \right)} & 2 L \sin{\left(\theta_{7} \right)}\\0 & -1 & 0 & 0\\0 & 0 & 0 & 1\end{matrix}\right] \]
+
+\section{Loop Closure Equations}
+\subsection{Set 1: $T_{1}T_{2}T_{3}T_{4} = T_{7}^{-1}T_{6}^{-1}T_{5}^{-1}$}
+\subsection{Set 2: $T_{2}T_{3}T_{4}T_{5} = T_{1}^{-1}T_{7}^{-1}T_{6}^{-1}$}
+\subsection{Set 3: $T_{3}T_{4}T_{5}T_{6} = T_{2}^{-1}T_{1}^{-1}T_{7}^{-1}$}
+\subsection{Set 4: $T_{4}T_{5}T_{6}T_{7} = T_{3}^{-1}T_{2}^{-1}T_{1}^{-1}$}
+\subsection{Set 5: $T_{5}T_{6}T_{7}T_{1} = T_{4}^{-1}T_{3}^{-1}T_{2}^{-1}$}
+\subsection{Set 6: $T_{6}T_{7}T_{1}T_{2} = T_{5}^{-1}T_{4}^{-1}T_{3}^{-1}$}
+\subsection{Set 7: $T_{7}T_{1}T_{2}T_{3} = T_{6}^{-1}T_{5}^{-1}T_{4}^{-1}$}
+
+\section{Simplified Scalar Equations}
+\subsection{Set 1: $T_{1}T_{2}T_{3}T_{4} = T_{7}^{-1}T_{6}^{-1}T_{5}^{-1}$}
+\paragraph{Permutation 1, (a_{x})}
+\begin{dmath*} - \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{4} \right)} \cos{\left(\theta_{3} \right)} - \sin{\left(\theta_{1} \right)} \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{4} \right)} - \sin{\left(\theta_{2} \right)} \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{4} \right)} + \sin{\left(\theta_{4} \right)} \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)} - \frac{\sin{\left(\theta_{6} \right)} \sin^{2}{\left(\theta_{7} \right)}}{\cos{\left(\theta_{7} \right)}} + \frac{\sin{\left(\theta_{6} \right)}}{\cos{\left(\theta_{7} \right)}} = 0 \end{dmath*}
+\paragraph{Permutation 1, (p_{x})}
+\begin{dmath*} \frac{L \left(- 5 \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{1} + \theta_{2} \right)} - 5 \sin{\left(\theta_{7} \right)} + 2 \cos{\left(\theta_{1} \right)} - 5 \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} \cos{\left(\theta_{1} + \theta_{2} \right)} - 5 \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} + 4 \cos{\left(\theta_{1} + \theta_{2} \right)} + 4\right)}{2} = 0 \end{dmath*}
+\paragraph{Permutation 1, (n_{y})}
+\begin{dmath*} - \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{4} \right)} - \sin{\left(\theta_{1} \right)} \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} - \sin{\left(\theta_{2} \right)} \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} + \sin{\left(\theta_{4} \right)} \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{2} \right)} - \frac{\sin^{2}{\left(\theta_{5} \right)} \sin{\left(\theta_{6} \right)}}{\cos{\left(\theta_{5} \right)}} + \frac{\sin{\left(\theta_{6} \right)}}{\cos{\left(\theta_{5} \right)}} = 0 \end{dmath*}
+\paragraph{Permutation 1, (o_{y})}
+\begin{dmath*} \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{2} \right)} + \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{1} \right)} + \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{6} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 1, (a_{y})}
+\begin{dmath*} - \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{2} \right)} \cos{\left(\theta_{4} \right)} + \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{4} \right)} \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)} + \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{4} \right)} \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{3} \right)} + \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{4} \right)} - \cos{\left(\theta_{6} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 1, (p_{y})}
+\begin{dmath*} \frac{L \left(2 \sin{\left(\theta_{1} \right)} + 5 \sin{\left(\theta_{4} \right)} \cos{\left(\theta_{1} + \theta_{2} \right)} - 5 \sin{\left(\theta_{6} \right)} - 5 \sin{\left(\theta_{1} + \theta_{2} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} + 4 \sin{\left(\theta_{1} + \theta_{2} \right)}\right)}{2} = 0 \end{dmath*}
+\paragraph{Permutation 1, (n_{z})}
+\begin{dmath*} \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} - \frac{\sin^{2}{\left(\theta_{5} \right)} \sin^{2}{\left(\theta_{6} \right)} \sin{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)}} + \frac{\sin^{2}{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)}} + \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{7} \right)} + \frac{\sin^{2}{\left(\theta_{6} \right)} \sin{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)}} - \frac{\sin{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)}} = 0 \end{dmath*}
+\paragraph{Permutation 1, (o_{z})}
+\begin{dmath*} \frac{\sin{\left(\theta_{5} \right)} \sin^{2}{\left(\theta_{6} \right)} \sin{\left(\theta_{7} \right)}}{\cos{\left(\theta_{6} \right)}} - \frac{\sin{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)}}{\cos{\left(\theta_{6} \right)}} + \cos{\left(\theta_{3} \right)} - \cos{\left(\theta_{5} \right)} \cos{\left(\theta_{7} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 1, (a_{z})}
+\begin{dmath*} - \sin{\left(\theta_{3} \right)} \sin{\left(\theta_{4} \right)} - \sin{\left(\theta_{6} \right)} \sin{\left(\theta_{7} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 1, (p_{z})}
+\begin{dmath*} \frac{5 L \left(\sin{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} + \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{6} \right)} - \cos{\left(\theta_{7} \right)} + 2\right)}{2} = 0 \end{dmath*}
+\subsection{Set 2: $T_{2}T_{3}T_{4}T_{5} = T_{1}^{-1}T_{7}^{-1}T_{6}^{-1}$}
+\paragraph{Permutation 2, (o_{x})}
+\begin{dmath*} \frac{\sin^{2}{\left(\theta_{1} \right)} \sin{\left(\theta_{6} \right)} \sin^{2}{\left(\theta_{7} \right)}}{\cos{\left(\theta_{1} \right)} \cos{\left(\theta_{7} \right)}} - \frac{\sin^{2}{\left(\theta_{1} \right)} \sin{\left(\theta_{6} \right)}}{\cos{\left(\theta_{1} \right)} \cos{\left(\theta_{7} \right)}} - \sin{\left(\theta_{1} \right)} \cos{\left(\theta_{6} \right)} - \sin{\left(\theta_{2} \right)} \cos{\left(\theta_{4} \right)} + \sin{\left(\theta_{4} \right)} \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)} - \frac{\sin{\left(\theta_{6} \right)} \sin^{2}{\left(\theta_{7} \right)}}{\cos{\left(\theta_{1} \right)} \cos{\left(\theta_{7} \right)}} + \frac{\sin{\left(\theta_{6} \right)}}{\cos{\left(\theta_{1} \right)} \cos{\left(\theta_{7} \right)}} = 0 \end{dmath*}
+\paragraph{Permutation 2, (a_{x})}
+\begin{dmath*} - \frac{\sin^{2}{\left(\theta_{1} \right)} \sin{\left(\theta_{7} \right)}}{\cos{\left(\theta_{1} \right)}} - \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{5} \right)} - \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{5} \right)} - \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} + \frac{\sin{\left(\theta_{7} \right)}}{\cos{\left(\theta_{1} \right)}} = 0 \end{dmath*}
+\paragraph{Permutation 2, (p_{x})}
+\begin{dmath*} \frac{L \left(- 5 \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{4} \right)} \cos{\left(\theta_{5} \right)} - 5 \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{4} \right)} + 5 \sin{\left(\theta_{3} \right)} \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{2} \right)} - 5 \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{1} \right)} + 4 \cos{\left(\theta_{1} \right)} - 5 \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} \cos{\left(\theta_{5} \right)} - 5 \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} + 4 \cos{\left(\theta_{2} \right)} + 2\right)}{2} = 0 \end{dmath*}
+\paragraph{Permutation 2, (o_{y})}
+\begin{dmath*} \frac{\sin{\left(\theta_{1} \right)} \sin{\left(\theta_{6} \right)} \sin^{2}{\left(\theta_{7} \right)}}{\cos{\left(\theta_{7} \right)}} - \frac{\sin{\left(\theta_{1} \right)} \sin{\left(\theta_{6} \right)}}{\cos{\left(\theta_{7} \right)}} + \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{4} \right)} \cos{\left(\theta_{3} \right)} - \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{6} \right)} + \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{4} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 2, (a_{y})}
+\begin{dmath*} - \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{7} \right)} - \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{5} \right)} - \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} + \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{2} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 2, (p_{y})}
+\begin{dmath*} \frac{L \left(- 5 \left(\sin{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} - \sin{\left(\theta_{4} \right)} \cos{\left(\theta_{2} \right)}\right) \cos{\left(\theta_{5} \right)} + 5 \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{7} \right)} - 4 \sin{\left(\theta_{1} \right)} + 5 \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{3} \right)} \sin{\left(\theta_{5} \right)} - 5 \sin{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} + 4 \sin{\left(\theta_{2} \right)} + 5 \sin{\left(\theta_{4} \right)} \cos{\left(\theta_{2} \right)}\right)}{2} = 0 \end{dmath*}
+\paragraph{Permutation 2, (n_{z})}
+\begin{dmath*} \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} \cos{\left(\theta_{5} \right)} + \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{3} \right)} + \frac{\sin^{2}{\left(\theta_{6} \right)} \sin{\left(\theta_{7} \right)}}{\cos{\left(\theta_{6} \right)}} - \frac{\sin{\left(\theta_{7} \right)}}{\cos{\left(\theta_{6} \right)}} = 0 \end{dmath*}
+\paragraph{Permutation 2, (o_{z})}
+\begin{dmath*} - \sin{\left(\theta_{3} \right)} \sin{\left(\theta_{4} \right)} - \sin{\left(\theta_{6} \right)} \sin{\left(\theta_{7} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 2, (a_{z})}
+\begin{dmath*} \sin{\left(\theta_{3} \right)} \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{4} \right)} - \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{5} \right)} + \cos{\left(\theta_{7} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 2, (p_{z})}
+\begin{dmath*} \frac{5 L \left(\sin{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} \cos{\left(\theta_{5} \right)} + \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} + \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{3} \right)} - \cos{\left(\theta_{7} \right)} + 2\right)}{2} = 0 \end{dmath*}
+\subsection{Set 3: $T_{3}T_{4}T_{5}T_{6} = T_{2}^{-1}T_{1}^{-1}T_{7}^{-1}$}
+\paragraph{Permutation 3, (a_{x})}
+\begin{dmath*} - \frac{\sin{\left(\theta_{1} \right)} \sin^{2}{\left(\theta_{2} \right)}}{\cos{\left(\theta_{2} \right)}} + \frac{\sin{\left(\theta_{1} \right)}}{\cos{\left(\theta_{2} \right)}} + \sin{\left(\theta_{2} \right)} \cos{\left(\theta_{1} \right)} + \sin{\left(\theta_{3} \right)} \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{6} \right)} - \sin{\left(\theta_{4} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{6} \right)} - \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} \cos{\left(\theta_{5} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 3, (p_{x})}
+\begin{dmath*} \frac{L \left(- 4 \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{2} \right)} - 5 \sqrt{2} \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{5} + \frac{\pi}{4} \right)} - 5 \sqrt{2} \sin{\left(\theta_{5} + \frac{\pi}{4} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} + 4 \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{2} \right)} + 2 \cos{\left(\theta_{2} \right)} - 5 \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} + 4\right)}{2} = 0 \end{dmath*}
+\paragraph{Permutation 3, (n_{y})}
+\begin{dmath*} - \sin{\left(\theta_{3} \right)} \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{6} \right)} + \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} \cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} + \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{6} \right)} - \sin{\left(\theta_{7} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 3, (o_{y})}
+\begin{dmath*} \sin{\left(\theta_{3} \right)} \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{4} \right)} - \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{5} \right)} + \cos{\left(\theta_{7} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 3, (a_{y})}
+\begin{dmath*} - \sin{\left(\theta_{3} \right)} \sin{\left(\theta_{4} \right)} \cos{\left(\theta_{6} \right)} - \sin{\left(\theta_{3} \right)} \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{4} \right)} \cos{\left(\theta_{5} \right)} - \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{3} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 3, (p_{y})}
+\begin{dmath*} \frac{5 L \left(- \sqrt{2} \sin{\left(\theta_{3} \right)} \sin{\left(\theta_{5} + \frac{\pi}{4} \right)} \cos{\left(\theta_{4} \right)} - \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} + \sqrt{2} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{5} + \frac{\pi}{4} \right)} - 2\right)}{2} = 0 \end{dmath*}
+\paragraph{Permutation 3, (o_{z})}
+\begin{dmath*} - \frac{\sin^{2}{\left(\theta_{1} \right)} \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{7} \right)}}{\cos{\left(\theta_{1} \right)}} + \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{2} \right)} + \frac{\sin{\left(\theta_{2} \right)} \sin{\left(\theta_{7} \right)}}{\cos{\left(\theta_{1} \right)}} - \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{5} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 3, (a_{z})}
+\begin{dmath*} - \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{2} \right)} + \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{5} \right)} + \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{2} \right)} - \cos{\left(\theta_{4} \right)} \cos{\left(\theta_{6} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 3, (p_{z})}
+\begin{dmath*} \frac{L \left(- 4 \sin{\left(\theta_{1} \right)} \cos{\left(\theta_{2} \right)} - 4 \sin{\left(\theta_{2} \right)} \cos{\left(\theta_{1} \right)} - 2 \sin{\left(\theta_{2} \right)} + 5 \sqrt{2} \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{5} + \frac{\pi}{4} \right)} + 5 \sin{\left(\theta_{4} \right)}\right)}{2} = 0 \end{dmath*}
+\subsection{Set 4: $T_{4}T_{5}T_{6}T_{7} = T_{3}^{-1}T_{2}^{-1}T_{1}^{-1}$}
+\paragraph{Permutation 4, (a_{x})}
+\begin{dmath*} - \sin{\left(\theta_{3} \right)} - \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{6} \right)} \sin{\left(\theta_{7} \right)} - \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{4} \right)} \cos{\left(\theta_{7} \right)} + \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{4} \right)} \cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 4, (p_{x})}
+\begin{dmath*} \frac{L \left(10 \sin{\left(\theta_{3} \right)} + 4 \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} - 4 \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{4} \right)} + 5 \sqrt{2} \sin{\left(\theta_{5} + \frac{\pi}{4} \right)} \cos{\left(\theta_{4} \right)} - 2 \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)} - 4 \cos{\left(\theta_{3} \right)} - 4 \cos{\left(\theta_{4} \right)} \cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} + 5 \cos{\left(\theta_{4} \right)}\right)}{2} = 0 \end{dmath*}
+\paragraph{Permutation 4, (n_{y})}
+\begin{dmath*} - \frac{\sin^{2}{\left(\theta_{1} \right)} \sin{\left(\theta_{2} \right)}}{\cos{\left(\theta_{1} \right)}} + \sin{\left(\theta_{1} \right)} \cos{\left(\theta_{2} \right)} + \frac{\sin{\left(\theta_{2} \right)}}{\cos{\left(\theta_{1} \right)}} - \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)} - \sin{\left(\theta_{4} \right)} \cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} - \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{4} \right)} \cos{\left(\theta_{7} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 4, (o_{y})}
+\begin{dmath*} \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{2} \right)} - \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{5} \right)} - \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{2} \right)} + \cos{\left(\theta_{4} \right)} \cos{\left(\theta_{6} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 4, (a_{y})}
+\begin{dmath*} - \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{7} \right)} + \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} + \sin{\left(\theta_{6} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{4} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 4, (p_{y})}
+\begin{dmath*} \frac{L \left(- 2 \sin{\left(\theta_{2} \right)} - 4 \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)} + 5 \sqrt{2} \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{5} + \frac{\pi}{4} \right)} - 4 \sin{\left(\theta_{4} \right)} \cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} + 5 \sin{\left(\theta_{4} \right)} - 4 \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{4} \right)} \cos{\left(\theta_{7} \right)}\right)}{2} = 0 \end{dmath*}
+\paragraph{Permutation 4, (o_{z})}
+\begin{dmath*} - \frac{\sin{\left(\theta_{1} \right)} \sin^{2}{\left(\theta_{2} \right)} \sin{\left(\theta_{3} \right)}}{\cos{\left(\theta_{2} \right)}} + \frac{\sin{\left(\theta_{1} \right)} \sin{\left(\theta_{3} \right)}}{\cos{\left(\theta_{2} \right)}} + \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{1} \right)} + \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{6} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 4, (a_{z})}
+\begin{dmath*} - \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{6} \right)} + \cos{\left(\theta_{3} \right)} - \cos{\left(\theta_{5} \right)} \cos{\left(\theta_{7} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 4, (p_{z})}
+\begin{dmath*} \frac{L \left(- 2 \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{2} \right)} - 4 \sin{\left(\theta_{3} \right)} + 4 \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} - 4 \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{5} \right)} - 10 \cos{\left(\theta_{3} \right)} + 5 \sqrt{2} \cos{\left(\theta_{5} + \frac{\pi}{4} \right)}\right)}{2} = 0 \end{dmath*}
+\subsection{Set 5: $T_{5}T_{6}T_{7}T_{1} = T_{4}^{-1}T_{3}^{-1}T_{2}^{-1}$}
+\paragraph{Permutation 5, (a_{x})}
+\begin{dmath*} \frac{\sin{\left(\theta_{3} \right)} \sin^{2}{\left(\theta_{4} \right)}}{\cos{\left(\theta_{4} \right)}} - \frac{\sin{\left(\theta_{3} \right)}}{\cos{\left(\theta_{4} \right)}} - \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{7} \right)} + \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 5, (p_{x})}
+\begin{dmath*} \frac{L \left(- 2 \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{5} \right)} + 10 \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} - 2 \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{1} \right)} - 4 \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)} + 5 \sqrt{2} \sin{\left(\theta_{5} + \frac{\pi}{4} \right)} - 2 \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} - 4 \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} - 4 \cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} + 5\right)}{2} = 0 \end{dmath*}
+\paragraph{Permutation 5, (n_{y})}
+\begin{dmath*} - \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{6} \right)} + \frac{\sin^{2}{\left(\theta_{2} \right)} \sin{\left(\theta_{3} \right)}}{\cos{\left(\theta_{2} \right)}} - \frac{\sin{\left(\theta_{3} \right)}}{\cos{\left(\theta_{2} \right)}} - \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} + \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{5} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 5, (o_{y})}
+\begin{dmath*} \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} - \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{5} \right)} - \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{3} \right)} - \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{1} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 5, (a_{y})}
+\begin{dmath*} \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{6} \right)} - \cos{\left(\theta_{3} \right)} + \cos{\left(\theta_{5} \right)} \cos{\left(\theta_{7} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 5, (p_{y})}
+\begin{dmath*} \frac{L \left(- 2 \left(\sin{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} - \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{5} \right)}\right) \cos{\left(\theta_{1} \right)} - 2 \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{6} \right)} + 4 \sin{\left(\theta_{3} \right)} - 4 \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} + 5 \sin{\left(\theta_{5} \right)} + 4 \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{5} \right)} + 10 \cos{\left(\theta_{3} \right)} - 5 \cos{\left(\theta_{5} \right)}\right)}{2} = 0 \end{dmath*}
+\paragraph{Permutation 5, (n_{z})}
+\begin{dmath*} \sin{\left(\theta_{1} \right)} \cos{\left(\theta_{6} \right)} - \frac{\sin^{2}{\left(\theta_{2} \right)} \sin^{2}{\left(\theta_{3} \right)} \sin{\left(\theta_{4} \right)}}{\cos{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)}} + \frac{\sin^{2}{\left(\theta_{2} \right)} \sin{\left(\theta_{4} \right)}}{\cos{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)}} + \sin{\left(\theta_{2} \right)} \cos{\left(\theta_{4} \right)} + \frac{\sin^{2}{\left(\theta_{3} \right)} \sin{\left(\theta_{4} \right)}}{\cos{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)}} - \frac{\sin{\left(\theta_{4} \right)}}{\cos{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)}} - \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{7} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 5, (o_{z})}
+\begin{dmath*} \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} + \frac{\sin{\left(\theta_{2} \right)} \sin^{2}{\left(\theta_{3} \right)} \sin{\left(\theta_{4} \right)}}{\cos{\left(\theta_{3} \right)}} - \frac{\sin{\left(\theta_{2} \right)} \sin{\left(\theta_{4} \right)}}{\cos{\left(\theta_{3} \right)}} + \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{6} \right)} - \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{4} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 5, (a_{z})}
+\begin{dmath*} \sin{\left(\theta_{3} \right)} \sin{\left(\theta_{4} \right)} + \sin{\left(\theta_{6} \right)} \sin{\left(\theta_{7} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 5, (p_{z})}
+\begin{dmath*} L \left(\sin{\left(\theta_{1} \right)} \cos{\left(\theta_{6} \right)} - 5 \sin{\left(\theta_{3} \right)} \sin{\left(\theta_{4} \right)} + 2 \sin{\left(\theta_{4} \right)} \cos{\left(\theta_{3} \right)} - \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{7} \right)} - 2 \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}\right) = 0 \end{dmath*}
+\subsection{Set 6: $T_{6}T_{7}T_{1}T_{2} = T_{5}^{-1}T_{4}^{-1}T_{3}^{-1}$}
+\paragraph{Permutation 6, (o_{x})}
+\begin{dmath*} \frac{\sin{\left(\theta_{3} \right)} \sin^{2}{\left(\theta_{4} \right)} \sin^{2}{\left(\theta_{5} \right)}}{\cos{\left(\theta_{4} \right)} \cos{\left(\theta_{5} \right)}} - \frac{\sin{\left(\theta_{3} \right)} \sin^{2}{\left(\theta_{4} \right)}}{\cos{\left(\theta_{4} \right)} \cos{\left(\theta_{5} \right)}} - \frac{\sin{\left(\theta_{3} \right)} \sin^{2}{\left(\theta_{5} \right)}}{\cos{\left(\theta_{4} \right)} \cos{\left(\theta_{5} \right)}} + \frac{\sin{\left(\theta_{3} \right)}}{\cos{\left(\theta_{4} \right)} \cos{\left(\theta_{5} \right)}} + \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{3} \right)} - \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{6} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 6, (a_{x})}
+\begin{dmath*} \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{6} \right)} + \sin{\left(\theta_{1} \right)} \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} + \sin{\left(\theta_{2} \right)} \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} + \frac{\sin{\left(\theta_{4} \right)} \sin^{2}{\left(\theta_{5} \right)}}{\cos{\left(\theta_{5} \right)}} - \frac{\sin{\left(\theta_{4} \right)}}{\cos{\left(\theta_{5} \right)}} - \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{2} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 6, (p_{x})}
+\begin{dmath*} \frac{L \left(- 2 \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{6} \right)} - 4 \sin{\left(\theta_{6} \right)} \sin{\left(\theta_{1} + \theta_{2} \right)} + 10 \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{6} \right)} - 2 \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} + 5 \cos{\left(\theta_{5} \right)} - 4 \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} \cos{\left(\theta_{1} + \theta_{2} \right)} - 4 \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} + 5\right)}{2} = 0 \end{dmath*}
+\paragraph{Permutation 6, (n_{y})}
+\begin{dmath*} \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} + \sin{\left(\theta_{1} \right)} \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{6} \right)} + \sin{\left(\theta_{2} \right)} \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{6} \right)} + \frac{\sin^{2}{\left(\theta_{3} \right)} \sin{\left(\theta_{4} \right)}}{\cos{\left(\theta_{3} \right)}} - \frac{\sin{\left(\theta_{4} \right)}}{\cos{\left(\theta_{3} \right)}} - \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{7} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 6, (o_{y})}
+\begin{dmath*} - \sin{\left(\theta_{3} \right)} \sin{\left(\theta_{4} \right)} - \sin{\left(\theta_{6} \right)} \sin{\left(\theta_{7} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 6, (a_{y})}
+\begin{dmath*} - \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{2} \right)} \cos{\left(\theta_{6} \right)} + \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{7} \right)} + \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{7} \right)} + \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{6} \right)} - \cos{\left(\theta_{4} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 6, (p_{y})}
+\begin{dmath*} L \left(\sin{\left(\theta_{1} \right)} \cos{\left(\theta_{6} \right)} + 5 \sin{\left(\theta_{6} \right)} \sin{\left(\theta_{7} \right)} - \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{7} \right)} - 2 \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} \cos{\left(\theta_{1} + \theta_{2} \right)} - 2 \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} + 2 \sin{\left(\theta_{1} + \theta_{2} \right)} \cos{\left(\theta_{6} \right)}\right) = 0 \end{dmath*}
+\paragraph{Permutation 6, (o_{z})}
+\begin{dmath*} - \frac{\sin{\left(\theta_{3} \right)} \sin^{2}{\left(\theta_{4} \right)} \sin{\left(\theta_{5} \right)}}{\cos{\left(\theta_{4} \right)}} + \frac{\sin{\left(\theta_{3} \right)} \sin{\left(\theta_{5} \right)}}{\cos{\left(\theta_{4} \right)}} - \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{5} \right)} + \cos{\left(\theta_{7} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 6, (a_{z})}
+\begin{dmath*} \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{2} \right)} + \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{1} \right)} - \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{5} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 6, (p_{z})}
+\begin{dmath*} \frac{L \left(5 \sin{\left(\theta_{5} \right)} - 2 \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{1} \right)} - 4 \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{1} + \theta_{2} \right)} - 4 \sin{\left(\theta_{7} \right)} - 10 \cos{\left(\theta_{7} \right)} + 5\right)}{2} = 0 \end{dmath*}
+\subsection{Set 7: $T_{7}T_{1}T_{2}T_{3} = T_{6}^{-1}T_{5}^{-1}T_{4}^{-1}$}
+\paragraph{Permutation 7, (a_{x})}
+\begin{dmath*} \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{7} \right)} - \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{7} \right)} + \frac{\sin{\left(\theta_{5} \right)} \sin^{2}{\left(\theta_{6} \right)}}{\cos{\left(\theta_{6} \right)}} - \frac{\sin{\left(\theta_{5} \right)}}{\cos{\left(\theta_{6} \right)}} + \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{3} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 7, (p_{x})}
+\begin{dmath*} \frac{L \left(- 10 \sin{\left(\theta_{7} \right)} + 2 \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{7} \right)} - 5 \cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} - 5 \cos{\left(\theta_{6} \right)} + 4 \cos{\left(\theta_{7} \right)} \cos{\left(\theta_{1} + \theta_{2} \right)} + 4 \cos{\left(\theta_{7} \right)}\right)}{2} = 0 \end{dmath*}
+\paragraph{Permutation 7, (n_{y})}
+\begin{dmath*} \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{3} \right)} + \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{7} \right)} - \frac{\sin^{2}{\left(\theta_{4} \right)} \sin{\left(\theta_{5} \right)}}{\cos{\left(\theta_{4} \right)}} + \frac{\sin{\left(\theta_{5} \right)}}{\cos{\left(\theta_{4} \right)}} - \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 7, (o_{y})}
+\begin{dmath*} - \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{2} \right)} - \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{1} \right)} + \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{5} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 7, (a_{y})}
+\begin{dmath*} \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{3} \right)} \sin{\left(\theta_{7} \right)} - \sin{\left(\theta_{3} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{2} \right)} - \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{7} \right)} + \cos{\left(\theta_{5} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 7, (p_{y})}
+\begin{dmath*} \frac{L \left(- 5 \sin{\left(\theta_{5} \right)} + 2 \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{1} \right)} + 4 \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{1} + \theta_{2} \right)} + 4 \sin{\left(\theta_{7} \right)} + 10 \cos{\left(\theta_{7} \right)} - 5\right)}{2} = 0 \end{dmath*}
+\paragraph{Permutation 7, (o_{z})}
+\begin{dmath*} \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{2} \right)} + \frac{\sin{\left(\theta_{4} \right)} \sin^{2}{\left(\theta_{5} \right)} \sin{\left(\theta_{6} \right)}}{\cos{\left(\theta_{5} \right)}} - \frac{\sin{\left(\theta_{4} \right)} \sin{\left(\theta_{6} \right)}}{\cos{\left(\theta_{5} \right)}} - \cos{\left(\theta_{1} \right)} \cos{\left(\theta_{2} \right)} + \cos{\left(\theta_{4} \right)} \cos{\left(\theta_{6} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 7, (a_{z})}
+\begin{dmath*} \sin{\left(\theta_{1} \right)} \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{2} \right)} + \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{1} \right)} + \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{6} \right)} = 0 \end{dmath*}
+\paragraph{Permutation 7, (p_{z})}
+\begin{dmath*} \frac{L \left(- 2 \sin{\left(\theta_{1} \right)} + 5 \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{5} \right)} + 5 \sin{\left(\theta_{6} \right)} - 4 \sin{\left(\theta_{1} + \theta_{2} \right)}\right)}{2} = 0 \end{dmath*}
+
+\section{Single Driver Solutions}
+No complete solution found for single drivers.
+
+\section{Dual Driver Solutions}
+\subsection{Inputs $\theta_{3}, \theta_{5}$}
+\begin{enumerate}
+\item \textbf{Solve for} $\theta_{4}$ using Permutation 3, (p_{y}) \\
+Equation form: $A\sin(\theta_{4}) + B\cos(\theta_{4}) + C = 0$ \\
+{\scriptsize \begin{dgroup*}
+\begin{dmath*} A = 0 \end{dmath*}
+\begin{dmath*} B = - \frac{5 L \left(\sqrt{2} \sin{\left(\theta_{5} + \frac{\pi}{4} \right)} + 1\right) \sin{\left(\theta_{3} \right)}}{2} \end{dmath*}
+\begin{dmath*} C = \frac{5 L \left(\sqrt{2} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{5} + \frac{\pi}{4} \right)} - 2\right)}{2} \end{dmath*}
+\end{dgroup*} }
+Solution (via $t=\tan\frac{\theta_{4}}{2}$): \\
+\[ \theta_{4} = 2 \arctan\left( \frac{B \pm \sqrt{A^2 + B^2 - C^2}}{A + C} \right) \]
+\item \textbf{Solve for} $\theta_{7}$ using Permutation 2, (a_{z}) \\
+Equation form: $A\sin(\theta_{7}) + B\cos(\theta_{7}) + C = 0$ \\
+{\scriptsize \begin{dgroup*}
+\begin{dmath*} A = 0 \end{dmath*}
+\begin{dmath*} B = 1 \end{dmath*}
+\begin{dmath*} C = \sin{\left(\theta_{3} \right)} \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{4} \right)} - \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{5} \right)} \end{dmath*}
+\end{dgroup*} }
+Solution (via $t=\tan\frac{\theta_{7}}{2}$): \\
+\[ \theta_{7} = 2 \arctan\left( \frac{B \pm \sqrt{A^2 + B^2 - C^2}}{A + C} \right) \]
+\item \textbf{Solve for} $\theta_{6}$ using Permutation 1, (n_{z}) \\
+Equation form: $A\sin(\theta_{6}) + B\cos(\theta_{6}) + C = 0$ \\
+{\scriptsize \begin{dgroup*}
+\begin{dmath*} A = 0 \end{dmath*}
+\begin{dmath*} B = 0 \end{dmath*}
+\begin{dmath*} C = \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} + \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{7} \right)} + \tilde{\infty} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{5} \right)} \end{dmath*}
+\end{dgroup*} }
+Solution (via $t=\tan\frac{\theta_{6}}{2}$): \\
+\[ \theta_{6} = 2 \arctan\left( \frac{B \pm \sqrt{A^2 + B^2 - C^2}}{A + C} \right) \]
+\item \textbf{Solve for} $\theta_{2}$ using Permutation 4, (p_{x}) \\
+Equation form: $A\sin(\theta_{2}) + B\cos(\theta_{2}) + C = 0$ \\
+{\scriptsize \begin{dgroup*}
+\begin{dmath*} A = 0 \end{dmath*}
+\begin{dmath*} B = - L \cos{\left(\theta_{3} \right)} \end{dmath*}
+\begin{dmath*} C = \frac{L \left(10 \sin{\left(\theta_{3} \right)} + 4 \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} - 4 \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{4} \right)} + 5 \sqrt{2} \sin{\left(\theta_{5} + \frac{\pi}{4} \right)} \cos{\left(\theta_{4} \right)} - 4 \cos{\left(\theta_{3} \right)} - 4 \cos{\left(\theta_{4} \right)} \cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} + 5 \cos{\left(\theta_{4} \right)}\right)}{2} \end{dmath*}
+\end{dgroup*} }
+Solution (via $t=\tan\frac{\theta_{2}}{2}$): \\
+\[ \theta_{2} = 2 \arctan\left( \frac{B \pm \sqrt{A^2 + B^2 - C^2}}{A + C} \right) \]
+\item \textbf{Solve for} $\theta_{1}$ using Permutation 1, (n_{x}) \\
+Equation form: $A\sin(\theta_{1}) + B\cos(\theta_{1}) + C = 0$ \\
+{\scriptsize \begin{dgroup*}
+\begin{dmath*} A = \sin{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} - \sin{\left(\theta_{4} \right)} \cos{\left(\theta_{2} \right)} \end{dmath*}
+\begin{dmath*} B = - \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{4} \right)} - \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} \end{dmath*}
+\begin{dmath*} C = \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)} + \cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} \end{dmath*}
+\end{dgroup*} }
+Solution (via $t=\tan\frac{\theta_{1}}{2}$): \\
+\[ \theta_{1} = 2 \arctan\left( \frac{B \pm \sqrt{A^2 + B^2 - C^2}}{A + C} \right) \]
+\end{enumerate}
+\subsection{Inputs $\theta_{4}, \theta_{5}$}
+\begin{enumerate}
+\item \textbf{Solve for} $\theta_{3}$ using Permutation 3, (p_{y}) \\
+Equation form: $A\sin(\theta_{3}) + B\cos(\theta_{3}) + C = 0$ \\
+{\scriptsize \begin{dgroup*}
+\begin{dmath*} A = - \frac{5 L \left(\sqrt{2} \sin{\left(\theta_{5} + \frac{\pi}{4} \right)} + 1\right) \cos{\left(\theta_{4} \right)}}{2} \end{dmath*}
+\begin{dmath*} B = \frac{5 \sqrt{2} L \cos{\left(\theta_{5} + \frac{\pi}{4} \right)}}{2} \end{dmath*}
+\begin{dmath*} C = - 5 L \end{dmath*}
+\end{dgroup*} }
+Solution (via $t=\tan\frac{\theta_{3}}{2}$): \\
+\[ \theta_{3} = 2 \arctan\left( \frac{B \pm \sqrt{A^2 + B^2 - C^2}}{A + C} \right) \]
+\item \textbf{Solve for} $\theta_{7}$ using Permutation 2, (a_{z}) \\
+Equation form: $A\sin(\theta_{7}) + B\cos(\theta_{7}) + C = 0$ \\
+{\scriptsize \begin{dgroup*}
+\begin{dmath*} A = 0 \end{dmath*}
+\begin{dmath*} B = 1 \end{dmath*}
+\begin{dmath*} C = \sin{\left(\theta_{3} \right)} \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{4} \right)} - \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{5} \right)} \end{dmath*}
+\end{dgroup*} }
+Solution (via $t=\tan\frac{\theta_{7}}{2}$): \\
+\[ \theta_{7} = 2 \arctan\left( \frac{B \pm \sqrt{A^2 + B^2 - C^2}}{A + C} \right) \]
+\item \textbf{Solve for} $\theta_{6}$ using Permutation 1, (n_{z}) \\
+Equation form: $A\sin(\theta_{6}) + B\cos(\theta_{6}) + C = 0$ \\
+{\scriptsize \begin{dgroup*}
+\begin{dmath*} A = 0 \end{dmath*}
+\begin{dmath*} B = 0 \end{dmath*}
+\begin{dmath*} C = \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} + \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{7} \right)} + \tilde{\infty} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{5} \right)} \end{dmath*}
+\end{dgroup*} }
+Solution (via $t=\tan\frac{\theta_{6}}{2}$): \\
+\[ \theta_{6} = 2 \arctan\left( \frac{B \pm \sqrt{A^2 + B^2 - C^2}}{A + C} \right) \]
+\item \textbf{Solve for} $\theta_{2}$ using Permutation 4, (p_{x}) \\
+Equation form: $A\sin(\theta_{2}) + B\cos(\theta_{2}) + C = 0$ \\
+{\scriptsize \begin{dgroup*}
+\begin{dmath*} A = 0 \end{dmath*}
+\begin{dmath*} B = - L \cos{\left(\theta_{3} \right)} \end{dmath*}
+\begin{dmath*} C = \frac{L \left(10 \sin{\left(\theta_{3} \right)} + 4 \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} - 4 \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{4} \right)} + 5 \sqrt{2} \sin{\left(\theta_{5} + \frac{\pi}{4} \right)} \cos{\left(\theta_{4} \right)} - 4 \cos{\left(\theta_{3} \right)} - 4 \cos{\left(\theta_{4} \right)} \cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} + 5 \cos{\left(\theta_{4} \right)}\right)}{2} \end{dmath*}
+\end{dgroup*} }
+Solution (via $t=\tan\frac{\theta_{2}}{2}$): \\
+\[ \theta_{2} = 2 \arctan\left( \frac{B \pm \sqrt{A^2 + B^2 - C^2}}{A + C} \right) \]
+\item \textbf{Solve for} $\theta_{1}$ using Permutation 1, (n_{x}) \\
+Equation form: $A\sin(\theta_{1}) + B\cos(\theta_{1}) + C = 0$ \\
+{\scriptsize \begin{dgroup*}
+\begin{dmath*} A = \sin{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} - \sin{\left(\theta_{4} \right)} \cos{\left(\theta_{2} \right)} \end{dmath*}
+\begin{dmath*} B = - \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{4} \right)} - \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} \end{dmath*}
+\begin{dmath*} C = \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)} + \cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} \end{dmath*}
+\end{dgroup*} }
+Solution (via $t=\tan\frac{\theta_{1}}{2}$): \\
+\[ \theta_{1} = 2 \arctan\left( \frac{B \pm \sqrt{A^2 + B^2 - C^2}}{A + C} \right) \]
+\end{enumerate}
+
+\section{Numerical Verification}
+\begin{figure}[H] \centering
+\includegraphics[width=0.9\textwidth]{joint_relations.png}
+\caption{Joint relationships simulation}
+\end{figure}
+\end{document}

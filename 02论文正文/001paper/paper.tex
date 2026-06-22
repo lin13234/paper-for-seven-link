@@ -1,0 +1,370 @@
+%% 
+%% Copyright 2019-2024 Elsevier Ltd
+%% 版本 2.4
+%% 
+%% 这是一个适用于 cas-sc 文档类（单栏排版）的模板文件。
+
+\documentclass[a4paper,fleqn]{cas-sc}
+
+% 加载参考文献宏包 natbib
+\usepackage[authoryear,longnamesfirst]{natbib}
+\usepackage{amsmath}
+%%% 作者自定义的宏（快捷指令）
+\def\tsc#1{\csdef{#1}{\textsc{\lowercase{#1}}\xspace}}
+\tsc{WGM}
+\tsc{QE}
+\tsc{EP}
+\tsc{PMS}
+\tsc{BEC}
+\tsc{DE}
+%%%
+
+% 文档正式开始
+\begin{document}
+\let\WriteBookmarks\relax
+\def\floatpagepagefraction{1}
+\def\textpagefraction{.001}
+
+% 设置页眉处的短标题和短作者列表
+\shorttitle{Leveraging social media news}
+\shortauthors{J.K. Krishnan et~al.}
+
+% 文章的主标题
+\title [mode = title]{Gait Planning of a Mobile Robot Utilizing the Reconfigurability of a Novel 7R Plane-Symmetric Spatial Mechanism}                      
+
+% 标题脚注标记
+% \tnotemark[1,2]
+% \tnotetext[1]{This document is the results of the research project funded by the National Science Foundation.}
+% \tnotetext[2]{The second title footnote which is a longer text matter...}
+
+%================ 作者与机构信息 ================%
+
+\author[1,3]{Hongyu Lin}[type=editor,
+                        auid=000,bioid=1,
+                        prefix=Sir,
+                        role=Researcher,
+                        orcid=0000-0001-0000-0000]
+\cormark[1] 
+\fnmark[1]  
+\ead{jkk@example.in} 
+\ead[url]{www.jkkrishnan.in} 
+
+\credit{Conceptualization of this study, Methodology, Software}
+
+\affiliation[1]{organization={Department of Physics, J.K. Institute of Science},
+                addressline={Jawahar Nagar}, 
+                city={Trivandrum},
+                postcode={695013}, 
+                state={Kerala},
+                country={India}}
+
+\author[2,4]{Han Thane}[style=chinese]
+
+\author[2,3]{William {J. Hansen}}[%
+   role=Co-ordinator,
+   suffix=Jr,
+   ]
+\fnmark[2] 
+\ead{wjh@example.org}
+\ead[URL]{https://www.university.org}
+\credit{Data curation, Writing - Original draft preparation}
+
+\affiliation[2]{organization={World Scientific University},
+                addressline={Street 29}, 
+                postcode={1011 NX}, 
+                postcodesep={}, 
+                city={Amsterdam},
+                country={The Netherlands}}
+
+\author[1,3]{T. Rafeeq}
+\cormark[2] 
+\fnmark[1,3]
+\ead{t.rafeeq@example.in}
+\ead[URL]{www.campus.in}
+
+\affiliation[3]{organization={University of Intelligent Studies},
+                addressline={Street 15}, 
+                city={Jabaldesh},
+                postcode={825001}, 
+                state={Orissa}, 
+                country={India}}
+
+\cortext[cor1]{Corresponding author}
+\cortext[cor2]{Principal corresponding author}
+
+\fntext[fn1]{This is the first author footnote...}
+\fntext[fn2]{Another author footnote...}
+\nonumnote{This note has no numbers...}
+
+%================ 前置信息结束 ================%
+
+\begin{abstract}
+This template helps you to create a properly formatted \LaTeX\ manuscript.
+\end{abstract}
+
+% 图文摘要环境
+\begin{graphicalabstract}
+% \includegraphics{figs/cas-grabs.pdf} % <--- 原图片代码已注释
+% [占位符：此处插入图文摘要图片，例如：\verb|\includegraphics{你的图片路径}|]
+\end{graphicalabstract}
+
+\begin{highlights}
+\item Research highlights item 1
+\item Research highlights item 2
+\end{highlights}
+
+\begin{keywords}
+quadrupole exciton \sep polariton \sep \WGM \sep \BEC
+\end{keywords}
+
+\maketitle
+
+
+\section{Introduction}
+
+The Elsevier cas-sc class is based on the standard article class...
+
+\section{Mobility and Reconfiguration Analysis of the 7R Plane-Symmetric Spatial Mechanism}
+% 请确保在 LaTeX 文档的导言区（\begin{document}之前）添加了宏包：
+% \usepackage{booktabs}
+Spatial single-loop mechanisms exhibit superior load-bearing capacity and excellent spatial motion characteristics. This is particularly true for spatial closed-loop linkages with geometric symmetry, such as the classic Bennett and Bricard linkages. Inspired by spatial symmetry and the Bricard linkage, we propose a novel 7R plane-symmetric spatial mechanism. This mechanism possesses multiple kinematic branches, and the transition between different branches can be achieved by passing through singular configurations, thereby endowing the system with both high reliability and kinematic flexibility. 
+
+To govern the symmetric geometry of the mechanism, the general Denavit-Hartenberg (D-H) parameter constraints are formulated as:
+\begin{equation}
+    \begin{aligned}
+        \alpha_2 &= \alpha_3 = \alpha_4 = \alpha_5 = \alpha_6 = \alpha_7; \\
+        a_2 &= a_7, \quad a_4 = a_5 = \frac{a_1 + a_7 + a_2}{2}; \\
+        d_2 &= d_6.
+    \end{aligned}
+\end{equation}
+
+Furthermore, to maximize the kinematic capabilities and spatial reach of this mechanism, the specific structural parameters and initial joint variables are carefully determined as follows:
+To transition from the theoretical kinematic model to the physical structural design, the geometric parameters of the proposed 7R mechanism must be explicitly defined. The constant structural dimensions (link lengths $a_i$, joint offsets $d_i$, twist angles $\alpha_i$) and the initial phase angles ($\theta_i$) are strictly configured as follows:
+To transition from the theoretical kinematic model to the physical structural design, the geometric parameters of the proposed 7R mechanism must be explicitly defined. The constant structural dimensions and the initial phase angles are strictly configured as follows:
+\begin{equation}
+    \begin{aligned}
+        & \alpha_1 = 0^\circ, \quad \alpha_2 = \alpha_3 = \alpha_4 = \alpha_5 = \alpha_6 = \alpha_7 = 90^\circ; \\
+        & a_1 = 40 \, \text{mm}, \quad a_2 = a_7 = 80 \, \text{mm}, \quad a_4 = a_5 = \frac{a_1 + a_7 + a_2}{2} = 100 \, \text{mm}; \\
+        & d_2 = d_6 = 100 \, \text{mm}; \\
+        & \theta_1 = \theta_2 = \theta_4 = \theta_5 = \theta_7 = 0^\circ, \quad \theta_3 = \theta_6 = 180^\circ.
+    \end{aligned}
+\end{equation}
+
+The initial configuration of the proposed mechanism, based on these parameters, is illustrated in Fig. \ref{fig:initial_config}.
+% 插入图片的环境
+\begin{figure}
+	\centering % 居中显示
+	% \includegraphics[width=.9\textwidth]{figs/cas-munnar-2024.jpg} % <--- 原图片代码已注释
+   %  [占位符：此处插入单栏图片，例如：\verb|\includegraphics[width=0.8\textwidth]{figs/my-figure.jpg}|]
+	\caption{The beauty of Munnar, Kerala. (See also Table \protect\ref{tbl1}).} % 图片标题
+	\label{FIG:1} % 图片标签
+\end{figure}
+
+By employing the adjoint transformation matrices and the kinematic propagation method, the unit twists (screw coordinates) associated with the joint axes can be systematically derived in the global coordinate system. The corresponding twists $\boldsymbol{S}_i$ ($i = 1, 2, \dots, 7$) are expressed as follows:
+\begin{equation}
+\begin{aligned}
+    \boldsymbol{S}_1 &= \begin{bmatrix}0\\0\\1\\0\\0\\0\end{bmatrix}, \quad
+    \boldsymbol{S}_2 = \begin{bmatrix}0\\0\\1\\0\\- l\\0\end{bmatrix}, \quad
+    \boldsymbol{S}_3 = \begin{bmatrix}\sin{\left(q_{1} \right)}\\- \cos{\left(q_{1} \right)}\\0\\0\\0\\- a - l \cos{\left(q_{1} \right)}\end{bmatrix}, \\
+    \boldsymbol{S}_4 &= \begin{bmatrix}\sin{\left(q_{2} \right)} \cos{\left(q_{1} \right)}\\\sin{\left(q_{1} \right)} \sin{\left(q_{2} \right)}\\- \cos{\left(q_{2} \right)}\\\left(- a \sin{\left(q_{1} \right)} + b \cos{\left(q_{1} \right)}\right) \cos{\left(q_{2} \right)}\\\left(a \cos{\left(q_{1} \right)} + b \sin{\left(q_{1} \right)} + l\right) \cos{\left(q_{2} \right)}\\\left(b + l \sin{\left(q_{1} \right)}\right) \sin{\left(q_{2} \right)}\end{bmatrix}, \\
+    \boldsymbol{S}_5 &= \begin{bmatrix}
+        - \sin{\left(q_{5} \right)} \cos{\left(q_{6} \right)} \cos{\left(q_{7} \right)} - \sin{\left(q_{7} \right)} \cos{\left(q_{5} \right)} \\
+        \sin{\left(q_{5} \right)} \sin{\left(q_{7} \right)} \cos{\left(q_{6} \right)} - \cos{\left(q_{5} \right)} \cos{\left(q_{7} \right)} \\
+        - \sin{\left(q_{5} \right)} \sin{\left(q_{6} \right)} \\
+        \frac{\left(\left(2 a + l\right) \cos^{2}{\left(q_{7} \right)} - \left(a \sin{\left(2 q_{7} \right)} - 2 b \cos^{2}{\left(q_{7} \right)}\right) \sin{\left(q_{5} \right)}\right) \sin{\left(q_{6} \right)}}{2 \cos{\left(q_{7} \right)}} \\
+        \frac{\left(\left(- 2 a - l\right) \sin{\left(q_{7} \right)} - 2 \left(a \cos{\left(q_{7} \right)} + b \sin{\left(q_{7} \right)}\right) \sin{\left(q_{5} \right)}\right) \sin{\left(q_{6} \right)}}{2} \\
+        a \cos{\left(q_{5} \right)} - a \cos{\left(q_{6} \right)} - b \sin{\left(q_{5} \right)} \cos{\left(q_{6} \right)} - \frac{l \cos{\left(q_{6} \right)}}{2}
+    \end{bmatrix}, \\
+    \boldsymbol{S}_6 &= \begin{bmatrix}- \sin{\left(q_{6} \right)} \cos{\left(q_{7} \right)}\\\sin{\left(q_{6} \right)} \sin{\left(q_{7} \right)}\\\cos{\left(q_{6} \right)}\\\left(a \sin{\left(q_{7} \right)} - b \cos{\left(q_{7} \right)}\right) \cos{\left(q_{6} \right)}\\\left(a \cos{\left(q_{7} \right)} + b \sin{\left(q_{7} \right)}\right) \cos{\left(q_{6} \right)}\\- b \sin{\left(q_{6} \right)}\end{bmatrix}, \quad
+    \boldsymbol{S}_7 = \begin{bmatrix}\sin{\left(q_{7} \right)}\\\cos{\left(q_{7} \right)}\\0\\0\\0\\- a\end{bmatrix}.
+\end{aligned}
+\end{equation}
+
+To determine the common constraints of the mechanism, the reciprocal screw system must be analyzed. By assembling the kinematic Jacobian matrix $\boldsymbol{J} = [\boldsymbol{S}_1, \boldsymbol{S}_2, \dots, \boldsymbol{S}_7]$ and imposing the geometric symmetry constraints $q_7=q_1$, $q_6=-q_2$, and $q_5=-q_3$, we solve the reciprocal condition equation $\boldsymbol{J}^T \boldsymbol{S}^r = \mathbf{0}$. The mathematical solution yields:
+\begin{equation}
+    \boldsymbol{S}^r = \emptyset
+\end{equation}
+
+The absence of any reciprocal screw indicates that the mechanism possesses no common constraints, yielding a constraint number $\lambda = 0$. Consequently, the mechanism order $d$ is determined as:
+\begin{equation}
+    d = 6 - \lambda = 6
+\end{equation}
+
+Given that the proposed mechanism comprises $n=7$ links (including the fixed base) and $g=7$ one-DOF revolute joints ($\sum f_i = 7$), the modified Grübler-Kutzbach (G-K) criterion is applied to calculate its global mobility $M$:
+\begin{equation}
+    M = d(n - g - 1) + \sum_{i=1}^{g} f_i = 6 \times (7 - 7 - 1) + 7 = 1
+\end{equation}
+
+Therefore, the theoretical global degree of freedom (DOF) of the proposed spatial mechanism is rigorously proven to be 1.
+
+Singular Value Decomposition (SVD) is a robust mathematical tool for identifying the singular configurations and instantaneous degrees of freedom (DOF) of a mechanism. Having established the global mobility, the SVD method is subsequently employed to systematically explore the singular configurations of the proposed mechanism.
+
+To guarantee continuous motion and computational efficiency, Joint 2 is selected as the actuated joint. A continuation-based nonlinear minimization optimization approach is adopted to track the kinematic trajectory of the mechanism. Specifically, the kinematic resolution of the spatial 7R closed-loop linkage is formulated as an error-minimization problem: for each specified angle of the actuated Joint 2, forward homogeneous transformation matrices are utilized to evaluate the six-dimensional closure error (defined by the 2-norm of the position and orientation discrepancies) at the end of the kinematic chain. The Broyden--Fletcher--Goldfarb--Shanno (BFGS) quasi-Newton algorithm is then invoked to search for a set of passive joint variables that minimizes this closure error to a strict tolerance ($< 10^{-4}$). 
+
+Crucially, to ensure the physical smoothness of the motion and prevent numerical discontinuities or jumps between different assembly modes (kinematic branches), the successfully converged joint angles from the preceding step are strictly assigned as the initial iteration guess for the current step. This numerical continuation strategy enables the stable tracking of a single, deterministic motion trajectory. Ultimately, by applying SVD to the passive Jacobian matrix, the singular values are extracted, allowing us to plot their variations with respect to the displacement of Joint 2.
+
+To mathematically define the passive Jacobian matrix for the SVD analysis, we first establish the spatial kinematic constraints. The closed-loop position equation of the proposed 7R mechanism is rigorously formulated by sequentially multiplying the relative transformation matrices along the kinematic loop:
+\begin{equation}
+    \mathbf{T}_{1,2} \mathbf{T}_{2,3} \dots \mathbf{T}_{7,1} = \mathbf{T}_{S_1} \mathbf{T}_{J_1} \mathbf{T}_{S_2} \mathbf{T}_{J_2} \dots \mathbf{T}_{S_7} \mathbf{T}_{J_7} = \mathbf{I}
+\end{equation}
+where $\mathbf{T}_{i,i+1} \in \mathrm{SE}(3)$ denotes the $4 \times 4$ homogeneous transformation matrix relating the coordinate frame of link $i+1$ to that of link $i$. Crucially, each local transformation is decoupled into two distinct components: $\mathbf{T}_{S_i}$, which is the constant structural transformation matrix governed by the fixed D-H parameters (i.e., link length $a_i$, twist angle $\alpha_i$, and joint offset $d_i$); and $\mathbf{T}_{J_i}$, which is the variable joint transformation matrix representing the instantaneous displacement of the revolute joint $i$ (i.e., joint variable $q_i$). $\mathbf{I}$ represents the $4 \times 4$ identity matrix.
+
+By differentiating this closed-loop position constraint with respect to time, the general velocity equation is derived as:
+\begin{equation}
+    \mathbf{J} \dot{\mathbf{q}} = \mathbf{0}
+\end{equation}
+where $\mathbf{J} \in \mathbb{R}^{6 \times 7}$ represents the global kinematic Jacobian matrix, and $\dot{\mathbf{q}} = [\dot{q}_1, \dot{q}_2, \dots, \dot{q}_7]^T$ is the joint velocity vector. 
+
+By designating Joint 2 as the driving joint, the joint variables are partitioned into the actuated subset $\mathbf{q}_a = [q_2]$ and the passive subset $\mathbf{q}_p = [q_1, q_3, q_4, q_5, q_6, q_7]^T$. Consequently, the velocity constraint yields:
+\begin{equation}
+    \mathbf{J}_p \dot{\mathbf{q}}_p = - \mathbf{J}_a \dot{q}_2
+\end{equation}
+where $\mathbf{J}_a \in \mathbb{R}^{6 \times 1}$ is the active Jacobian vector associated with the input joint, and $\mathbf{J}_p \in \mathbb{R}^{6 \times 6}$ is the passive Jacobian matrix, constructed by removing the column corresponding to the driving joint (i.e., the second column) from the global Jacobian $\mathbf{J}$.
+
+The kinematic singularities of the mechanism directly correspond to the rank deficiency of $\mathbf{J}_p$. Therefore, we apply Singular Value Decomposition (SVD) to $\mathbf{J}_p$. A singular configuration is structurally identified when the minimum singular value approaches zero ($\sigma_{\min} \to 0$).
+
+% 插入图片的环境
+\begin{figure}
+	\centering % 居中显示
+	% \includegraphics[width=.9\textwidth]{figs/cas-munnar-2024.jpg} % <--- 原图片代码已注释
+   %  [占位符：此处插入单栏图片，例如：\verb|\includegraphics[width=0.8\textwidth]{figs/my-figure.jpg}|]
+	\caption{The beauty of Munnar, Kerala. (See also Table \protect\ref{tbl1}).} % 图片标题
+	\label{FIG:1} % 图片标签
+\end{figure}
+
+In numerical computation, a kinematic singularity is structurally identified when the minimum singular value, denoted as $\sigma_6$ for the $6 \times 6$ passive Jacobian matrix $\mathbf{J}_p$, approaches zero. By numerically tracking the local minima of $\sigma_6$ over a full motion cycle of the driving joint ($q_2 \in [0^\circ, 360^\circ]$), the critical singular configurations were successfully isolated using a predefined threshold of $\sigma_6 < 0.1$. 
+
+As summarized in Table \ref{tab:singularities}, the continuation algorithm detected five local minima. Notably, these computationally identified singular points closely approximate the exact theoretical singularity angles at $0^\circ$, $90^\circ$, $180^\circ$, $270^\circ$, and $360^\circ$. The minor deviations (e.g., $90.25^\circ$ instead of $90^\circ$) are inherent numerical artifacts attributed to the discrete angular step size of the search algorithm.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Numerically identified singular configurations over a full motion cycle of the driving joint.}
+    \label{tab:singularities}
+    \begin{tabular}{lcc}
+        \toprule
+        \textbf{Theoretical State} & \textbf{Actuated Joint Angle ($q_2$)} & \textbf{Minimum Singular Value ($\sigma_6$)} \\
+        \midrule
+        Configuration I   & $1.00^\circ$   & $1.08 \times 10^{-4}$ \\
+        Configuration II  & $90.25^\circ$  & $1.14 \times 10^{-3}$ \\
+        Configuration III & $179.50^\circ$ & $2.40 \times 10^{-5}$ \\
+        Configuration IV  & $269.75^\circ$ & $1.14 \times 10^{-3}$ \\
+        Configuration V   & $359.00^\circ$ & $9.80 \times 10^{-5}$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+A closer inspection of the minimum singular values ($\sigma_6$) reveals local minima near the driving angles of $0^\circ, 90^\circ, 180^\circ, 270^\circ$, and $360^\circ$. However, it is imperative to note that the values of $\sigma_6$ at $90^\circ$ and $270^\circ$ are approximately an order of magnitude larger than those at $0^\circ, 180^\circ$, and $360^\circ$. This significant discrepancy indicates that the local minima at $90^\circ$ and $270^\circ$ are strictly non-zero and do not represent actual singular configurations. 
+
+Further examination of the full spectrum of singular values at these pseudo-singular positions confirms that the passive Jacobian matrix maintains its full rank. Furthermore, the maximum singular values (e.g., $\sigma_1$) peak precisely at these two configurations. The concurrent existence of maximized upper singular values and a minimized $\sigma_6$ drastically inflates the condition number of the Jacobian matrix, which is a mathematical hallmark of severe deterioration in the kinetostatic performance. From a physical perspective, while the mechanism strictly avoids a true kinematic bifurcation at $90^\circ$ and $270^\circ$, it suffers from severely compromised force transmission efficiency. Consequently, a substantially larger actuating torque is demanded at the driving joint to overcome this ill-conditioned state and sustain continuous motion.
+
+Consequently, the true kinematic singularities, where the determinant of the passive Jacobian effectively vanishes, occur exclusively at $0^\circ$ (equivalent to $360^\circ$) and $180^\circ$. This critical finding demonstrates that during a full $360^\circ$ rotation of the actuated Joint 2, the mechanism encounters exactly two singular positions. These specific configurations serve as the critical bifurcation points where the mechanism can transition between different kinematic branches (assembly modes).
+\begin{equation}
+\begin{aligned}
+    q_1(q_2) &= -13.911 + 0.023\cos(q_2) + 13.665\cos(2q_2) + 0.023\cos(3q_2) \\
+    q_3(q_2) &= -89.997 + 94.670\cos(q_2) + 0.006\cos(2q_2) - 4.989\cos(3q_2) \\
+    q_4(q_2) &= -124.037\sin(q_2) + 2.255\sin(3q_2) \\
+    q_5(q_2) &= 90.001 - 94.661\cos(q_2) + 0.002\cos(2q_2) + 4.998\cos(3q_2) \\
+    q_6(q_2) &= -180.000 + 114.589\sin(q_2) + 57.290\sin(2q_2) + 38.188\sin(3q_2) \\
+    q_7(q_2) &= -13.933 - 0.020\cos(q_2) + 13.620\cos(2q_2) - 0.020\cos(3q_2)
+\end{aligned}
+\end{equation}
+
+By analyzing the continuous motion within this specific kinematic branch, it is revealed that the joint variables inherently satisfy a set of strict symmetric kinematic constraints. These angular relationships are mathematically expressed as:
+\begin{equation}
+    q_7 = q_1, \quad q_6 = -q_2, \quad q_5 = -q_3
+\end{equation}
+
+Physically, the emergence of these strict proportional angular relationships perfectly manifests the inherent plane-symmetric topology of the proposed spatial linkage. It rigorously guarantees that the mechanism preserves its macroscopic plane symmetry throughout the entire continuous motion cycle within this primary kinematic branch.
+
+By evaluating the Jacobian matrix at these specific singular configurations, the instantaneous degree of freedom (DOF) of the mechanism is mathematically calculated to be 2. Intriguingly, at this critical bifurcation point, the joint axes of the spatial mechanism naturally decouple into two mutually orthogonal sets: the set $\{2, 4, 6\}$ and the set $\{1, 3, 5, 7\}$. 
+
+During the motion within this secondary branch, the joint variables $q_2$, $q_4$, and $q_6$ remain locked (i.e., stationary), causing the proposed spatial 7R linkage to kinematically degenerate into an equivalent planar four-bar linkage governed by the active joints 1, 3, 5, and 7. Within this degenerated planar mode, the strict symmetric constraints are no longer applicable; rather, the kinematic analysis reveals a distinct phase difference (phase shift) between the angular displacements of Joint 3 and Joint 5.
+
+To comprehensively map the kinematic behavior of this planar branch, Joint 1 is reassigned as the actuated joint. The variation of the minimum singular values with respect to the new input angle $q_1$ was systematically tracked, as illustrated in Fig. X. Consistent with our previous bifurcation analysis, the new singular configurations are pinpointed precisely at $q_1 = [XXX]^\circ$. Following the same numerical continuation and Fourier series fitting methodology, the high-fidelity analytical expressions mapping the passive joint angles to the input $q_1$ within this degenerated planar branch are derived.
+
+Following the numerical continuation and Fourier series fitting methodology, the high-fidelity analytical expressions mapping the passive joint angles to the input $q_1$ within this degenerated planar branch are derived. 
+
+It is crucial to note that, governed by the theoretical degeneration of the spatial linkage, the joint variables $q_2, q_4$, and $q_6$ are strictly constrained as constants (e.g.,$(q_2 \approx 0^\circ \text{ or } 180^\circ, \, q_4 \approx 0^\circ, \, q_6 \approx 0^\circ \text{ or } 180^\circ)$. The negligible oscillatory coefficients generated during the numerical fitting for these three joints are safely discarded as inherent algorithmic noise. Consequently, the explicit kinematic relationships for the actively moving passive joints ($q_3, q_5$, and $q_7$) are elegantly formulated as follows:
+\begin{equation}
+\begin{aligned}
+   Q_{J3}(x) &= +14.741 -17.158\cos(x) +7.200\sin(x) +2.094\cos(2x) +3.424\sin(2x) +0.619\cos(3x) -0.949\sin(3x) -0.366\cos(4x) -0.023\sin(4x) +0.062\cos(5x) +0.112\sin(5x)\\
+   Q_{J4}(x) &= -0.000 +0.001\cos(x) +0.001\sin(x) -0.000\cos(2x) -0.001\sin(2x) +0.000\cos(3x) +0.001\sin(3x) +0.001\cos(4x) -0.001\sin(4x) -0.001\cos(5x) +0.000\sin(5x)\\
+   Q_{J5}(x) &= -11.728 +11.633\cos(x) +14.541\sin(x) +0.432\cos(2x) -1.922\sin(2x) -0.460\cos(3x) +0.224\sin(3x) +0.143\cos(4x) +0.068\sin(4x) -0.013\cos(5x) -0.053\sin(5x)\\
+   Q_{J7}(x) &= +26.400 -57.274x -28.791\cos(x) -7.297\sin(x) +1.662\cos(2x) +5.368\sin(2x) +1.079\cos(3x) -1.158\sin(3x) -0.509\cos(4x) -0.079\sin(4x) +0.074\cos(5x) +0.174\sin(5x)
+\end{aligned}
+\end{equation}
+
+By analyzing the continuous SVD curve of this secondary planar branch, local minima of the minimum singular value ($\sigma_6$) are observed near the driving angles of $q_1 = 0^\circ, 210.58^\circ$, and $360^\circ$. However, a rigorous quantitative evaluation reveals that at $q_1 = 210.58^\circ$, the singular value only drops to $\sigma_6 = 1.48 \times 10^{-3}$. Consistent with our established numerical criteria, this magnitude is strictly non-zero. Further verification confirms the absence of a true mathematical root at this location, definitively classifying it as an ill-conditioned pseudo-singularity rather than a true kinematic bifurcation point.
+
+Consequently, within the entire $360^\circ$ operational cycle of this degenerated planar branch, the passive Jacobian matrix becomes truly rank-deficient exclusively at the home configuration ($q_1 = 0^\circ$ or $360^\circ$). This critical finding rigorously proves that the degenerated planar four-bar linkage possesses a continuous global mobility of exactly 1 (DOF = 1). Governed by a single active joint ($q_1$), the mechanism's kinematic behavior within this secondary branch is strictly deterministic. It is physically restricted to execute a branch transition (i.e., switching between the primary spatial symmetric mode and the secondary planar mode) solely at the singular configuration of $0^\circ$. This deterministic topological isolation effectively prevents any unexpected mode collapse during the intermediate motion, thereby providing a highly reliable and predictable foundation for subsequent multi-mode gait planning.
+
+In summary, the comprehensive kinematic and singularity analyses rigorously establish that the proposed spatial mechanism inherently possesses one global DOF, a single unified home singularity (at $0^\circ$), and two distinct single-DOF operational branches. At this critical singular configuration, the instantaneous mobility of the mechanism temporarily increases to 2. This transient state acts as a kinematic gateway, empowering the system to smoothly switch between the two decoupled motion branches simply by reassigning the active driving joint. 
+
+Such a remarkable reconfigurable property holds immense potential for advanced engineering applications. Leveraging this inherent bifurcation behavior, we creatively conceptualize and develop the linkage into a novel underactuated mobile robot. By exploiting the kinematic singularities, the robot can achieve diverse locomotion capabilities with a minimized number of actuators. The subsequent section will delve into the mechanical design, prototype implementation, and multi-mode gait planning of this robotic platform.
+
+\section{Prototype Development and Multi-Mode Gait Validation}
+
+\subsection{Physical Embodiment and Redundant Actuation Scheme}
+Based on the explicit kinematic theoretical derivations, the physical structural embodiment of the proposed underactuated mobile robot was developed. To contend with the physical constraints of single-motor dimensions and torque saturation, a redundant actuation scheme was implemented, wherein multiple low-torque motors cooperatively collaborate to fulfill the prescribed trajectory movements when a single actuator is insufficient. 
+
+The necessity of this redundant actuation scheme is fundamentally driven by the kinetostatic transmission characteristics of the mechanism. According to the principle of virtual work, the required actuating torque $\boldsymbol{\tau}$ relates to the external wrench $\boldsymbol{F}$ via the Jacobian matrix $\boldsymbol{J}$ as $\boldsymbol{\tau} = \boldsymbol{J}^T \boldsymbol{F}$. As the mechanism approaches a singular configuration ($\det(\boldsymbol{J}) \to 0$), the transmission angle severely deteriorates, causing a theoretical torque explosion for a single actuator. Therefore, distributing the actuation effort cooperatively across four redundant motors is mechanically imperative to safely bypass the dead-points.
+
+The overall structural layout of the physical prototype is illustrated in Fig. \ref{fig:physical_layout}. The actuated joints are strategically bifurcated into planar-mode active joints ($v_1$, $v_7$) and spatial-mode active joints ($v_2$, $v_6$). To minimize the system's structural inertia while guaranteeing essential operational rigidity, the main chassis and link components were fabricated using 3D-printed polylactic acid combined with carbon fiber (PLA-CF) composites. Specifically, the links $r_{link3}$ and $L_{link3}$ serve as the primary ground-contact elements to provide the driving thrust and traction.
+
+However, before proceeding to the final physical control deployment, it is imperative to rigorously verify whether this designed physical structure can reliably execute the theoretically predicted multi-branch locomotion. To this end, a high-fidelity 3D virtual prototype derived from the detailed CAD model was developed, and multi-body dynamic simulations were conducted. 
+
+By actuating the virtual model along both the primary spatial symmetric branch and the secondary degenerated planar branch, the discrete angular trajectories of the passive joints were extracted. As illustrated in Fig. \ref{fig:simulation_validation}, the simulated data points (represented by discrete markers) exhibit excellent agreement with the theoretical continuous curves (represented by solid lines) derived from our Fourier series models. This perfect alignment not only strictly validates the correctness of the complex multi-branch kinematic derivations but also confirms the physical realizability of the mechanism's deterministic bifurcation at the singular configurations using the proposed redundant actuation scheme.
+\subsection{Structural Embodiment of the Underactuated Mobile Robot}
+Building upon the validated theoretical foundation, the abstract spatial linkage is creatively transformed into a novel underactuated mobile robot. The core design philosophy is to exploit the mechanism's inherent multi-branch topological reconfigurability to achieve diverse locomotion gaits with a minimized number of actuators. 
+
+% 接下来你可以开始描述机器人的具体零件、电机安装位置、轮子/腿的设计等...
+
+\section{Mechanical Design and Multi-Mode Gait Planning}
+
+% 这里开始写你第三章的正文...
+\section{Example Matrix Calculation at $q_2 = 0^\circ$}
+
+% 插入表格的环境
+\begin{table}[width=.9\linewidth,cols=4,pos=h]
+\caption{This is a test caption.}\label{tbl1}
+\begin{tabular*}{\tblwidth}{@{} LLLL@{} }
+\toprule 
+Col 1 & Col 2 & Col 3 & Col4\\
+\midrule 
+12345 & 12345 & 123 & 12345 \\
+12345 & 12345 & 123 & 12345 \\
+\bottomrule 
+\end{tabular*}
+\end{table}
+
+\section[Theorem and ...]{Theorem and theorem like environments}
+\newtheorem{theorem}{Theorem}
+
+\begin{theorem}
+For system (8), consensus can be achieved with $\|T_{\omega z}$ ...
+\end{theorem}
+
+\appendix
+\section{My Appendix}
+Appendix sections are coded under \verb+\appendix+.
+
+\printcredits
+
+%================ 参考文献区 ================%
+\bibliographystyle{cas-model2-names} 
+\bibliography{cas-refs}
+
+%================ 作者简介区 ================%
+
+% 无照片版
+\bio{}
+Author biography without author photo. Author biography.
+\endbio
+
+% 带照片版
+% \bio{figs/cas-pic1} % <--- 原图片路径已注释
+\bio{} % [占位符：如果要放照片，改为 \bio{你的图片路径}（注意不需要加后缀名），例如 \bio{figs/author1}]
+Author biography with author photo. Author biography.
+\endbio
+
+\end{document}

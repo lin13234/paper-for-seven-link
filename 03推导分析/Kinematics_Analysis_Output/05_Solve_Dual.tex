@@ -1,0 +1,49 @@
+\section{Step 5: Dual Driver Solutions}
+Attempting to solve with dual input joints (checking for redundancy).
+\subsection{Input: $\theta_{3}, \theta_{5}$}
+\begin{enumerate}
+\item \textbf{Solve} $\theta_{4}$ from Permutation 3, Element (p_{y}) \\
+Form: $A\sin(\theta_{4}) + B\cos(\theta_{4}) + C = 0$ \\
+Half-angle substitution $t=\tan(\frac{\theta_{4}}{2}) \Rightarrow (C-B)t^2 + 2At + (B+C) = 0$ \\
+{\scriptsize \begin{dgroup*} \begin{dmath*} A=0 \end{dmath*}\begin{dmath*} B=0 \end{dmath*}\begin{dmath*} C=5 L \left(\frac{\sqrt{2} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{5} + \frac{\pi}{4} \right)}}{2} - 1\right) \end{dmath*} \end{dgroup*} }
+\item \textbf{Solve} $\theta_{7}$ from Permutation 2, Element (a_{z}) \\
+Form: $A\sin(\theta_{7}) + B\cos(\theta_{7}) + C = 0$ \\
+Half-angle substitution $t=\tan(\frac{\theta_{7}}{2}) \Rightarrow (C-B)t^2 + 2At + (B+C) = 0$ \\
+{\scriptsize \begin{dgroup*} \begin{dmath*} A=0 \end{dmath*}\begin{dmath*} B=1 \end{dmath*}\begin{dmath*} C=\sin{\left(\theta_{3} \right)} \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{4} \right)} - \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{5} \right)} \end{dmath*} \end{dgroup*} }
+\item \textbf{Solve} $\theta_{6}$ from Permutation 1, Element (n_{z}) \\
+Form: $A\sin(\theta_{6}) + B\cos(\theta_{6}) + C = 0$ \\
+Half-angle substitution $t=\tan(\frac{\theta_{6}}{2}) \Rightarrow (C-B)t^2 + 2At + (B+C) = 0$ \\
+{\scriptsize \begin{dgroup*} \begin{dmath*} A=0 \end{dmath*}\begin{dmath*} B=0 \end{dmath*}\begin{dmath*} C=\tilde{\infty} \left(\frac{\sin^{2}{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)}} - \frac{\sin{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)}}\right) + \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} + \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{7} \right)} \end{dmath*} \end{dgroup*} }
+\item \textbf{Solve} $\theta_{2}$ from Permutation 4, Element (p_{x}) \\
+Form: $A\sin(\theta_{2}) + B\cos(\theta_{2}) + C = 0$ \\
+Half-angle substitution $t=\tan(\frac{\theta_{2}}{2}) \Rightarrow (C-B)t^2 + 2At + (B+C) = 0$ \\
+{\scriptsize \begin{dgroup*} \begin{dmath*} A=0 \end{dmath*}\begin{dmath*} B=0 \end{dmath*}\begin{dmath*} C=L \left(5 \sin{\left(\theta_{3} \right)} + 2 \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} - 2 \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{4} \right)} + \frac{5 \sqrt{2} \sin{\left(\theta_{5} + \frac{\pi}{4} \right)} \cos{\left(\theta_{4} \right)}}{2} - 2 \cos{\left(\theta_{3} \right)} - 2 \cos{\left(\theta_{4} \right)} \cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} + \frac{5 \cos{\left(\theta_{4} \right)}}{2}\right) \end{dmath*} \end{dgroup*} }
+\item \textbf{Solve} $\theta_{1}$ from Permutation 1, Element (n_{x}) \\
+Form: $A\sin(\theta_{1}) + B\cos(\theta_{1}) + C = 0$ \\
+Half-angle substitution $t=\tan(\frac{\theta_{1}}{2}) \Rightarrow (C-B)t^2 + 2At + (B+C) = 0$ \\
+{\scriptsize \begin{dgroup*} \begin{dmath*} A=\sin{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} - \sin{\left(\theta_{4} \right)} \cos{\left(\theta_{2} \right)} \end{dmath*}\begin{dmath*} B=- \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{4} \right)} - \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} \end{dmath*}\begin{dmath*} C=- \frac{\sin^{2}{\left(\theta_{5} \right)} \sin^{2}{\left(\theta_{6} \right)} \sin^{2}{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} + \frac{\sin^{2}{\left(\theta_{5} \right)} \sin^{2}{\left(\theta_{6} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} + \frac{\sin^{2}{\left(\theta_{5} \right)} \sin^{2}{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} - \frac{\sin^{2}{\left(\theta_{5} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} + \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)} + \frac{\sin^{2}{\left(\theta_{6} \right)} \sin^{2}{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} - \frac{\sin^{2}{\left(\theta_{6} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} - \frac{\sin^{2}{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} + \frac{1}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} \end{dmath*} \end{dgroup*} }
+\end{enumerate}
+\subsection{Input: $\theta_{4}, \theta_{5}$}
+\begin{enumerate}
+\item \textbf{Solve} $\theta_{3}$ from Permutation 3, Element (p_{y}) \\
+Form: $A\sin(\theta_{3}) + B\cos(\theta_{3}) + C = 0$ \\
+Half-angle substitution $t=\tan(\frac{\theta_{3}}{2}) \Rightarrow (C-B)t^2 + 2At + (B+C) = 0$ \\
+{\scriptsize \begin{dgroup*} \begin{dmath*} A=0 \end{dmath*}\begin{dmath*} B=0 \end{dmath*}\begin{dmath*} C=- 5 L \end{dmath*} \end{dgroup*} }
+\item \textbf{Solve} $\theta_{7}$ from Permutation 2, Element (a_{z}) \\
+Form: $A\sin(\theta_{7}) + B\cos(\theta_{7}) + C = 0$ \\
+Half-angle substitution $t=\tan(\frac{\theta_{7}}{2}) \Rightarrow (C-B)t^2 + 2At + (B+C) = 0$ \\
+{\scriptsize \begin{dgroup*} \begin{dmath*} A=0 \end{dmath*}\begin{dmath*} B=1 \end{dmath*}\begin{dmath*} C=\sin{\left(\theta_{3} \right)} \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{4} \right)} - \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{5} \right)} \end{dmath*} \end{dgroup*} }
+\item \textbf{Solve} $\theta_{6}$ from Permutation 1, Element (n_{z}) \\
+Form: $A\sin(\theta_{6}) + B\cos(\theta_{6}) + C = 0$ \\
+Half-angle substitution $t=\tan(\frac{\theta_{6}}{2}) \Rightarrow (C-B)t^2 + 2At + (B+C) = 0$ \\
+{\scriptsize \begin{dgroup*} \begin{dmath*} A=0 \end{dmath*}\begin{dmath*} B=0 \end{dmath*}\begin{dmath*} C=\tilde{\infty} \left(\frac{\sin^{2}{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)}} - \frac{\sin{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)}}\right) + \sin{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} + \sin{\left(\theta_{5} \right)} \cos{\left(\theta_{7} \right)} \end{dmath*} \end{dgroup*} }
+\item \textbf{Solve} $\theta_{2}$ from Permutation 4, Element (p_{x}) \\
+Form: $A\sin(\theta_{2}) + B\cos(\theta_{2}) + C = 0$ \\
+Half-angle substitution $t=\tan(\frac{\theta_{2}}{2}) \Rightarrow (C-B)t^2 + 2At + (B+C) = 0$ \\
+{\scriptsize \begin{dgroup*} \begin{dmath*} A=0 \end{dmath*}\begin{dmath*} B=0 \end{dmath*}\begin{dmath*} C=L \left(5 \sin{\left(\theta_{3} \right)} + 2 \sin{\left(\theta_{4} \right)} \sin{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} - 2 \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)} \cos{\left(\theta_{4} \right)} + \frac{5 \sqrt{2} \sin{\left(\theta_{5} + \frac{\pi}{4} \right)} \cos{\left(\theta_{4} \right)}}{2} - 2 \cos{\left(\theta_{3} \right)} - 2 \cos{\left(\theta_{4} \right)} \cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)} + \frac{5 \cos{\left(\theta_{4} \right)}}{2}\right) \end{dmath*} \end{dgroup*} }
+\item \textbf{Solve} $\theta_{1}$ from Permutation 1, Element (n_{x}) \\
+Form: $A\sin(\theta_{1}) + B\cos(\theta_{1}) + C = 0$ \\
+Half-angle substitution $t=\tan(\frac{\theta_{1}}{2}) \Rightarrow (C-B)t^2 + 2At + (B+C) = 0$ \\
+{\scriptsize \begin{dgroup*} \begin{dmath*} A=\sin{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} - \sin{\left(\theta_{4} \right)} \cos{\left(\theta_{2} \right)} \end{dmath*}\begin{dmath*} B=- \sin{\left(\theta_{2} \right)} \sin{\left(\theta_{4} \right)} - \cos{\left(\theta_{2} \right)} \cos{\left(\theta_{3} \right)} \cos{\left(\theta_{4} \right)} \end{dmath*}\begin{dmath*} C=- \frac{\sin^{2}{\left(\theta_{5} \right)} \sin^{2}{\left(\theta_{6} \right)} \sin^{2}{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} + \frac{\sin^{2}{\left(\theta_{5} \right)} \sin^{2}{\left(\theta_{6} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} + \frac{\sin^{2}{\left(\theta_{5} \right)} \sin^{2}{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} - \frac{\sin^{2}{\left(\theta_{5} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} + \sin{\left(\theta_{5} \right)} \sin{\left(\theta_{7} \right)} + \frac{\sin^{2}{\left(\theta_{6} \right)} \sin^{2}{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} - \frac{\sin^{2}{\left(\theta_{6} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} - \frac{\sin^{2}{\left(\theta_{7} \right)}}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} + \frac{1}{\cos{\left(\theta_{5} \right)} \cos{\left(\theta_{6} \right)} \cos{\left(\theta_{7} \right)}} \end{dmath*} \end{dgroup*} }
+\end{enumerate}
+\newpage

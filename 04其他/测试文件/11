@@ -1,0 +1,7 @@
+\documentclass{article}
+\begin{document}
+Hello LaTeX 世界！
+nniahaoshijie
+这是一个简单测试。
+\end{document}
+\coordinate (id) at position;
