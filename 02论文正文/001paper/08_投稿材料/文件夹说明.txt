@@ -1,0 +1,11 @@
+本目录用于存放投稿时需要提交或填写的辅助材料。
+
+建议内容：
+1. Cover letter。
+2. Highlights。
+3. Graphical abstract。
+4. Declaration of competing interest。
+5. Author contributions。
+6. Response to reviewers。
+
+当前状态：已建立目录，尚未放入投稿材料。

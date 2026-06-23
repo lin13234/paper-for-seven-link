@@ -1,0 +1,8 @@
+本目录用于存放参考文献资料。
+
+建议内容：
+1. paper.bib 或 references.bib。
+2. Zotero、EndNote、NoteExpress 导出的 ris、enw、bib 文件。
+3. 关键论文 PDF 或文献阅读笔记。
+
+当前状态：已建立目录，尚未放入参考文献文件。
