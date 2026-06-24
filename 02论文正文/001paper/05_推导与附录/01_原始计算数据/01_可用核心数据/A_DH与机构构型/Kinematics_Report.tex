@@ -1,0 +1,63 @@
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+\title{Robot Kinematics Analysis Report (MDH)}
+\author{Kinematics Assistant}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Modified DH Parameters}
+The kinematic structure of the robot is defined by the following Modified DH parameters (Craig's Convention). The transformation matrix $T_i^{i-1}$ is calculated as:
+\begin{equation}
+T_i^{i-1} = Rot_x(\alpha_{i-1}) Trans_x(a_{i-1}) Rot_z(\theta_i) Trans_z(d_i)
+\end{equation}
+
+\begin{table}[h]
+    \centering
+    \caption{MDH Parameters Table}
+    \begin{tabular}{ccccc}
+        \toprule
+        Joint $i$ & $\alpha_{i-1} (^\circ)$ & $a_{i-1}$ (mm) & $d_i$ (mm) & $\theta_{offset} (^\circ)$ \\
+        \midrule
+        1 & 0.0 & 40.0 & 0.0 & 0.0 \\
+        2 & 90.0 & 80.0 & 100.0 & 0.0 \\
+        3 & 90.0 & 0.0 & 0.0 & 180.0 \\
+        4 & 90.0 & 100.0 & 0.0 & 0.0 \\
+        5 & 90.0 & 100.0 & 0.0 & 0.0 \\
+        6 & 90.0 & 0.0 & 100.0 & 180.0 \\
+        7 & 90.0 & 80.0 & 0.0 & 0.0 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{Kinematics Visualization}
+The following figure illustrates the initial configuration and the coordinate frames of each joint.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{DH_Result_Images/kinematics_MDH.png}
+    \caption{3D Kinematic Chain Visualization}
+\end{figure}
+
+\section{Fourier Series Trajectory Representation}
+For smooth trajectory planning, the joint position $q(t)$ is represented using a finite Fourier series:
+\begin{equation}
+q(t) = a_0 + \sum_{n=1}^{N} \left( a_n \cos(n\omega_f t) + b_n \sin(n\omega_f t) \right)
+\end{equation}
+Where:
+\begin{itemize}
+    \item $a_0$: DC component (average position).
+    \item $a_n, b_n$: Fourier coefficients.
+    \item $\omega_f$: Fundamental frequency of the motion.
+\end{itemize}
+
+\end{document}
