@@ -1,4 +1,4 @@
-# MMT 图形标注与 Inkscape 规范
+﻿# MMT 图形标注与 Inkscape 规范
 
 本文档用于统一本论文所有机构图、拓扑图、仿真图和数据图的标注风格。目标期刊为 *Mechanism and Machine Theory*，图形风格应保持工程学术图的清晰、克制和可复现，不追求过度渲染效果。
 
@@ -24,10 +24,10 @@ KeyShot / MuJoCo / SolidWorks 渲染底图
 图内英文标注统一使用：
 
 ```text
-Arial
+Times New Roman
 ```
 
-不建议在同一张图里混用 Arial、Times New Roman、微软雅黑、宋体等字体。
+不建议在同一张图里混用 Times New Roman、Times New Roman、微软雅黑、宋体等字体。
 
 数学符号建议：
 
@@ -72,14 +72,14 @@ Custom size: 170 mm x 110 mm
 Figure 1 建议作为双栏图使用，因此按照双栏图字号设置。
 
 ```text
-关节编号 J1-J7: 10 pt, Arial Bold
-坐标轴 X/Y/Z: 9 pt, Arial
-坐标原点 O: 9 pt, Arial
-Symmetry plane: 9 pt, Arial
-Planar mode / Spatial mode: 9 pt, Arial
-子图编号 (a), (b), (c): 11 pt, Arial Bold
-普通短标签: 9 pt, Arial
-辅助说明文字: 8-9 pt, Arial
+关节编号 J1-J7: 10 pt, Times New Roman Bold
+坐标轴 X/Y/Z: 9 pt, Times New Roman
+坐标原点 O: 9 pt, Times New Roman
+Symmetry plane: 9 pt, Times New Roman
+Planar mode / Spatial mode: 9 pt, Times New Roman
+子图编号 (a), (b), (c): 11 pt, Times New Roman Bold
+普通短标签: 9 pt, Times New Roman
+辅助说明文字: 8-9 pt, Times New Roman
 ```
 
 如果某张图最终作为单栏图使用，可相应减小字号：
@@ -88,7 +88,7 @@ Planar mode / Spatial mode: 9 pt, Arial
 关节编号 J1-J7: 9 pt
 坐标轴 X/Y/Z: 8 pt
 普通说明文字: 8 pt
-子图编号 (a), (b): 10 pt, Arial Bold
+子图编号 (a), (b): 10 pt, Times New Roman Bold
 箭头或轴线说明: 7.5-8 pt
 ```
 
@@ -235,11 +235,11 @@ figure1_mechanism_final_600dpi.png
 
 ```text
 Canvas: 170 mm x 110 mm
-Font: Arial
-J1-J7: 10 pt, Arial Bold
-Normal labels: 9 pt, Arial
-Coordinate labels: 9 pt, Arial
-Subfigure labels: 11 pt, Arial Bold
+Font: Times New Roman
+J1-J7: 10 pt, Times New Roman Bold
+Normal labels: 9 pt, Times New Roman
+Coordinate labels: 9 pt, Times New Roman
+Subfigure labels: 11 pt, Times New Roman Bold
 Joint axis line: 1.0 pt, blue dashed line
 Arrow line: 0.9 pt
 Symmetry plane: #9EC7E8, opacity 15%-20%
@@ -492,3 +492,4 @@ KeyShot 渲染机构底图
 -> Inkscape 添加标注
 -> 导出 PDF + SVG + 600 dpi PNG
 ```
+
