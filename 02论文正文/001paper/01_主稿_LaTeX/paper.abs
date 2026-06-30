@@ -1,1 +1,17 @@
-This template helps you to create a properly formatted \LaTeX\ manuscript.
+This paper presents a plane-symmetric spatial 7R closed-chain mechanism for
+reconfigurable underactuated locomotion. Screw-system analysis and a modified
+Gr\"ubler--Kutzbach criterion show that the mechanism has one global degree of
+freedom. A passive-Jacobian formulation combined with singular value
+decomposition identifies two one-degree-of-freedom motion branches: a spatial
+symmetric branch and a degenerated planar branch. The branches intersect at
+singular configurations at which the instantaneous mobility increases and the
+active-joint assignment can be changed. Numerical continuation verifies the
+branch geometry and distinguishes true singularities from ill-conditioned
+non-singular configurations. A four-motor prototype architecture is then
+represented in MuJoCo and controlled through a two-stage curriculum-learning
+procedure. The first stage discovers the kinematic branches on a test rig and
+fits their joint coordination using Fourier series; the second stage uses
+these fitted relations as references for ground-locomotion learning. The
+resulting policies produce multiple locomotion modes while remaining
+consistent with the mechanism-level constraints. Physical experiments are
+planned to quantify branch switching and locomotion performance.
