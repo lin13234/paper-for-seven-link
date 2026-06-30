@@ -1,6 +1,6 @@
 # LaTeX SyncTeX Workflow Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [x]`) syntax for tracking.
 
 **Goal:** Build a VS Code and LaTeX Workshop workflow that compiles the current paper, previews it in the internal PDF viewer, and supports SyncTeX forward and inverse navigation.
 
@@ -32,7 +32,7 @@
 - Consumes: optional `-Main <path>`, `-Watch`, and `-OpenPdf` parameters.
 - Produces: `paper.pdf`, `paper.synctex.gz`, and the original `latexmk` exit code.
 
-- [ ] **Step 1: Write the failing script acceptance test**
+- [x] **Step 1: Write the failing script acceptance test**
 
 Create `tools/tests/test_latex_scripts.ps1` with assertions that:
 
@@ -49,7 +49,7 @@ if (-not (Test-Path -LiteralPath $clean)) {
 }
 ```
 
-- [ ] **Step 2: Run the test and confirm the missing-script failure**
+- [x] **Step 2: Run the test and confirm the missing-script failure**
 
 Run:
 
@@ -59,7 +59,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File tools/tests/test_latex_scrip
 
 Expected: non-zero exit with `Missing build script`.
 
-- [ ] **Step 3: Implement `tools/latex_build.ps1`**
+- [x] **Step 3: Implement `tools/latex_build.ps1`**
 
 Implement:
 
@@ -133,7 +133,7 @@ if ($OpenPdf -and -not $Watch) {
 exit 0
 ```
 
-- [ ] **Step 4: Implement `tools/latex_clean.ps1`**
+- [x] **Step 4: Implement `tools/latex_clean.ps1`**
 
 Implement the same main-path validation, then run:
 
@@ -148,7 +148,7 @@ try {
 exit $exitCode
 ```
 
-- [ ] **Step 5: Extend and run the script acceptance test**
+- [x] **Step 5: Extend and run the script acceptance test**
 
 Add checks for `latexmk` and the real build:
 
@@ -183,7 +183,7 @@ Run the test and expect exit code `0` with the success message.
 - Consumes: `tools/latex_build.ps1`, `tools/latex_clean.ps1`, LaTeX Workshop.
 - Produces: workspace tasks and internal-viewer SyncTeX configuration.
 
-- [ ] **Step 1: Write the failing configuration test**
+- [x] **Step 1: Write the failing configuration test**
 
 The test must require the three `.vscode` files and parse each after removing
 full-line `//` comments. It must assert:
@@ -197,7 +197,7 @@ $settings.'latex-workshop.synctex.afterBuild.enabled' -eq $true
 
 Expected initial result: failure because `.vscode/settings.json` is missing.
 
-- [ ] **Step 2: Allowlist workspace configuration in `.gitignore`**
+- [x] **Step 2: Allowlist workspace configuration in `.gitignore`**
 
 Replace the blanket `.vscode/` rule with:
 
@@ -208,7 +208,7 @@ Replace the blanket `.vscode/` rule with:
 !.vscode/extensions.json
 ```
 
-- [ ] **Step 3: Create `.vscode/settings.json`**
+- [x] **Step 3: Create `.vscode/settings.json`**
 
 Configure one `latexmk` tool and recipe:
 
@@ -244,7 +244,7 @@ Configure one `latexmk` tool and recipe:
 }
 ```
 
-- [ ] **Step 4: Create `.vscode/tasks.json` and `extensions.json`**
+- [x] **Step 4: Create `.vscode/tasks.json` and `extensions.json`**
 
 Define build, watch, and clean tasks using:
 
@@ -271,7 +271,7 @@ Define build, watch, and clean tasks using:
 The watch task adds `-Watch`; the clean task calls `latex_clean.ps1`.
 `extensions.json` recommends `james-yu.latex-workshop`.
 
-- [ ] **Step 5: Run the configuration acceptance test**
+- [x] **Step 5: Run the configuration acceptance test**
 
 Run:
 
@@ -291,7 +291,7 @@ Expected: exit code `0` and `VS Code LaTeX configuration test passed.`
 - Consumes: completed scripts and workspace settings.
 - Produces: verified commands and concise operating instructions.
 
-- [ ] **Step 1: Run build and artifact verification**
+- [x] **Step 1: Run build and artifact verification**
 
 Run:
 
@@ -308,7 +308,7 @@ Test-Path '02论文正文\001paper\01_主稿_LaTeX\paper.synctex.gz'
 
 Expected: both return `True`.
 
-- [ ] **Step 2: Verify failure reporting**
+- [x] **Step 2: Verify failure reporting**
 
 Run the build script with a nonexistent main file:
 
@@ -318,7 +318,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File tools/latex_build.ps1 -Main 
 
 Expected: non-zero exit and an absolute `LaTeX main file not found` path.
 
-- [ ] **Step 3: Write the usage guide**
+- [x] **Step 3: Write the usage guide**
 
 Document:
 
@@ -329,10 +329,10 @@ Document:
 - Terminal commands for build, watch, clean, and `-OpenPdf`;
 - troubleshooting when `.synctex.gz` is stale or the wrong PDF is open.
 
-- [ ] **Step 4: Run all acceptance tests**
+- [x] **Step 4: Run all acceptance tests**
 
 Run both test scripts and expect exit code `0`.
 
-- [ ] **Step 5: Mark completed plan checkboxes and review Git diff**
+- [x] **Step 5: Mark completed plan checkboxes and review Git diff**
 
 Confirm no manuscript source text changed during this implementation.
