@@ -18,6 +18,9 @@
 # OS / editor noise
 .DS_Store
 Thumbs.db
-.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/extensions.json
 .idea/
 .worktrees/
