@@ -112,9 +112,13 @@ The proposed mechanism is a spatial single-loop chain containing seven
 revolute joints. Its geometry is symmetric with respect to a plane that maps
 the corresponding links and joint axes on the two sides of the chain. The
 joint variables are denoted by
-\(\mathbf q=[q_1,q_2,\ldots,q_7]^T\). Joint~2 is selected as the input for
-tracking the spatial symmetric branch, whereas Joint~1 is used to parameterize
-the degenerated planar branch.
+\(\mathbf q=[q_1,q_2,\ldots,q_7]^T\). Owing to the plane-symmetric
+architecture, Joints~1, 2, 3, and 7 can each be selected as a kinematic input.
+To avoid redundant calculations, only one representative coordinate is used
+in each numerical continuation analysis. In the calculations reported below,
+Joint~3 parameterizes the spatial symmetric branch and Joint~2 parameterizes
+the degenerated planar branch. This computational choice does not restrict
+the physical actuation arrangement.
 
 \begin{figure}[htbp]
   \centering
@@ -126,29 +130,56 @@ the degenerated planar branch.
   \label{fig:mechanism}
 \end{figure}
 
-The plane-symmetric geometry is defined by the structural relations
+Following the joint numbering in Fig.~\ref{fig:mechanism}, the kinematic
+chain is described using the modified Denavit--Hartenberg (MDH) convention
 \begin{equation}
-\begin{aligned}
-\alpha_2&=\alpha_3=\alpha_4=\alpha_5=\alpha_6=\alpha_7,\\
-a_2&=a_7,\qquad
-a_4=a_5=\frac{a_1+a_2+a_7}{2},\\
-d_2&=d_6.
-\end{aligned}
-\label{eq:geometric_constraints}
+{}^{i-1}\mathbf T_i=
+R_x(\alpha_{i-1})T_x(a_{i-1})
+R_z(q_i+\theta_{i,0})T_z(d_i),
+\label{eq:mdh_transform}
 \end{equation}
-The current design uses
+where \(\theta_{i,0}\) denotes the zero-configuration angular offset. The
+complete parameters after the cyclic joint renumbering are listed in
+Table~\ref{tab:mdh_parameters}.
+
+\begin{table}[htbp]
+\centering
+\caption{Modified Denavit--Hartenberg parameters using the joint numbering
+adopted throughout this paper.}
+\label{tab:mdh_parameters}
+\begin{tabular}{ccccc}
+\toprule
+Joint \(i\) & \(\alpha_{i-1}\) & \(a_{i-1}\) (mm) &
+\(d_i\) (mm) & \(\theta_{i,0}\)\\
+\midrule
+1 & \(90^\circ\) & 80  & 0   & \(0^\circ\)\\
+2 & \(0^\circ\)  & 40  & 0   & \(0^\circ\)\\
+3 & \(90^\circ\) & 80  & 100 & \(0^\circ\)\\
+4 & \(90^\circ\) & 0   & 0   & \(180^\circ\)\\
+5 & \(90^\circ\) & 100 & 0   & \(0^\circ\)\\
+6 & \(90^\circ\) & 100 & 0   & \(0^\circ\)\\
+7 & \(90^\circ\) & 0   & 100 & \(180^\circ\)\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Equivalently, the non-redundant geometric relations are
 \begin{equation}
 \begin{aligned}
 &\alpha_1=0^\circ,\qquad
-\alpha_2=\cdots=\alpha_7=90^\circ,\\
-&a_1=40~\mathrm{mm},\quad a_2=a_7=80~\mathrm{mm},\quad
-a_4=a_5=100~\mathrm{mm},\\
-&d_2=d_6=100~\mathrm{mm}.
+\alpha_0=\alpha_2=\alpha_3=\alpha_4=\alpha_5=\alpha_6=90^\circ,\\
+&a_0=a_2=80~\mathrm{mm},\quad a_1=40~\mathrm{mm},\quad
+a_3=a_6=0,\quad a_4=a_5=100~\mathrm{mm},\\
+&d_3=d_7=100~\mathrm{mm},\qquad
+d_1=d_2=d_4=d_5=d_6=0,\\
+&\theta_{4,0}=\theta_{7,0}=180^\circ,\qquad
+\theta_{i,0}=0^\circ\quad(i\neq4,7).
 \end{aligned}
 \label{eq:design_parameters}
 \end{equation}
-\missing{Author input required: verify the complete D--H table, including
-the parameters not listed in Eq.~\eqref{eq:design_parameters}}
+In particular, \(a_3=d_4=0\) permits the origins \(O_3\) and \(O_4\) to
+coincide, while \(\alpha_3=90^\circ\) indicates that \(Z_3\) and \(Z_4\)
+remain orthogonal.
 
 \subsection{Screw-system-based mobility analysis}
 
@@ -180,18 +211,18 @@ where \(\mathbf T=[\mathbf R,\mathbf p;\mathbf 0^T,1]\).
 Representative screws from the current symbolic model are
 \begin{equation}
 \begin{aligned}
-\mathbf S_1&=\begin{bmatrix}0\\0\\1\\0\\0\\0\end{bmatrix},&
-\mathbf S_2&=\begin{bmatrix}0\\0\\1\\0\\-l\\0\end{bmatrix},\\
-\mathbf S_3&=\begin{bmatrix}
-\sin q_1\\-\cos q_1\\0\\0\\0\\-a-l\cos q_1
-\end{bmatrix},&
+\mathbf S_2&=\begin{bmatrix}0\\0\\1\\0\\0\\0\end{bmatrix},&
+\mathbf S_3&=\begin{bmatrix}0\\0\\1\\0\\-l\\0\end{bmatrix},\\
 \mathbf S_4&=\begin{bmatrix}
-\sin q_2\cos q_1\\
-\sin q_1\sin q_2\\
--\cos q_2\\
-(-a\sin q_1+b\cos q_1)\cos q_2\\
-(a\cos q_1+b\sin q_1+l)\cos q_2\\
-(b+l\sin q_1)\sin q_2
+\sin q_2\\-\cos q_2\\0\\0\\0\\-a-l\cos q_2
+\end{bmatrix},&
+\mathbf S_5&=\begin{bmatrix}
+\sin q_3\cos q_2\\
+\sin q_2\sin q_3\\
+-\cos q_3\\
+(-a\sin q_2+b\cos q_2)\cos q_3\\
+(a\cos q_2+b\sin q_2+l)\cos q_3\\
+(b+l\sin q_2)\sin q_3
 \end{bmatrix}.
 \end{aligned}
 \label{eq:representative_screws}
@@ -253,23 +284,25 @@ column associated with the selected input from \(\mathbf J\). Its
 invertibility determines whether the passive coordinates are locally unique
 functions of the input coordinate.
 
-For the spatial symmetric branch, Joint~2 is the input, and the matrix blocks
-are explicitly
+For the representative continuation of the spatial symmetric branch,
+Joint~3 is selected as the computational input, and the matrix blocks are
+explicitly
+\begin{equation}
+\mathbf J_a=\mathbf S_3,\qquad
+\mathbf J_p=
+\begin{bmatrix}
+\mathbf S_1&\mathbf S_2&\mathbf S_4&
+\mathbf S_5&\mathbf S_6&\mathbf S_7
+\end{bmatrix}.
+\label{eq:jacobian_partition_planar}
+\end{equation}
+For the representative continuation of the degenerated planar branch,
+Joint~2 is selected instead:
 \begin{equation}
 \mathbf J_a=\mathbf S_2,\qquad
 \mathbf J_p=
 \begin{bmatrix}
 \mathbf S_1&\mathbf S_3&\mathbf S_4&
-\mathbf S_5&\mathbf S_6&\mathbf S_7
-\end{bmatrix}.
-\label{eq:jacobian_partition_q2}
-\end{equation}
-For the degenerated planar branch with Joint~1 as input,
-\begin{equation}
-\mathbf J_a=\mathbf S_1,\qquad
-\mathbf J_p=
-\begin{bmatrix}
-\mathbf S_2&\mathbf S_3&\mathbf S_4&
 \mathbf S_5&\mathbf S_6&\mathbf S_7
 \end{bmatrix}.
 \label{eq:jacobian_partition_q1}
@@ -322,12 +355,12 @@ intersections.
 
 Along the spatial symmetric branch, the joint variables satisfy
 \begin{equation}
-q_7=q_1,\qquad q_6=-q_2,\qquad q_5=-q_3.
+q_1=q_2,\qquad q_7=-q_3,\qquad q_6=-q_4.
 \label{eq:spatial_symmetry}
 \end{equation}
 At a true singular configuration, the joint axes separate into the mutually
-orthogonal groups \(\{2,4,6\}\) and \(\{1,3,5,7\}\). Holding Joints
-\(\{2,4,6\}\) fixed leaves Joints \(\{1,3,5,7\}\) to form an equivalent
+orthogonal groups \(\{3,5,7\}\) and \(\{1,2,4,6\}\). Holding Joints
+\(\{3,5,7\}\) fixed leaves Joints \(\{1,2,4,6\}\) to form an equivalent
 planar four-bar chain. The mechanism can therefore depart from the
 singularity along either the spatial symmetric branch or the degenerated
 planar branch, depending on which joint group is actuated.
@@ -354,10 +387,10 @@ solution at the preceding input step initializes the next solve, thereby
 providing numerical continuation on one assembly branch and suppressing
 unintended jumps between branches.
 
-With Joint~2 as the input, the singular-value spectrum is evaluated over a
+With Joint~3 as the input, the singular-value spectrum is evaluated over a
 complete revolution. The available results identify true rank-deficient
-configurations near \(q_2=0^\circ\) and \(q_2=180^\circ\);
-\(q_2=360^\circ\) is physically identical to \(q_2=0^\circ\). Local minima
+configurations near \(q_3=0^\circ\) and \(q_3=180^\circ\);
+\(q_3=360^\circ\) is physically identical to \(q_3=0^\circ\). Local minima
 near \(90^\circ\) and \(270^\circ\) remain non-zero and are therefore
 classified as ill-conditioned configurations rather than additional
 singularities.
@@ -366,7 +399,7 @@ singularities.
   \centering
   \fbox{\parbox{0.86\linewidth}{\centering
   \missing{Figure placeholder: complete singular-value spectrum versus
-  \(q_2\), with true and pseudo-singular configurations annotated}}}
+  \(q_3\), with true and pseudo-singular configurations annotated}}}
   \caption{Singular values of the passive Jacobian along the spatial
   symmetric branch.}
   \label{fig:svd_q2}
@@ -379,12 +412,12 @@ numbers consistently}
 \subsection{Spatial symmetric branch}
 
 The continued solutions form a smooth one-dimensional trajectory parameterized
-by \(q_2\). Pairwise comparisons of the joint coordinates confirm the
+by \(q_3\). Pairwise comparisons of the joint coordinates confirm the
 symmetry relations in Eq.~\eqref{eq:spatial_symmetry}. Fourier series provide
 a compact representation of the numerical joint trajectories,
 \begin{equation}
-\hat q_i(q_2)=c_{i,0}+
-\sum_{k=1}^{K}\left[c_{i,k}\cos(kq_2)+s_{i,k}\sin(kq_2)\right],
+\hat q_i(q_3)=c_{i,0}+
+\sum_{k=1}^{K}\left[c_{i,k}\cos(kq_3)+s_{i,k}\sin(kq_3)\right],
 \label{eq:fourier_general}
 \end{equation}
 where the coefficients are fitted to the continued solutions. These fits are
@@ -394,7 +427,7 @@ learning; they are not treated as exact analytical closure solutions.
 \begin{figure}[htbp]
   \centering
   \fbox{\parbox{0.86\linewidth}{\centering
-  \missing{Figure placeholder: passive joint angles versus \(q_2\), symmetry
+  \missing{Figure placeholder: passive joint angles versus \(q_3\), symmetry
   relation plots, and Fourier-fit errors}}}
   \caption{Numerical joint trajectories and symmetry relations of the spatial
   symmetric branch.}
@@ -406,9 +439,9 @@ error, and coefficient units}
 
 \subsection{Degenerated planar branch and branch intersections}
 
-Starting from a singular configuration and selecting Joint~1 as the input
-tracks the degenerated planar branch. Joints~2, 4, and 6 remain fixed within
-numerical tolerance, whereas Joints~1, 3, 5, and 7 execute the equivalent
+Starting from a singular configuration and selecting Joint~2 as the input
+tracks the degenerated planar branch. Joints~3, 5, and 7 remain fixed within
+numerical tolerance, whereas Joints~1, 2, 4, and 6 execute the equivalent
 planar four-bar motion. The existing calculations show one closed
 one-degree-of-freedom branch, but the complete signed angle relations for this
 branch must be rechecked before they are stated as exact constraints.
