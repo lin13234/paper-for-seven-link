@@ -30,7 +30,8 @@ $mainPath = if ([string]::IsNullOrWhiteSpace($Main)) {
     $candidates = @(
         Get-ChildItem -LiteralPath $workspaceRoot -Recurse -File -Filter 'paper.tex' |
             Where-Object {
-                $_.FullName -match '[\\/]001paper[\\/].*_LaTeX[\\/]paper\.tex$'
+                $_.FullName -match '[\\/]001paper[\\/].*_LaTeX[\\/]paper\.tex$' -and
+                $_.FullName -notmatch '[\\/]\.worktrees[\\/]'
             }
     )
     if ($candidates.Count -ne 1) {
