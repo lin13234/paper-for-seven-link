@@ -118,15 +118,19 @@ To avoid redundant calculations, only one representative coordinate is used
 in each numerical continuation analysis. In the calculations reported below,
 Joint~3 parameterizes the spatial symmetric branch and Joint~2 parameterizes
 the degenerated planar branch. This computational choice does not restrict
-the physical actuation arrangement.
+the physical actuation arrangement. In the prototype, the four candidate
+input joints are organized into the two symmetric motor groups
+\(\{\mathrm{J1},\mathrm{J2}\}\) and \(\{\mathrm{J3},\mathrm{J7}\}\);
+selecting a single input in the kinematic calculation therefore represents a
+parameterization choice rather than a reduction of the installed actuation.
 
 \begin{figure}[htbp]
   \centering
-  \fbox{\parbox{0.86\linewidth}{\centering
-  \missing{Figure placeholder: mechanism topology, J1--J7, symmetry plane,
-  global frame, and initial configuration}}}
-  \caption{Architecture and initial configuration of the plane-symmetric
-  spatial 7R mechanism.}
+  \includegraphics[width=0.95\linewidth]{figs/fig1dh.pdf}
+  \caption{Architecture and kinematic description of the plane-symmetric
+  spatial 7R mechanism. (a) Joint numbering, symmetry plane, and the two
+  physical motor groups. (b) Joint-axis and angular-coordinate assignment
+  used in the modified Denavit--Hartenberg model.}
   \label{fig:mechanism}
 \end{figure}
 
@@ -139,8 +143,8 @@ R_z(q_i+\theta_{i,0})T_z(d_i),
 \label{eq:mdh_transform}
 \end{equation}
 where \(\theta_{i,0}\) denotes the zero-configuration angular offset. The
-complete parameters after the cyclic joint renumbering are listed in
-Table~\ref{tab:mdh_parameters}.
+complete parameters consistent with the joint labels in
+Fig.~\ref{fig:mechanism} are listed in Table~\ref{tab:mdh_parameters}.
 
 \begin{table}[htbp]
 \centering
@@ -179,7 +183,9 @@ d_1=d_2=d_4=d_5=d_6=0,\\
 \end{equation}
 In particular, \(a_3=d_4=0\) permits the origins \(O_3\) and \(O_4\) to
 coincide, while \(\alpha_3=90^\circ\) indicates that \(Z_3\) and \(Z_4\)
-remain orthogonal.
+remain orthogonal. This MDH model supplies both the finite loop-closure
+transformations and the joint-axis geometry required for the screw-system
+analysis below.
 
 \subsection{Screw-system-based mobility analysis}
 
@@ -257,6 +263,10 @@ M=d(n-g-1)+\sum_{i=1}^{g}f_i
 Thus, the mechanism has one global degree of freedom away from singular
 configurations. The complete twist expressions are reserved for the
 supplementary derivation because their length obscures the mobility argument.
+This mobility count establishes the dimension of regular motion but does not
+identify how the joint coordinates are coupled or where that coupling ceases
+to be locally unique. These questions are addressed through the differentiated
+loop-closure equations.
 
 \subsection{Closed-loop kinematic formulation}
 
@@ -294,7 +304,7 @@ explicitly
 \mathbf S_1&\mathbf S_2&\mathbf S_4&
 \mathbf S_5&\mathbf S_6&\mathbf S_7
 \end{bmatrix}.
-\label{eq:jacobian_partition_planar}
+\label{eq:jacobian_partition_spatial}
 \end{equation}
 For the representative continuation of the degenerated planar branch,
 Joint~2 is selected instead:
@@ -305,8 +315,11 @@ Joint~2 is selected instead:
 \mathbf S_1&\mathbf S_3&\mathbf S_4&
 \mathbf S_5&\mathbf S_6&\mathbf S_7
 \end{bmatrix}.
-\label{eq:jacobian_partition_q1}
+\label{eq:jacobian_partition_planar}
 \end{equation}
+The two partitions describe the same closed chain under different local
+parameterizations. They are retained separately because each one is used to
+continue a different motion branch from the shared singular configurations.
 
 \subsection{SVD-based singularity analysis}
 
@@ -327,7 +340,10 @@ occurs when
 \end{equation}
 The number of zero singular values gives the dimension added to the
 instantaneous null space. Accordingly, a rank loss by one raises the
-instantaneous mobility from one to two at the branch intersection.
+instantaneous mobility from one to two at a candidate branch intersection.
+The SVD is therefore used as a local rank-loss test, whereas numerical
+continuation of both branches is used in Section~3 to confirm that the
+rank-deficient configuration is also a global manifold intersection.
 
 In numerical calculations, a small singular value alone is insufficient to
 establish a bifurcation. A configuration is classified as ill-conditioned or
@@ -361,9 +377,11 @@ q_1=q_2,\qquad q_7=-q_3,\qquad q_6=-q_4.
 At a true singular configuration, the joint axes separate into the mutually
 orthogonal groups \(\{3,5,7\}\) and \(\{1,2,4,6\}\). Holding Joints
 \(\{3,5,7\}\) fixed leaves Joints \(\{1,2,4,6\}\) to form an equivalent
-planar four-bar chain. The mechanism can therefore depart from the
-singularity along either the spatial symmetric branch or the degenerated
-planar branch, depending on which joint group is actuated.
+planar four-bar chain. The rank-deficient configuration consequently admits
+two locally allowable departure directions: one continues the spatial
+symmetric motion, whereas the other enters the degenerated planar motion.
+Exciting the corresponding joint group selects which tangent direction is
+followed, providing the kinematic basis for branch reconfiguration.
 
 \begin{figure}[htbp]
   \centering
@@ -402,7 +420,7 @@ singularities.
   \(q_3\), with true and pseudo-singular configurations annotated}}}
   \caption{Singular values of the passive Jacobian along the spatial
   symmetric branch.}
-  \label{fig:svd_q2}
+  \label{fig:svd_q3}
 \end{figure}
 
 \missing{Evidence needed: regenerate the singularity table from the final
