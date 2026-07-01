@@ -1,0 +1,125 @@
+\documentclass[tikz,border=4pt]{standalone}
+
+% 使用 XeLaTeX 编译，以保持论文中的英文字体和数学字体一致。
+\usepackage{fontspec}
+\usepackage[english, bidi=basic, provide=*]{babel}
+\babelprovide[import, onchar=ids fonts]{english}
+\babelfont{rm}{Noto Serif}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, calc}
+
+\begin{document}
+
+\begin{tikzpicture}[
+    node distance=12mm and 22mm,
+    every node/.style={text=black},
+    process/.style={
+        rectangle,
+        draw=black,
+        line width=0.8pt,
+        fill=blue!6,
+        text width=78mm,
+        align=center,
+        rounded corners=2pt,
+        minimum height=16mm,
+        inner sep=4pt,
+        font=\normalsize
+    },
+    decision/.style={
+        diamond,
+        aspect=2.35,
+        draw=black,
+        line width=0.8pt,
+        fill=white,
+        text width=45mm,
+        align=center,
+        minimum height=24mm,
+        inner xsep=1pt,
+        inner ysep=2pt,
+        font=\small
+    },
+    outcome/.style={
+        rectangle,
+        draw=black,
+        line width=0.8pt,
+        text width=65mm,
+        align=left,
+        rounded corners=2pt,
+        minimum height=24mm,
+        inner sep=7pt,
+        font=\small
+    },
+    true outcome/.style={outcome, fill=red!10},
+    pseudo outcome/.style={outcome, fill=yellow!20},
+    regular outcome/.style={
+        outcome,
+        fill=green!10,
+        text width=72mm
+    },
+    flow arrow/.style={
+        -{Stealth[length=2.2mm,width=1.5mm]},
+        line width=0.8pt,
+        draw=gray!80!black
+    },
+    branch label/.style={
+        font=\footnotesize,
+        fill=white,
+        inner sep=1.5pt
+    }
+]
+
+% 奇异值分解及判据。
+\node (svd) [process] {
+    \textbf{Singular Value Decomposition (SVD)}\\[1mm]
+    Compute singular values $\sigma_i$ and condition number $\kappa(J_p)$
+};
+
+\node (dec1) [decision, below=of svd] {
+    Is $\sigma_{\min}(J_p)\leq\varepsilon$?
+};
+
+\node (trueSing) [true outcome, right=30mm of dec1] {
+    \centering\textbf{True Singular Candidate}\par
+    \vspace{1.5mm}
+    \raggedright
+    $\bullet$ Rank deficiency detected\\
+    $\bullet$ Instantaneous DOF increases\\
+    $\bullet$ Confirm by branch continuation
+};
+
+\node (dec2) [decision, below=16mm of dec1] {
+    Is $\sigma_{\min}(J_p)$ a local minimum\\
+    and $\sigma_{\min}(J_p)>\varepsilon$?
+};
+
+\node (pseudoSing) [pseudo outcome, right=30mm of dec2] {
+    \centering\textbf{Ill-conditioned / Pseudo-singular}\par
+    \vspace{1.5mm}
+    \raggedright
+    $\bullet$ Local sensitivity peak\\
+    $\bullet$ No branch intersection\\
+    $\bullet$ Large condition number $\kappa(J_p)$
+};
+
+\node (regular) [regular outcome, below=16mm of dec2] {
+    \centering\textbf{Regular Configuration}\par
+    \vspace{1.5mm}
+    \raggedright
+    $\bullet$ $\sigma_{\min}$ remains safely above the threshold\\
+    $\bullet$ Well-conditioned passive Jacobian\\
+    \centering\textit{Stable motion on the selected branch}
+};
+
+% 流程箭头与分支标签。
+\draw[flow arrow] (svd) -- (dec1);
+\draw[flow arrow] (dec1.east) -- node[branch label, above] {Yes} (trueSing.west);
+\draw[flow arrow] (dec1.south) -- node[branch label, right] {No} (dec2.north);
+\draw[flow arrow] (dec2.east) -- node[branch label, above] {Yes} (pseudoSing.west);
+\draw[flow arrow] (dec2.south) -- node[branch label, right] {No} (regular.north);
+
+\end{tikzpicture}
+
+\end{document}

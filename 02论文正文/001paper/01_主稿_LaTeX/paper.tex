@@ -1,4 +1,4 @@
-\documentclass[a4paper,fleqn]{cas-sc}
+﻿\documentclass[a4paper,fleqn]{cas-sc}
 
 \usepackage[authoryear,longnamesfirst]{natbib}
 \usepackage{amsmath,amssymb}
@@ -112,15 +112,16 @@ physical-prototype validation is retained as a planned experimental stage.
 The proposed mechanism is a spatial single-loop chain containing seven
 revolute joints. Its geometry is symmetric with respect to a plane that maps
 the corresponding links and joint axes on the two sides of the chain. The
-joint variables are denoted by
-\(\mathbf q=[q_1,q_2,\ldots,q_7]^T\). Owing to the plane-symmetric
-architecture, Joints~1, 2, 3, and 7 can each be selected as a kinematic input.
-To avoid redundant calculations, only one representative coordinate is used
-in each numerical continuation analysis. In the calculations reported below,
-Joint~3 parameterizes the spatial symmetric branch and Joint~2 parameterizes
-the degenerated planar branch. This computational choice does not restrict
-the physical actuation arrangement. In the prototype, the four candidate
-input joints are organized into the two symmetric motor groups
+joint variables are denoted by \(\mathbf q=[q_1,q_2,\ldots,q_7]^T\). Owing
+to the plane-symmetric architecture, Joints~1, 2, 3, and 7 can each be
+selected as a kinematic input. To avoid redundant calculations, only one
+representative coordinate is used in each numerical continuation analysis.
+For the explicit branch-curve derivation below, the ordered program indices
+\((1,3,5,7)\) are relabeled as the physical sequence \((2,4,6,1)\) so that
+the final notation remains consistent with the numerical plots and the
+corrected joint numbering. This computational choice does not restrict the
+physical actuation arrangement. In the prototype, the four candidate input
+joints are organized into the two symmetric motor groups
 \(\{\mathrm{J1},\mathrm{J2}\}\) and \(\{\mathrm{J3},\mathrm{J7}\}\);
 selecting a single input in the kinematic calculation therefore represents a
 parameterization choice rather than a reduction of the installed actuation.
@@ -146,24 +147,28 @@ R_z(q_i+\theta_{i,0})T_z(d_i),
 where \(\theta_{i,0}\) denotes the zero-configuration angular offset. The
 complete parameters consistent with the joint labels in
 Fig.~\ref{fig:mechanism} are listed in Table~\ref{tab:mdh_parameters}.
+Here, \(l\) is the shortest link length, \(2l\) is the intermediate link
+length, and \(2.5l\) is the longest link length. In the numerical model used
+for the continuation plots, \(l=40~\mathrm{mm}\), so that \(2l=80~\mathrm{mm}\)
+and \(2.5l=100~\mathrm{mm}\).
 
 \begin{table}[htbp]
 \centering
-\caption{Modified Denavit--Hartenberg parameters using the joint numbering
-adopted throughout this paper.}
+\caption{Parameterized modified Denavit--Hartenberg parameters using the
+joint numbering adopted throughout this paper.}
 \label{tab:mdh_parameters}
 \begin{tabular}{ccccc}
 \toprule
 Joint \(i\) & \(\alpha_{i-1}\) & \(a_{i-1}\) (mm) &
 \(d_i\) (mm) & \(\theta_{i,0}\)\\
 \midrule
-1 & \(90^\circ\) & 80  & 0   & \(0^\circ\)\\
-2 & \(0^\circ\)  & 40  & 0   & \(0^\circ\)\\
-3 & \(90^\circ\) & 80  & 100 & \(0^\circ\)\\
-4 & \(90^\circ\) & 0   & 0   & \(180^\circ\)\\
-5 & \(90^\circ\) & 100 & 0   & \(0^\circ\)\\
-6 & \(90^\circ\) & 100 & 0   & \(0^\circ\)\\
-7 & \(90^\circ\) & 0   & 100 & \(180^\circ\)\\
+1 & \(0^\circ\)  & \(l\)     & \(0\)       & \(0^\circ\)\\
+2 & \(90^\circ\) & \(2l\)    & \(2.5l\)    & \(0^\circ\)\\
+3 & \(90^\circ\) & \(0\)     & \(0\)       & \(180^\circ\)\\
+4 & \(90^\circ\) & \(2.5l\)  & \(0\)       & \(0^\circ\)\\
+5 & \(90^\circ\) & \(2.5l\)  & \(0\)       & \(0^\circ\)\\
+6 & \(90^\circ\) & \(0\)     & \(2.5l\)    & \(180^\circ\)\\
+7 & \(90^\circ\) & \(2l\)    & \(0\)       & \(0^\circ\)\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -171,22 +176,22 @@ Joint \(i\) & \(\alpha_{i-1}\) & \(a_{i-1}\) (mm) &
 Equivalently, the non-redundant geometric relations are
 \begin{equation}
 \begin{aligned}
-&\alpha_1=0^\circ,\qquad
-\alpha_0=\alpha_2=\alpha_3=\alpha_4=\alpha_5=\alpha_6=90^\circ,\\
-&a_0=a_2=80~\mathrm{mm},\quad a_1=40~\mathrm{mm},\quad
-a_3=a_6=0,\quad a_4=a_5=100~\mathrm{mm},\\
-&d_3=d_7=100~\mathrm{mm},\qquad
-d_1=d_2=d_4=d_5=d_6=0,\\
-&\theta_{4,0}=\theta_{7,0}=180^\circ,\qquad
-\theta_{i,0}=0^\circ\quad(i\neq4,7).
+&\alpha_0=0^\circ,\qquad
+\alpha_1=\alpha_2=\alpha_3=\alpha_4=\alpha_5=\alpha_6=90^\circ,\\
+&a_0=a_6=2l,\quad a_1=a_4=2.5l,\quad a_2=a_5=0,\quad a_3=l,\\
+&d_2=d_6=2.5l,\qquad
+ d_1=d_3=d_4=d_5=d_7=0,\\
+&\theta_{3,0}=\theta_{6,0}=180^\circ,\qquad
+\theta_{i,0}=0^\circ\quad(i\neq3,6).
 \end{aligned}
 \label{eq:design_parameters}
 \end{equation}
-In particular, \(a_3=d_4=0\) permits the origins \(O_3\) and \(O_4\) to
-coincide, while \(\alpha_3=90^\circ\) indicates that \(Z_3\) and \(Z_4\)
-remain orthogonal. This MDH model supplies both the finite loop-closure
-transformations and the joint-axis geometry required for the screw-system
-analysis below.
+In particular, the zero pair \(a_2=0\) and \(d_3=0\) permits the chosen
+frames around Joints~3 and~4 to share the same origin in the corrected frame
+assignment, while \(\alpha_2=90^\circ\) indicates that the corresponding
+joint axes remain orthogonal. This MDH model supplies both the finite
+loop-closure transformations and the joint-axis geometry required for the
+screw-system analysis below.
 
 \subsection{Screw-system-based mobility analysis}
 
@@ -234,8 +239,8 @@ Representative screws from the current symbolic model are
 \end{aligned}
 \label{eq:representative_screws}
 \end{equation}
-Here, \(a\), \(b\), and \(l\) are reduced parameters of the symbolic model.
-\missing{Author input required: map \(a,b,l\) to the final D--H dimensions}
+Here, \(l\) is the shortest link length, with \(a=2l\) and \(b=2.5l\) used
+as the reduced symbolic parameters in the explicit branch derivation.
 
 Collecting the twists gives the global Jacobian
 \begin{equation}
@@ -394,6 +399,103 @@ followed, providing the kinematic basis for branch reconfiguration.
   \label{fig:branch_mechanism}
 \end{figure}
 
+\subsection{Explicit branch parameterization and joint-angle fitting}
+
+On the selected branch, the motion can be written as an explicit parametric
+curve. Let
+\[
+l_0=l,\qquad a=2l,\qquad b=2.5l,\qquad
+l_1=l_3=\sqrt{a^2+b^2},\qquad l_2=2a+l=5l,
+\]
+and define
+\[
+\beta=\operatorname{atan2}(b,a).
+\]
+Using the branch parameter \(\theta_1\), the intermediate angles are
+\[
+\phi_1=\theta_1-\beta,
+\]
+\[
+\mathbf p_3=
+\begin{bmatrix}
+l_1\cos\phi_1\\
+l_1\sin\phi_1
+\end{bmatrix},
+\qquad
+d=\sqrt{(l_1\cos\phi_1-l_0)^2+(l_1\sin\phi_1)^2}.
+\]
+The geometric angle at the closure triangle is
+\[
+\alpha=\operatorname{atan2}\!\left(l_1\sin\phi_1,\;l_1\cos\phi_1-l_0\right),
+\]
+and the law of cosines gives
+\[
+\gamma=\arccos\!\left(
+\frac{l_3^2+d^2-l_2^2}{2l_3d}
+\right).
+\]
+Hence,
+\[
+\phi_3=\alpha-\gamma,
+\]
+and the remaining coordination relations are
+\[
+\theta_3=\theta_1-\phi_2+\pi,\qquad
+\theta_5=\phi_3-\phi_2-\beta,\qquad
+\theta_7=\pi+\beta-\phi_3,
+\]
+where
+\[
+\phi_2=
+\operatorname{atan2}\!\left(
+ l_3\sin\phi_3-l_1\sin\phi_1,\;
+ l_0+l_3\cos\phi_3-l_1\cos\phi_1
+\right).
+\]
+This provides a closed-form parametric representation of the selected
+branch. When \(\theta_7\) is prescribed as the input, the inverse mapping
+\(\theta_1(\theta_7)\) is recovered numerically on the same branch by
+minimizing the wrapped angular residual
+\[
+\Delta(\theta_1)=
+\operatorname{atan2}\!\Big(
+\sin(\theta_7(\theta_1)-\theta_7^\star),\;
+\cos(\theta_7(\theta_1)-\theta_7^\star)
+\Big),
+\qquad
+\theta_1^\star=\arg\min_{\theta_1}\Delta(\theta_1)^2.
+\]
+The converged solution from the previous sample is used as the initial guess
+for the next sample, which preserves branch continuity during the sweep.
+
+After numerical continuation, the joint trajectories are unwrapped and
+referenced to the initial pose,
+\[
+\Delta\theta_i=\operatorname{unwrap}(\theta_i)-
+\operatorname{unwrap}(\theta_i)\big|_{\theta_7=\theta_{7,0}},
+\qquad i\in\{1,3,5,7\}.
+\]
+The periodic coordination is then approximated by a truncated Fourier
+series,
+\[
+\widehat{\Delta\theta_i}(\Delta\theta_7)=c_{i,0}+
+\sum_{k=1}^{K}\Big[
+ c_{i,k}\cos(k\Delta\theta_7)+s_{i,k}\sin(k\Delta\theta_7)
+\Big].
+\]
+The coefficients are obtained by least squares on the unwrapped samples, and
+the resulting fitted curves are directly reused in the curriculum-learning
+stage.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\linewidth]{figs/joint_relations.png}
+  \caption{Relative joint coordination on the selected branch, obtained by
+  numerical continuation and approximated by a truncated Fourier series. The
+  plotted ordered set corresponds to the relabeled physical sequence
+  \((2,4,6,1)\) after correcting the program indices.}
+  \label{fig:joint_relations_branch}
+\end{figure}
 \section{Numerical Validation of the Two Motion Branches}
 
 \subsection{Numerical continuation and singularity identification}
@@ -684,3 +786,7 @@ prototype experiments remain necessary to establish real-world performance.
 \missing{Citation needed: verified bibliography database}
 
 \end{document}
+
+
+
+
