@@ -401,8 +401,7 @@ followed, providing the kinematic basis for branch reconfiguration.
 
 \subsection{Explicit branch parameterization and joint-angle fitting}
 
-On the selected branch, the motion can be written as an explicit parametric
-curve. Let
+On the selected branch, the motion can be written as an explicit parametric curve. The symbols \(l_0,l_1,l_2,l_3\) denote reduced equivalent link lengths obtained after factoring out the common scale \(l\) from the original geometry; they preserve the same branch relation and only serve compact notation. Let
 \[
 l_0=l,\qquad a=2l,\qquad b=2.5l,\qquad
 l_1=l_3=\sqrt{a^2+b^2},\qquad l_2=2a+l=5l,
@@ -468,8 +467,7 @@ minimizing the wrapped angular residual
 The converged solution from the previous sample is used as the initial guess
 for the next sample, which preserves branch continuity during the sweep.
 
-After numerical continuation, the joint trajectories are unwrapped and
-referenced to the initial pose,
+After numerical continuation, the joint trajectories are unwrapped and referenced to the initial pose, so the plotted curves start from zero relative displacement rather than absolute joint coordinates,
 \[
 \Delta\theta_i=\operatorname{unwrap}(\theta_i)-
 \operatorname{unwrap}(\theta_i)\big|_{\theta_7=\theta_{7,0}},
@@ -786,6 +784,7 @@ prototype experiments remain necessary to establish real-world performance.
 \missing{Citation needed: verified bibliography database}
 
 \end{document}
+
 
 
 
