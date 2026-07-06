@@ -1,0 +1,15 @@
+# comparison_report
+Delta_theta1_RMSE_deg=98.55118165946223
+Delta_theta1_max_abs_deg=179.61059182499065
+Delta_theta1_mean_abs_deg=57.91015228666513
+Delta_theta2_RMSE_deg=112.03410455335248
+Delta_theta2_max_abs_deg=179.99999901785463
+Delta_theta2_mean_abs_deg=98.62399044716153
+Delta_theta4_RMSE_deg=112.10802120823037
+Delta_theta4_max_abs_deg=179.87321858958302
+Delta_theta4_mean_abs_deg=103.31268466958285
+
+analytic_residual_max=8.999999948186002
+analytic_residual_mean=0.03956834492222113
+analytic_residual_std=0.5515339858480135
+analytic_residual_max_angle_deg=270.0

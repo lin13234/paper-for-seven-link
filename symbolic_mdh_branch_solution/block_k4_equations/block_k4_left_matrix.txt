@@ -1,0 +1,49 @@
+L matrix
+
+L11 =
+-sin(s)*sin(x)*cos(z) + sin(y)*sin(z)*cos(x) - cos(s)*cos(x)*cos(y)*cos(z)
+
+L12 =
+sin(s)*sin(x)*sin(z) + sin(y)*cos(x)*cos(z) + sin(z)*cos(s)*cos(x)*cos(y)
+
+L13 =
+-sin(s)*cos(x)*cos(y) + sin(x)*cos(s)
+
+L14 =
+l*(-5*sin(s)*sin(x) + 5*sin(x) - 5*cos(s)*cos(x)*cos(y) + 4*cos(x) + 2)/2
+
+L21 =
+sin(s)*cos(x)*cos(z) + sin(x)*sin(y)*sin(z) - sin(x)*cos(s)*cos(y)*cos(z)
+
+L22 =
+-sin(s)*sin(z)*cos(x) + sin(x)*sin(y)*cos(z) + sin(x)*sin(z)*cos(s)*cos(y)
+
+L23 =
+-sin(s)*sin(x)*cos(y) - cos(s)*cos(x)
+
+L24 =
+l*(5*sin(s)*cos(x) - 5*sin(x)*cos(s)*cos(y) + 4*sin(x) - 5*cos(x))/2
+
+L31 =
+-sin(y)*cos(s)*cos(z) - sin(z)*cos(y)
+
+L32 =
+sin(y)*sin(z)*cos(s) - cos(y)*cos(z)
+
+L33 =
+-sin(s)*sin(y)
+
+L34 =
+-5*l*sin(y)*cos(s)/2
+
+L41 =
+0
+
+L42 =
+0
+
+L43 =
+0
+
+L44 =
+1

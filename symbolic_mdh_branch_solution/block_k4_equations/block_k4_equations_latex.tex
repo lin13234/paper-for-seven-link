@@ -1,0 +1,111 @@
+% k=4 block closure equations
+\section*{k=4 分块闭环方程}
+
+\subsection*{左侧矩阵}
+\[
+L = \begin{bmatrix}
+- \sin{\left(s \right)} \sin{\left(x \right)} \cos{\left(z \right)} + \sin{\left(y \right)} \sin{\left(z \right)} \cos{\left(x \right)} - \cos{\left(s \right)} \cos{\left(x \right)} \cos{\left(y \right)} \cos{\left(z \right)} & \sin{\left(s \right)} \sin{\left(x \right)} \sin{\left(z \right)} + \sin{\left(y \right)} \cos{\left(x \right)} \cos{\left(z \right)} + \sin{\left(z \right)} \cos{\left(s \right)} \cos{\left(x \right)} \cos{\left(y \right)} & - \sin{\left(s \right)} \cos{\left(x \right)} \cos{\left(y \right)} + \sin{\left(x \right)} \cos{\left(s \right)} & \frac{l \left(- 5 \sin{\left(s \right)} \sin{\left(x \right)} + 5 \sin{\left(x \right)} - 5 \cos{\left(s \right)} \cos{\left(x \right)} \cos{\left(y \right)} + 4 \cos{\left(x \right)} + 2\right)}{2} \\
+\sin{\left(s \right)} \cos{\left(x \right)} \cos{\left(z \right)} + \sin{\left(x \right)} \sin{\left(y \right)} \sin{\left(z \right)} - \sin{\left(x \right)} \cos{\left(s \right)} \cos{\left(y \right)} \cos{\left(z \right)} & - \sin{\left(s \right)} \sin{\left(z \right)} \cos{\left(x \right)} + \sin{\left(x \right)} \sin{\left(y \right)} \cos{\left(z \right)} + \sin{\left(x \right)} \sin{\left(z \right)} \cos{\left(s \right)} \cos{\left(y \right)} & - \sin{\left(s \right)} \sin{\left(x \right)} \cos{\left(y \right)} - \cos{\left(s \right)} \cos{\left(x \right)} & \frac{l \left(5 \sin{\left(s \right)} \cos{\left(x \right)} - 5 \sin{\left(x \right)} \cos{\left(s \right)} \cos{\left(y \right)} + 4 \sin{\left(x \right)} - 5 \cos{\left(x \right)}\right)}{2} \\
+- \sin{\left(y \right)} \cos{\left(s \right)} \cos{\left(z \right)} - \sin{\left(z \right)} \cos{\left(y \right)} & \sin{\left(y \right)} \sin{\left(z \right)} \cos{\left(s \right)} - \cos{\left(y \right)} \cos{\left(z \right)} & - \sin{\left(s \right)} \sin{\left(y \right)} & - \frac{5 l \sin{\left(y \right)} \cos{\left(s \right)}}{2} \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+\]
+
+\subsection*{右侧矩阵}
+\[
+R = \begin{bmatrix}
+- \sin{\left(s \right)} \sin{\left(x \right)} - \cos{\left(s \right)} \cos{\left(x \right)} \cos{\left(y \right)} & - \sin{\left(y \right)} \cos{\left(x \right)} & \sin{\left(s \right)} \cos{\left(x \right)} \cos{\left(y \right)} - \sin{\left(x \right)} \cos{\left(s \right)} & \frac{l \left(5 \sin{\left(s \right)} \sin{\left(x \right)} - 5 \sin{\left(x \right)} + 5 \cos{\left(s \right)} \cos{\left(x \right)} \cos{\left(y \right)} - 4 \cos{\left(x \right)}\right)}{2} \\
+- \sin{\left(s \right)} \cos{\left(x \right)} + \sin{\left(x \right)} \cos{\left(s \right)} \cos{\left(y \right)} & \sin{\left(x \right)} \sin{\left(y \right)} & - \sin{\left(s \right)} \sin{\left(x \right)} \cos{\left(y \right)} - \cos{\left(s \right)} \cos{\left(x \right)} & \frac{l \left(5 \sin{\left(s \right)} \cos{\left(x \right)} - 5 \sin{\left(x \right)} \cos{\left(s \right)} \cos{\left(y \right)} + 4 \sin{\left(x \right)} - 5 \cos{\left(x \right)}\right)}{2} \\
+\sin{\left(y \right)} \cos{\left(s \right)} & - \cos{\left(y \right)} & - \sin{\left(s \right)} \sin{\left(y \right)} & - \frac{5 l \sin{\left(y \right)} \cos{\left(s \right)}}{2} \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+\]
+
+\subsection*{16 个矩阵元素方程}
+\paragraph{E11} 来源：$L11 = R11$.
+\[
+- \sin{\left(s \right)} \sin{\left(x \right)} \cos{\left(z \right)} + \sin{\left(s \right)} \sin{\left(x \right)} + \sin{\left(y \right)} \sin{\left(z \right)} \cos{\left(x \right)} - \cos{\left(s \right)} \cos{\left(x \right)} \cos{\left(y \right)} \cos{\left(z \right)} + \cos{\left(s \right)} \cos{\left(x \right)} \cos{\left(y \right)} = 0
+\]
+
+\paragraph{E12} 来源：$L12 = R12$.
+\[
+\sin{\left(s \right)} \sin{\left(x \right)} \sin{\left(z \right)} + \sin{\left(y \right)} \cos{\left(x \right)} \cos{\left(z \right)} + \sin{\left(y \right)} \cos{\left(x \right)} + \sin{\left(z \right)} \cos{\left(s \right)} \cos{\left(x \right)} \cos{\left(y \right)} = 0
+\]
+
+\paragraph{E13} 来源：$L13 = R13$.
+\[
+- 2 \sin{\left(s \right)} \cos{\left(x \right)} \cos{\left(y \right)} + 2 \sin{\left(x \right)} \cos{\left(s \right)} = 0
+\]
+
+\paragraph{E14} 来源：$L14 = R14$.
+\[
+l \left(- 5 \sin{\left(s \right)} \sin{\left(x \right)} + 5 \sin{\left(x \right)} - 5 \cos{\left(s \right)} \cos{\left(x \right)} \cos{\left(y \right)} + 4 \cos{\left(x \right)} + 1\right) = 0
+\]
+
+\paragraph{E21} 来源：$L21 = R21$.
+\[
+\sin{\left(s \right)} \cos{\left(x \right)} \cos{\left(z \right)} + \sin{\left(s \right)} \cos{\left(x \right)} + \sin{\left(x \right)} \sin{\left(y \right)} \sin{\left(z \right)} - \sin{\left(x \right)} \cos{\left(s \right)} \cos{\left(y \right)} \cos{\left(z \right)} - \sin{\left(x \right)} \cos{\left(s \right)} \cos{\left(y \right)} = 0
+\]
+
+\paragraph{E22} 来源：$L22 = R22$.
+\[
+- \sin{\left(s \right)} \sin{\left(z \right)} \cos{\left(x \right)} + \sin{\left(x \right)} \sin{\left(y \right)} \cos{\left(z \right)} - \sin{\left(x \right)} \sin{\left(y \right)} + \sin{\left(x \right)} \sin{\left(z \right)} \cos{\left(s \right)} \cos{\left(y \right)} = 0
+\]
+
+\paragraph{E23} 来源：$L23 = R23$.
+\[
+0 = 0
+\]
+该式恒等成立。
+
+\paragraph{E24} 来源：$L24 = R24$.
+\[
+0 = 0
+\]
+该式恒等成立。
+
+\paragraph{E31} 来源：$L31 = R31$.
+\[
+- \sin{\left(y \right)} \cos{\left(s \right)} \cos{\left(z \right)} - \sin{\left(y \right)} \cos{\left(s \right)} - \sin{\left(z \right)} \cos{\left(y \right)} = 0
+\]
+
+\paragraph{E32} 来源：$L32 = R32$.
+\[
+\sin{\left(y \right)} \sin{\left(z \right)} \cos{\left(s \right)} - \cos{\left(y \right)} \cos{\left(z \right)} + \cos{\left(y \right)} = 0
+\]
+
+\paragraph{E33} 来源：$L33 = R33$.
+\[
+0 = 0
+\]
+该式恒等成立。
+
+\paragraph{E34} 来源：$L34 = R34$.
+\[
+0 = 0
+\]
+该式恒等成立。
+
+\paragraph{E41} 来源：$L41 = R41$.
+\[
+0 = 0
+\]
+该式恒等成立。
+
+\paragraph{E42} 来源：$L42 = R42$.
+\[
+0 = 0
+\]
+该式恒等成立。
+
+\paragraph{E43} 来源：$L43 = R43$.
+\[
+0 = 0
+\]
+该式恒等成立。
+
+\paragraph{E44} 来源：$L44 = R44$.
+\[
+0 = 0
+\]
+该式恒等成立。

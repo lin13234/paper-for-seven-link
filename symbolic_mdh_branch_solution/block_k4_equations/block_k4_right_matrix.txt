@@ -1,0 +1,49 @@
+R matrix
+
+R11 =
+-sin(s)*sin(x) - cos(s)*cos(x)*cos(y)
+
+R12 =
+-sin(y)*cos(x)
+
+R13 =
+sin(s)*cos(x)*cos(y) - sin(x)*cos(s)
+
+R14 =
+l*(5*sin(s)*sin(x) - 5*sin(x) + 5*cos(s)*cos(x)*cos(y) - 4*cos(x))/2
+
+R21 =
+-sin(s)*cos(x) + sin(x)*cos(s)*cos(y)
+
+R22 =
+sin(x)*sin(y)
+
+R23 =
+-sin(s)*sin(x)*cos(y) - cos(s)*cos(x)
+
+R24 =
+l*(5*sin(s)*cos(x) - 5*sin(x)*cos(s)*cos(y) + 4*sin(x) - 5*cos(x))/2
+
+R31 =
+sin(y)*cos(s)
+
+R32 =
+-cos(y)
+
+R33 =
+-sin(s)*sin(y)
+
+R34 =
+-5*l*sin(y)*cos(s)/2
+
+R41 =
+0
+
+R42 =
+0
+
+R43 =
+0
+
+R44 =
+1

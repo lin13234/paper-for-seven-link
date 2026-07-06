@@ -137,6 +137,30 @@ def solve_one_step(s_value: float, initial_guess: np.ndarray) -> tuple[np.ndarra
     return primary.x, primary_fro, "full_matrix_poor", primary.nfev, float(primary.cost)
 
 
+
+
+def refresh_postprocess_outputs_if_available() -> None:
+    """If implicit/explicit analytic outputs exist, refresh analytic residual and comparison artifacts."""
+    implicit_path = OUTPUT_DIR / "implicit_solution.txt"
+    explicit_path = OUTPUT_DIR / "explicit_joint_functions.txt"
+    postprocess_path = OUTPUT_DIR / "postprocess_branch_analysis.py"
+    if not postprocess_path.exists() or (not implicit_path.exists() and not explicit_path.exists()):
+        return
+
+    try:
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("postprocess_branch_analysis", postprocess_path)
+        module = importlib.util.module_from_spec(spec)
+        assert spec.loader is not None
+        spec.loader.exec_module(module)
+        workspace = module.ProjectWorkspace.from_existing_results(OUTPUT_DIR, OUTPUT_DIR)
+        _selected_path, candidate = module.select_main_branch(workspace)
+        recovery_data = module.save_solution_files(workspace, candidate)
+        module.generate_analytic_validation_and_comparison(workspace, candidate, recovery_data)
+        log("Refreshed analytic residual and comparison outputs from postprocess_branch_analysis.py")
+    except Exception as exc:  # noqa: BLE001
+        log(f"Postprocess refresh was skipped due to: {type(exc).__name__}: {exc}")
+
 def main() -> None:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     log("Starting numeric verification with 361 samples")
@@ -203,6 +227,7 @@ def main() -> None:
 
     log(f"Saved CSV to {CSV_PATH.name}")
     log(f"Saved plot to {PLOT_PATH.name}")
+    refresh_postprocess_outputs_if_available()
     log("Numeric verification finished")
 
 

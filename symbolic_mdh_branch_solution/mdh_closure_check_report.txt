@@ -1,0 +1,16 @@
+MDH closure basic audit
+input_csv=E:\hub\symbolic_mdh_branch_solution\joint_solution_numeric.csv
+output_csv=E:\hub\symbolic_mdh_branch_solution\mdh_closure_check_against_numeric.csv
+point_count=361
+max_norm=2.0218626678933296
+mean_norm=0.5711082767575143
+std_norm=0.7753127677959727
+max_index=39
+max_s_deg=39.0
+
+If these norms are not near zero, stop symbolic elimination and re-check:
+- MDH multiplication order
+- closure target T=I or T=T0
+- theta0 offsets duplicated or omitted
+- angle unit mismatch
+- standard DH vs modified DH mix-up

@@ -1,0 +1,154 @@
+k=4 block closure equations in trigonometric form
+Definition: L = A1*A2*A3*A4, R = inv(A7)*inv(A6)*inv(A5)
+
+编号：E11
+来源：L11 = R11
+L11 =
+-sin(s)*sin(x)*cos(z) + sin(y)*sin(z)*cos(x) - cos(s)*cos(x)*cos(y)*cos(z)
+R11 =
+-sin(s)*sin(x) - cos(s)*cos(x)*cos(y)
+完整表达式：
+-sin(s)*sin(x)*cos(z) + sin(s)*sin(x) + sin(y)*sin(z)*cos(x) - cos(s)*cos(x)*cos(y)*cos(z) + cos(s)*cos(x)*cos(y) = 0
+说明：非恒等方程
+
+编号：E12
+来源：L12 = R12
+L12 =
+sin(s)*sin(x)*sin(z) + sin(y)*cos(x)*cos(z) + sin(z)*cos(s)*cos(x)*cos(y)
+R12 =
+-sin(y)*cos(x)
+完整表达式：
+sin(s)*sin(x)*sin(z) + sin(y)*cos(x)*cos(z) + sin(y)*cos(x) + sin(z)*cos(s)*cos(x)*cos(y) = 0
+说明：非恒等方程
+
+编号：E13
+来源：L13 = R13
+L13 =
+-sin(s)*cos(x)*cos(y) + sin(x)*cos(s)
+R13 =
+sin(s)*cos(x)*cos(y) - sin(x)*cos(s)
+完整表达式：
+-2*sin(s)*cos(x)*cos(y) + 2*sin(x)*cos(s) = 0
+说明：非恒等方程
+
+编号：E14
+来源：L14 = R14
+L14 =
+l*(-5*sin(s)*sin(x) + 5*sin(x) - 5*cos(s)*cos(x)*cos(y) + 4*cos(x) + 2)/2
+R14 =
+l*(5*sin(s)*sin(x) - 5*sin(x) + 5*cos(s)*cos(x)*cos(y) - 4*cos(x))/2
+完整表达式：
+l*(-5*sin(s)*sin(x) + 5*sin(x) - 5*cos(s)*cos(x)*cos(y) + 4*cos(x) + 1) = 0
+说明：非恒等方程
+
+编号：E21
+来源：L21 = R21
+L21 =
+sin(s)*cos(x)*cos(z) + sin(x)*sin(y)*sin(z) - sin(x)*cos(s)*cos(y)*cos(z)
+R21 =
+-sin(s)*cos(x) + sin(x)*cos(s)*cos(y)
+完整表达式：
+sin(s)*cos(x)*cos(z) + sin(s)*cos(x) + sin(x)*sin(y)*sin(z) - sin(x)*cos(s)*cos(y)*cos(z) - sin(x)*cos(s)*cos(y) = 0
+说明：非恒等方程
+
+编号：E22
+来源：L22 = R22
+L22 =
+-sin(s)*sin(z)*cos(x) + sin(x)*sin(y)*cos(z) + sin(x)*sin(z)*cos(s)*cos(y)
+R22 =
+sin(x)*sin(y)
+完整表达式：
+-sin(s)*sin(z)*cos(x) + sin(x)*sin(y)*cos(z) - sin(x)*sin(y) + sin(x)*sin(z)*cos(s)*cos(y) = 0
+说明：非恒等方程
+
+编号：E23
+来源：L23 = R23
+L23 =
+-sin(s)*sin(x)*cos(y) - cos(s)*cos(x)
+R23 =
+-sin(s)*sin(x)*cos(y) - cos(s)*cos(x)
+完整表达式：0 = 0
+说明：恒等成立
+
+编号：E24
+来源：L24 = R24
+L24 =
+l*(5*sin(s)*cos(x) - 5*sin(x)*cos(s)*cos(y) + 4*sin(x) - 5*cos(x))/2
+R24 =
+l*(5*sin(s)*cos(x) - 5*sin(x)*cos(s)*cos(y) + 4*sin(x) - 5*cos(x))/2
+完整表达式：0 = 0
+说明：恒等成立
+
+编号：E31
+来源：L31 = R31
+L31 =
+-sin(y)*cos(s)*cos(z) - sin(z)*cos(y)
+R31 =
+sin(y)*cos(s)
+完整表达式：
+-sin(y)*cos(s)*cos(z) - sin(y)*cos(s) - sin(z)*cos(y) = 0
+说明：非恒等方程
+
+编号：E32
+来源：L32 = R32
+L32 =
+sin(y)*sin(z)*cos(s) - cos(y)*cos(z)
+R32 =
+-cos(y)
+完整表达式：
+sin(y)*sin(z)*cos(s) - cos(y)*cos(z) + cos(y) = 0
+说明：非恒等方程
+
+编号：E33
+来源：L33 = R33
+L33 =
+-sin(s)*sin(y)
+R33 =
+-sin(s)*sin(y)
+完整表达式：0 = 0
+说明：恒等成立
+
+编号：E34
+来源：L34 = R34
+L34 =
+-5*l*sin(y)*cos(s)/2
+R34 =
+-5*l*sin(y)*cos(s)/2
+完整表达式：0 = 0
+说明：恒等成立
+
+编号：E41
+来源：L41 = R41
+L41 =
+0
+R41 =
+0
+完整表达式：0 = 0
+说明：恒等成立
+
+编号：E42
+来源：L42 = R42
+L42 =
+0
+R42 =
+0
+完整表达式：0 = 0
+说明：恒等成立
+
+编号：E43
+来源：L43 = R43
+L43 =
+0
+R43 =
+0
+完整表达式：0 = 0
+说明：恒等成立
+
+编号：E44
+来源：L44 = R44
+L44 =
+1
+R44 =
+1
+完整表达式：0 = 0
+说明：恒等成立

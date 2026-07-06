@@ -1,0 +1,14 @@
+# explicit_joint_functions
+Because Y(q) is kept as the reliable implicit solution, the joint functions are represented as follows:
+
+F(Y,q) = 5*Y**4*q**3 - 29*Y**4*q**2 + 45*Y**4*q - 20*Y**4 + 5*Y**2*q**4 - 50*Y**2*q**3 + 88*Y**2*q**2 - 50*Y**2*q + 5*Y**2 - 20*q**4 + 45*q**3 - 29*q**2 + 5*q = 0
+X(Y,q) follows the quadratic relation X**2*Y**2*q/(Y**2*q**2 + Y**2 + q**2 + 1) - X**2*q/(Y**2*q**2 + Y**2 + q**2 + 1) + X*Y**2*q**2/(Y**2*q**2 + Y**2 + q**2 + 1) - X*Y**2/(Y**2*q**2 + Y**2 + q**2 + 1) + X*q**2/(Y**2*q**2 + Y**2 + q**2 + 1) - X/(Y**2*q**2 + Y**2 + q**2 + 1) - Y**2*q/(Y**2*q**2 + Y**2 + q**2 + 1) + q/(Y**2*q**2 + Y**2 + q**2 + 1) = 0
+Z(Y,q) = 2*Y*(1 - q**2)/(Y**2*q**2 + Y**2 - q**2 - 1)
+
+Joint-angle recovery:
+Delta theta1 = 2*atan(X)
+Delta theta2 = 2*atan(Y)
+Delta theta4 = 2*atan(Z)
+Delta theta5 = -Delta theta3
+Delta theta6 = -Delta theta2
+Delta theta7 = Delta theta1

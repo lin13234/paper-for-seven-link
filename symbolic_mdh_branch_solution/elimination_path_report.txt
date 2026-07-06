@@ -1,0 +1,118 @@
+# elimination_path_report
+
+indices=(6, 8, 9), order=Z->X, status=zero_resultant, variable=mixed
+detail=reused existing Z->X result from elimination_results.txt
+
+indices=(6, 8, 9), order=X->Z, status=zero_resultant, variable=mixed
+
+indices=(6, 8, 9), order=Y->X, status=zero_resultant, variable=mixed
+
+indices=(6, 8, 9), order=Y->Z, status=zero_resultant, variable=mixed
+
+indices=(5, 8, 9), order=Z->X, status=timeout, variable=mixed
+detail=reused existing Z->X result from elimination_results.txt
+
+indices=(5, 8, 9), order=X->Z, status=timeout, variable=mixed
+detail=skipped by lightweight search budget because the set is not in the very-low-complexity tier
+
+indices=(5, 8, 9), order=Y->X, status=timeout, variable=mixed
+detail=skipped by lightweight search budget because the set is not in the very-low-complexity tier
+
+indices=(5, 8, 9), order=Y->Z, status=timeout, variable=mixed
+detail=skipped by lightweight search budget because the set is not in the very-low-complexity tier
+
+indices=(3, 8, 9), order=Z->X, status=zero_resultant, variable=mixed
+detail=reused existing Z->X result from elimination_results.txt
+
+indices=(3, 8, 9), order=X->Z, status=timeout, variable=mixed
+detail=skipped by lightweight search budget because the set is not in the very-low-complexity tier
+
+indices=(3, 8, 9), order=Y->X, status=timeout, variable=mixed
+detail=skipped by lightweight search budget because the set is not in the very-low-complexity tier
+
+indices=(3, 8, 9), order=Y->Z, status=timeout, variable=mixed
+detail=skipped by lightweight search budget because the set is not in the very-low-complexity tier
+
+indices=(3, 6, 8), order=Z->X, status=zero_resultant, variable=mixed
+detail=reused existing Z->X result from elimination_results.txt
+
+indices=(3, 6, 8), order=X->Z, status=timeout, variable=mixed
+detail=skipped by lightweight search budget because the set is not in the very-low-complexity tier
+
+indices=(3, 6, 8), order=Y->X, status=timeout, variable=mixed
+detail=skipped by lightweight search budget because the set is not in the very-low-complexity tier
+
+indices=(3, 6, 8), order=Y->Z, status=timeout, variable=mixed
+detail=skipped by lightweight search budget because the set is not in the very-low-complexity tier
+
+indices=(7, 8, 9), order=Z->X, status=zero_resultant, variable=mixed
+detail=reused existing Z->X result from elimination_results.txt
+
+indices=(7, 8, 9), order=X->Z, status=timeout, variable=mixed
+detail=skipped by lightweight search budget because the set is not in the very-low-complexity tier
+
+indices=(7, 8, 9), order=Y->X, status=timeout, variable=mixed
+detail=skipped by lightweight search budget because the set is not in the very-low-complexity tier
+
+indices=(7, 8, 9), order=Y->Z, status=timeout, variable=mixed
+detail=skipped by lightweight search budget because the set is not in the very-low-complexity tier
+
+indices=(3, 5, 8), order=Z->X, status=zero_resultant, variable=mixed
+detail=reused existing Z->X result from elimination_results.txt
+
+indices=(3, 5, 8), order=X->Z, status=timeout, variable=mixed
+detail=skipped by lightweight search budget because the set is not in the very-low-complexity tier
+
+indices=(3, 5, 8), order=Y->X, status=timeout, variable=mixed
+detail=skipped by lightweight search budget because the set is not in the very-low-complexity tier
+
+indices=(3, 5, 8), order=Y->Z, status=timeout, variable=mixed
+detail=skipped by lightweight search budget because the set is not in the very-low-complexity tier
+
+indices=(5, 6, 9), order=Z->X, status=zero_resultant, variable=mixed
+detail=reused existing Z->X result from elimination_results.txt
+
+indices=(5, 6, 9), order=X->Z, status=timeout, variable=mixed
+detail=skipped by lightweight search budget because the set is not in the very-low-complexity tier
+
+indices=(5, 6, 9), order=Y->X, status=timeout, variable=mixed
+detail=skipped by lightweight search budget because the set is not in the very-low-complexity tier
+
+indices=(5, 6, 9), order=Y->Z, status=timeout, variable=mixed
+detail=skipped by lightweight search budget because the set is not in the very-low-complexity tier
+
+indices=(2, 8, 9), order=Z->X, status=timeout, variable=mixed
+detail=reused existing Z->X result from elimination_results.txt
+
+indices=(2, 8, 9), order=X->Z, status=timeout, variable=mixed
+detail=skipped by lightweight search budget because the set is not in the very-low-complexity tier
+
+indices=(2, 8, 9), order=Y->X, status=timeout, variable=mixed
+detail=skipped by lightweight search budget because the set is not in the very-low-complexity tier
+
+indices=(2, 8, 9), order=Y->Z, status=timeout, variable=mixed
+detail=skipped by lightweight search budget because the set is not in the very-low-complexity tier
+
+indices=(6, 7, 8), order=Z->X, status=zero_resultant, variable=mixed
+detail=reused existing Z->X result from elimination_results.txt
+
+indices=(6, 7, 8), order=X->Z, status=timeout, variable=mixed
+detail=skipped by lightweight search budget because the set is not in the very-low-complexity tier
+
+indices=(6, 7, 8), order=Y->X, status=timeout, variable=mixed
+detail=skipped by lightweight search budget because the set is not in the very-low-complexity tier
+
+indices=(6, 7, 8), order=Y->Z, status=timeout, variable=mixed
+detail=skipped by lightweight search budget because the set is not in the very-low-complexity tier
+
+indices=(5, 7, 8), order=Z->X, status=zero_resultant, variable=mixed
+detail=reused existing Z->X result from elimination_results.txt
+
+indices=(5, 7, 8), order=X->Z, status=timeout, variable=mixed
+detail=skipped by lightweight search budget because the set is not in the very-low-complexity tier
+
+indices=(5, 7, 8), order=Y->X, status=timeout, variable=mixed
+detail=skipped by lightweight search budget because the set is not in the very-low-complexity tier
+
+indices=(5, 7, 8), order=Y->Z, status=timeout, variable=mixed
+detail=skipped by lightweight search budget because the set is not in the very-low-complexity tier

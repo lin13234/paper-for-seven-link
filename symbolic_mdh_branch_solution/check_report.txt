@@ -1,0 +1,11 @@
+# check_report
+unique_equation_count=9
+independent_set_count=83
+main_branch_candidate_count=0
+zero_resultant_count=30
+timeout_count=3
+exception_count=10
+duplicate_factor_group_count=0
+
+candidate_details:
+none

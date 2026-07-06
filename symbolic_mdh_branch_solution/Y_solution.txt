@@ -1,0 +1,7 @@
+# Y_solution
+A reliable elementary explicit Y(q) branch was not asserted.
+Use the implicit branch relation below and RootOf/numerical branch tracking on that polynomial only.
+
+F(Y,q) = 5*Y**4*q**3 - 29*Y**4*q**2 + 45*Y**4*q - 20*Y**4 + 5*Y**2*q**4 - 50*Y**2*q**3 + 88*Y**2*q**2 - 50*Y**2*q + 5*Y**2 - 20*q**4 + 45*q**3 - 29*q**2 + 5*q = 0
+Formal representation:
+Y(q) = \mathrm{RootOf}(F(\xi,q), k), with branch index k selected by continuity and the initial pose.

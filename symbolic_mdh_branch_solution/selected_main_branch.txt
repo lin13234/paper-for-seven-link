@@ -1,0 +1,8 @@
+# selected_main_branch
+selected_source=factor-structure-from-existing-equations
+selected_variable=Y
+selected_polynomial=5*Y**4*q**3 - 29*Y**4*q**2 + 45*Y**4*q - 20*Y**4 + 5*Y**2*q**4 - 50*Y**2*q**3 + 88*Y**2*q**2 - 50*Y**2*q + 5*Y**2 - 20*q**4 + 45*q**3 - 29*q**2 + 5*q
+selected_reason=passes strict origin checks including recovered X and Z at q=0
+
+candidate_screening:
+source=factor-structure-from-existing-equations, variable=Y, passes_initial_pose=True, x_origin_zero=True, z_origin_zero=True
