@@ -1,0 +1,47 @@
+Phi(Y,q)=0 four-branch decomposition report
+
+This report validates only Branch 1~4 built from u_plus/u_minus and the explicit Y/X/Z formulas.
+
+Branch 1
+  Real valid intervals: [0.0, 0.0] deg; [78.0, 89.0] deg; [91.0, 108.0] deg; [150.0, 179.0] deg; [181.0, 360.0] deg
+  Max residual: 10.233567929370645
+  Mean residual: 0.0424629374669136
+  Passes initial pose: 是
+  Initial joint angles: Δθ1=0.000000 deg, Δθ2=0.000000 deg, Δθ4=0.000000 deg
+  Continuous: 否
+  Possible main branch: 否
+  Possible other assembly mode: 否
+  Note: 按显式 Y/X/Z 公式恢复后直接代回完整 MDH。
+
+Branch 2
+  Real valid intervals: [0.0, 0.0] deg; [78.0, 89.0] deg; [91.0, 108.0] deg; [150.0, 179.0] deg; [181.0, 360.0] deg
+  Max residual: 10.233567929370645
+  Mean residual: 0.04246293746691365
+  Passes initial pose: 是
+  Initial joint angles: Δθ1=0.000000 deg, Δθ2=0.000000 deg, Δθ4=0.000000 deg
+  Continuous: 否
+  Possible main branch: 否
+  Possible other assembly mode: 否
+  Note: 按显式 Y/X/Z 公式恢复后直接代回完整 MDH。
+
+Branch 3
+  Real valid intervals: [1.0, 30.0] deg; [72.0, 89.0] deg; [91.0, 102.0] deg; [181.0, 359.0] deg
+  Max residual: 10.233567600800356
+  Mean residual: 0.04281827448151534
+  Passes initial pose: 否
+  Initial joint angles: 无有效 s=0 样本
+  Continuous: 否
+  Possible main branch: 否
+  Possible other assembly mode: 是
+  Note: 按显式 Y/X/Z 公式恢复后直接代回完整 MDH。
+
+Branch 4
+  Real valid intervals: [1.0, 30.0] deg; [72.0, 89.0] deg; [91.0, 102.0] deg; [181.0, 359.0] deg
+  Max residual: 10.233567600800358
+  Mean residual: 0.04281827448151543
+  Passes initial pose: 否
+  Initial joint angles: 无有效 s=0 样本
+  Continuous: 否
+  Possible main branch: 否
+  Possible other assembly mode: 是
+  Note: 按显式 Y/X/Z 公式恢复后直接代回完整 MDH。

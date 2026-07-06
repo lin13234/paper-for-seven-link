@@ -1,0 +1,76 @@
+A1
+--
+Latex:
+\left[\begin{matrix}\cos{\left(x \right)} & - \sin{\left(x \right)} & 0 & l\\\sin{\left(x \right)} & \cos{\left(x \right)} & 0 & 0\\0 & 0 & 1 & 0\\0 & 0 & 0 & 1\end{matrix}\right]
+
+SymPy:
+Matrix([[cos(x), -sin(x), 0, l], [sin(x), cos(x), 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]])
+
+Code:
+A1 = sp.Matrix([[cos(Symbol('x', real=True)), Mul(Integer(-1), sin(Symbol('x', real=True))), Integer(0), Symbol('l', real=True, nonzero=True)], [sin(Symbol('x', real=True)), cos(Symbol('x', real=True)), Integer(0), Integer(0)], [Integer(0), Integer(0), Integer(1), Integer(0)], [Integer(0), Integer(0), Integer(0), Integer(1)]])
+
+A2
+--
+Latex:
+\left[\begin{matrix}\cos{\left(s \right)} & - \sin{\left(s \right)} & 0 & 2 l\\0 & 0 & -1 & - \frac{5 l}{2}\\\sin{\left(s \right)} & \cos{\left(s \right)} & 0 & 0\\0 & 0 & 0 & 1\end{matrix}\right]
+
+SymPy:
+Matrix([[cos(s), -sin(s), 0, 2*l], [0, 0, -1, -5*l/2], [sin(s), cos(s), 0, 0], [0, 0, 0, 1]])
+
+Code:
+A2 = sp.Matrix([[cos(Symbol('s', real=True)), Mul(Integer(-1), sin(Symbol('s', real=True))), Integer(0), Mul(Integer(2), Symbol('l', real=True, nonzero=True))], [Integer(0), Integer(0), Integer(-1), Mul(Integer(-1), Rational(5, 2), Symbol('l', real=True, nonzero=True))], [sin(Symbol('s', real=True)), cos(Symbol('s', real=True)), Integer(0), Integer(0)], [Integer(0), Integer(0), Integer(0), Integer(1)]])
+
+A3
+--
+Latex:
+\left[\begin{matrix}- \cos{\left(y \right)} & \sin{\left(y \right)} & 0 & 0\\0 & 0 & -1 & 0\\- \sin{\left(y \right)} & - \cos{\left(y \right)} & 0 & 0\\0 & 0 & 0 & 1\end{matrix}\right]
+
+SymPy:
+Matrix([[-cos(y), sin(y), 0, 0], [0, 0, -1, 0], [-sin(y), -cos(y), 0, 0], [0, 0, 0, 1]])
+
+Code:
+A3 = sp.Matrix([[Mul(Integer(-1), cos(Symbol('y', real=True))), sin(Symbol('y', real=True)), Integer(0), Integer(0)], [Integer(0), Integer(0), Integer(-1), Integer(0)], [Mul(Integer(-1), sin(Symbol('y', real=True))), Mul(Integer(-1), cos(Symbol('y', real=True))), Integer(0), Integer(0)], [Integer(0), Integer(0), Integer(0), Integer(1)]])
+
+A4
+--
+Latex:
+\left[\begin{matrix}\cos{\left(z \right)} & - \sin{\left(z \right)} & 0 & \frac{5 l}{2}\\0 & 0 & -1 & 0\\\sin{\left(z \right)} & \cos{\left(z \right)} & 0 & 0\\0 & 0 & 0 & 1\end{matrix}\right]
+
+SymPy:
+Matrix([[cos(z), -sin(z), 0, 5*l/2], [0, 0, -1, 0], [sin(z), cos(z), 0, 0], [0, 0, 0, 1]])
+
+Code:
+A4 = sp.Matrix([[cos(Symbol('z', real=True)), Mul(Integer(-1), sin(Symbol('z', real=True))), Integer(0), Mul(Rational(5, 2), Symbol('l', real=True, nonzero=True))], [Integer(0), Integer(0), Integer(-1), Integer(0)], [sin(Symbol('z', real=True)), cos(Symbol('z', real=True)), Integer(0), Integer(0)], [Integer(0), Integer(0), Integer(0), Integer(1)]])
+
+A5
+--
+Latex:
+\left[\begin{matrix}\cos{\left(y \right)} & \sin{\left(y \right)} & 0 & \frac{5 l}{2}\\0 & 0 & -1 & 0\\- \sin{\left(y \right)} & \cos{\left(y \right)} & 0 & 0\\0 & 0 & 0 & 1\end{matrix}\right]
+
+SymPy:
+Matrix([[cos(y), sin(y), 0, 5*l/2], [0, 0, -1, 0], [-sin(y), cos(y), 0, 0], [0, 0, 0, 1]])
+
+Code:
+A5 = sp.Matrix([[cos(Symbol('y', real=True)), sin(Symbol('y', real=True)), Integer(0), Mul(Rational(5, 2), Symbol('l', real=True, nonzero=True))], [Integer(0), Integer(0), Integer(-1), Integer(0)], [Mul(Integer(-1), sin(Symbol('y', real=True))), cos(Symbol('y', real=True)), Integer(0), Integer(0)], [Integer(0), Integer(0), Integer(0), Integer(1)]])
+
+A6
+--
+Latex:
+\left[\begin{matrix}- \cos{\left(s \right)} & - \sin{\left(s \right)} & 0 & 0\\0 & 0 & -1 & - \frac{5 l}{2}\\\sin{\left(s \right)} & - \cos{\left(s \right)} & 0 & 0\\0 & 0 & 0 & 1\end{matrix}\right]
+
+SymPy:
+Matrix([[-cos(s), -sin(s), 0, 0], [0, 0, -1, -5*l/2], [sin(s), -cos(s), 0, 0], [0, 0, 0, 1]])
+
+Code:
+A6 = sp.Matrix([[Mul(Integer(-1), cos(Symbol('s', real=True))), Mul(Integer(-1), sin(Symbol('s', real=True))), Integer(0), Integer(0)], [Integer(0), Integer(0), Integer(-1), Mul(Integer(-1), Rational(5, 2), Symbol('l', real=True, nonzero=True))], [sin(Symbol('s', real=True)), Mul(Integer(-1), cos(Symbol('s', real=True))), Integer(0), Integer(0)], [Integer(0), Integer(0), Integer(0), Integer(1)]])
+
+A7
+--
+Latex:
+\left[\begin{matrix}\cos{\left(x \right)} & - \sin{\left(x \right)} & 0 & 2 l\\0 & 0 & -1 & 0\\\sin{\left(x \right)} & \cos{\left(x \right)} & 0 & 0\\0 & 0 & 0 & 1\end{matrix}\right]
+
+SymPy:
+Matrix([[cos(x), -sin(x), 0, 2*l], [0, 0, -1, 0], [sin(x), cos(x), 0, 0], [0, 0, 0, 1]])
+
+Code:
+A7 = sp.Matrix([[cos(Symbol('x', real=True)), Mul(Integer(-1), sin(Symbol('x', real=True))), Integer(0), Mul(Integer(2), Symbol('l', real=True, nonzero=True))], [Integer(0), Integer(0), Integer(-1), Integer(0)], [sin(Symbol('x', real=True)), cos(Symbol('x', real=True)), Integer(0), Integer(0)], [Integer(0), Integer(0), Integer(0), Integer(1)]])

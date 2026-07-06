@@ -1,0 +1,23 @@
+Name | Degree | HasX | HasY | HasZ | Hasq
+---- | ------ | ---- | ---- | ---- | ----
+E11 | 20 | True | True | True | True
+E12 | 15 | True | True | True | True
+E13 | 17 | True | True | False | True
+E14 | 18 | True | True | False | True
+E21 | 17 | True | True | True | True
+E22 | 14 | True | True | True | True
+E23 | 0 | True | True | False | True
+E24 | 0 | True | True | False | True
+E31 | 13 | False | True | True | True
+E32 | 10 | False | True | True | True
+E33 | 0 | False | True | False | True
+E34 | 0 | False | True | False | True
+E41 | 0 | False | False | False | False
+E42 | 0 | False | False | False | False
+E43 | 0 | False | False | False | False
+E44 | 0 | False | False | False | False
+
+Closure error ||T-I||_F at x=y=z=s=0: 0
+Numeric closure error: 0
+
+Stop here by design: no elimination, no Groebner, no Resultant, no RootOf, no branch analysis.
