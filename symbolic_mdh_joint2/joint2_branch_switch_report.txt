@@ -1,0 +1,37 @@
+Joint2 continuous branch tracking report
+sample_count=540
+successful_points=540
+failed_points=0
+failed_s_deg=[]
+max_closure_residual=3.812027246042649e-08
+mean_closure_residual=9.227235722071097e-11
+branch_switch_detected=True
+branch_switch_count=5
+passes_initial_configuration=True
+reference_available=True
+trend_consistent_with_fourier_numeric_continuation=False
+
+Scoring rule
+closure_residual_weight=1.0
+continuity_weight=0.01
+predictor_weight=0.01
+residual_priority_threshold=1e-07
+
+Switch interpretation
+switch_continuity_threshold=0.2
+如果切换点前后关节角不连续，则原切换是错误选根；如果连续，则只是代数根编号变化。
+
+Switch details
+s_prev=90.0, s_curr=91.0, branch_prev=0:0, branch_curr=1:0, continuity_error=0.054125150444205725, classification=algebraic_renumbering
+s_prev=126.0, s_curr=127.0, branch_prev=1:0, branch_curr=0:0, continuity_error=0.047089600234499956, classification=algebraic_renumbering
+s_prev=233.0, s_curr=234.0, branch_prev=0:0, branch_curr=1:0, continuity_error=0.04708960023449827, classification=algebraic_renumbering
+s_prev=269.9, s_curr=270.0, branch_prev=1:0, branch_curr=0:1, continuity_error=5.1181003989706095, classification=wrong_root_selection
+s_prev=270.0, s_curr=270.1, branch_prev=0:1, branch_curr=2:0, continuity_error=0.0025492119516294267, classification=algebraic_renumbering
+
+Trend comparison metrics
+delta_theta1_rad: correlation=0.2985568269489044, centered_mae_deg=29.946119718737506
+delta_theta3_rad: correlation=-0.00027718662994155846, centered_mae_deg=74.58244101078648
+delta_theta4_rad: correlation=0.9022862781267897, centered_mae_deg=25.924544514080235
+
+Trend note
+Reference data comes from the existing q2 numerical/Fourier workflow and is used only for final trend comparison.

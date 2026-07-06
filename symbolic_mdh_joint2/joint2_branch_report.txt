@@ -1,0 +1,24 @@
+Joint2 selected analytic branch report
+sample_count=360
+successful_points=360
+failed_points=0
+failed_s_deg=[]
+max_closure_residual=3.812027246042649e-08
+mean_closure_residual=1.327113208366855e-10
+branch_switch_detected=True
+branch_switch_count=5
+passes_initial_configuration=True
+reference_available=True
+trend_consistent_with_fourier_numeric_continuation=False
+
+Trend comparison metrics
+delta_theta1_rad: correlation=0.16815697022834125, centered_mae_deg=25.517200476160376
+delta_theta3_rad: correlation=0.06472666224087457, centered_mae_deg=64.12770979736635
+delta_theta4_rad: correlation=0.9442650743364381, centered_mae_deg=14.830543824587885
+
+Scoring rule
+first_point = closest to zero pose
+later_points = closure_residual + 0.0001 * continuity_error
+
+Trend note
+Reference data comes from the existing q2 numerical/Fourier workflow and is used only for final trend comparison.

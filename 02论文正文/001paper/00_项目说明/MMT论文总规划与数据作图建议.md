@@ -22,7 +22,7 @@
 - 将机构实现为冗余驱动移动机器人。
 - 用 PPO 神经网络控制验证冗余驱动可以激发理论预测的运动模式，并实现基本模式切换和基础移动能力。
 
-本篇不建议展开：
+本篇不展开：
 
 - 完整转向控制。
 - 复杂路径规划。
@@ -46,9 +46,9 @@
 
 > A Reconfigurable Plane-Symmetric 7R Mechanism for Multi-Mode Underactuated Mobile Robots
 
-## 4. 推荐贡献点
+## 4. 贡献点
 
-建议写成三条贡献：
+写成三条贡献：
 
 1. A novel plane-symmetric spatial 7R mechanism is proposed, and its global mobility is shown to be one through screw-system and modified G-K analyses.
 
@@ -64,16 +64,9 @@
 
 ## 5. 全文章节大纲（推荐 6 章结构）
 
-推荐采用更紧凑的 6 章结构：
 
-1. Introduction
-2. Kinematic Modeling and Reconfiguration Analysis
-3. Numerical Validation of the Two Motion Branches
-4. Robotic Embodiment and PPO-Based Validation
-5. Discussion
-6. Conclusion
 
-这样可以避免“机构构型单独成章内容过薄”的问题，也更符合 MMT 这类机构学论文常见的组织方式。
+
 
 ### 1. Introduction
 
